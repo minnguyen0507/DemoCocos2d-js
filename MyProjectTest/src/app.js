@@ -1,37 +1,45 @@
 
 var HelloWorldLayer = cc.Layer.extend({
-    sprite:null,
     ctor:function () {
-        //////////////////////////////
-        // 1. super init first
         this._super();
-
-        /////////////////////////////
-        // 2. add a menu item with "X" image, which is clicked to quit the program
-        //    you may modify it.
-        // ask the window size
         var size = cc.winSize;
+//tạo Sprite
+    var spriteTest = new cc.Sprite( res.HelloWorld_png);
+    spriteTest.setAnchorPoint( 0.5, 0.5);
+    spriteTest.setPosition( size.width/2, size.height/2);
+    this.addChild( spriteTest, 1);
 
-        /////////////////////////////
-        // 3. add your codes below...
-        // add a label shows "Hello World"
-        // create and initialize a label
-        var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
-        // position the label on the center of the screen
-        helloLabel.x = size.width / 2;
-        helloLabel.y = size.height / 2 + 200;
-        // add the label as a child to this layer
-        this.addChild(helloLabel, 5);
+//Tạo Label
+    var labelTest = new cc.LabelTTF("Anh Minh Dep Trai","Arial",24);
+    labelTest.setAnchorPoint( 0.5, 0.5);
+    labelTest.setPosition( size.width/2 , size.height * 0.75);
+    this.addChild( labelTest, 2);
 
-        // add "HelloWorld" splash screen"
-        this.sprite = new cc.Sprite(res.HelloWorld_png);
-        this.sprite.attr({
-            x: size.width / 2,
-            y: size.height / 2
-        });
-        this.addChild(this.sprite, 0);
+//Tao Button
+     var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
+     //buttonTest.loadTextures(res.btn_next, res.btn_next, res.btn_next);
+     buttonTest.setAnchorPoint(0.5 , 0.5);
+     buttonTest.setPosition( size.width /2, size.height * 0.25);
+     buttonTest.addTouchEventListener(this.touchEvent,this);
+     buttonTest.setPressedActionEnabled(true);
+     this.addChild( buttonTest, 3);
+
+    cc.log("test");
 
         return true;
+    },
+    touchEvent : function (sender,  type) {
+        switch (type){
+            case ccui.Widget.TOUCH_BEGAN:
+                break;
+            case ccui.Widget.TOUCH_MOVED:
+                break;
+            case ccui.Widget.TOUCH_MOVED:
+                break;
+            case ccui.Widget.TOUCH_ENDED:
+                cc.log("Fuck you bitch");
+                break;
+        }
     }
 });
 
