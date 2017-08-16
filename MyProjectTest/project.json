@@ -1,18 +1,19 @@
 {
-    "project_type": "javascript",
-
-    "debugMode" : 1,
-    "showFPS" : true,
-    "frameRate" : 60,
-    "id" : "gameCanvas",
-    "renderMode" : 0,
+    "project_type":"javascript",
+    "debugMode":1,
+    "showFPS":true,
+    "frameRate":60,
+    "id":"gameCanvas",
+    "renderMode":0,
     "engineDir":"frameworks/cocos2d-html5",
-
-    "modules" : ["cocos2d","extensions"],
-
-    "jsList" : [
+    "modules":[
+        "cocos2d",
+        "extensions"
+    ],
+    "jsList":[
         "src/resource.js",
         "src/app.js",
-        "src/SceneTest.js"
+        "src/study/SceneTest.js",
+        "src/study/GameLatBai.js"
     ]
 }

@@ -2,17 +2,26 @@ var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
         var size = cc.winSize;
+    var bgTest = new cc.Sprite(res.bg_test);
+    bgTest.setAnchorPoint( 0.5, 0.5);
+    bgTest.setPosition( size.width/2, size.height/2);
+    this.addChild( bgTest, 0);
 //tạo Sprite
     var spriteTest = new cc.Sprite( res.HelloWorld_png);
     spriteTest.setAnchorPoint( 0.5, 0.5);
     spriteTest.setPosition( size.width/2, size.height/2);
-    this.addChild( spriteTest, 1);
+    bgTest.addChild( spriteTest, 1);
+
+//Remove Sprite
+//    setTimeout (function(){
+//    	bgTest.removeChild(spriteTest); // Delete Sprite at 3s
+//    },3000);
 
 //Tạo Label
     var labelTest = new cc.LabelTTF("teST","Arial",24);
     labelTest.setAnchorPoint( 0.5, 0.5);
     labelTest.setPosition( size.width/2 , size.height * 0.75);
-    this.addChild( labelTest, 2);
+    bgTest.addChild( labelTest, 2);
 
 //Tao Button
      var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
@@ -21,7 +30,7 @@ var HelloWorldLayer = cc.Layer.extend({
      buttonTest.setPosition( size.width /2, size.height * 0.25);
      buttonTest.addTouchEventListener(this.touchEvent,this);
      buttonTest.setPressedActionEnabled(true);
-     this.addChild( buttonTest, 3);
+     bgTest.addChild( buttonTest, 3);
 
     cc.log("test");
 
@@ -37,6 +46,8 @@ var HelloWorldLayer = cc.Layer.extend({
                 break;
             case ccui.Widget.TOUCH_ENDED:
                 cc.log("Fuck you bitch");
+                var gameLatBai = new GameLatBaiScene();
+                cc.director.runScene(gameLatBai);
                 break;
         }
     }
