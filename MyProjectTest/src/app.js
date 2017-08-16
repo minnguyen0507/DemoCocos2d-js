@@ -18,7 +18,7 @@ var HelloWorldLayer = cc.Layer.extend({
 //    },3000);
 
 //Tạo Label
-    var labelTest = new cc.LabelTTF("teST","Arial",24);
+    var labelTest = new cc.LabelTTF("Nguyen Cong Minh","Arial",24);
     labelTest.setAnchorPoint( 0.5, 0.5);
     labelTest.setPosition( size.width/2 , size.height * 0.75);
     bgTest.addChild( labelTest, 2);
@@ -52,6 +52,7 @@ var HelloWorldLayer = cc.Layer.extend({
         }
     }
 });
+
 
 var HelloWorldScene = cc.Scene.extend({
     onEnter:function () {
