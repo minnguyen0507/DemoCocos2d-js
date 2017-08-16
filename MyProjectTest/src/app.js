@@ -1,4 +1,3 @@
-
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
@@ -10,7 +9,7 @@ var HelloWorldLayer = cc.Layer.extend({
     this.addChild( spriteTest, 1);
 
 //Tạo Label
-    var labelTest = new cc.LabelTTF("Anh Minh Dep Trai","Arial",24);
+    var labelTest = new cc.LabelTTF("teST","Arial",24);
     labelTest.setAnchorPoint( 0.5, 0.5);
     labelTest.setPosition( size.width/2 , size.height * 0.75);
     this.addChild( labelTest, 2);
