@@ -9,7 +9,13 @@ var res = {
 	tile_5 : "res/gamelatbai/tile_5.png",
 	tile_6 : "res/gamelatbai/tile_6.png",
 	tile_7 : "res/gamelatbai/tile_7.png",
-	
+    //----game may bay----
+	helicopter_store : "res/gamemaybay/asteroid.png",
+    helicopter_background : "res/gamemaybay/background.png",
+    helicopter_particle : "res/gamemaybay/particle.png",
+    helicopter_ship : "res/gamemaybay/ship.png",
+
+
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
     bg_test : "res/common/bg_test.png"

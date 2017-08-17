@@ -14,6 +14,7 @@
         "src/resource.js",
         "src/app.js",
         "src/study/SceneTest.js",
-        "src/study/GameLatBai.js"
+        "src/study/GameLatBai.js",
+        "src/study/GameMayBay.js"
     ]
 }

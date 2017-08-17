@@ -1,18 +1,18 @@
 
-var SceneLayer = cc.Layer.extend({
+var GameMayBayLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
         var size = cc.winSize;
-        cc.log("vao scene test");
+        cc.log("vao game may bay");
 
         return true;
     }
 });
 
-var SceneTest = cc.Scene.extend({
+var GameMayBayScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
-        var layer = new SceneLayer();
+        var layer = new GameMayBayLayer();
         this.addChild(layer);
     }
 });
