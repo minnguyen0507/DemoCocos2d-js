@@ -15,6 +15,7 @@
         "src/app.js",
         "src/study/SceneTest.js",
         "src/study/GameLatBai.js",
-        "src/study/GameMayBay.js"
+        "src/study/GameMayBay.js",
+        "src/study/LayerTest.js"
     ]
 }

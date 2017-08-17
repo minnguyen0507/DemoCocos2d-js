@@ -5,6 +5,10 @@ var GameMayBayLayer = cc.Layer.extend({
         var size = cc.winSize;
         cc.log("vao game may bay");
 
+        var test = new LayerTest(); // Kế thừa thằng Test
+        test.testLayer();           // Thằng Test gọi đến hàm
+      //  this.addChild(test);     //Add vào Scene
+
         return true;
     }
 });
