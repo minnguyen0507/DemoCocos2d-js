@@ -1,5 +1,9 @@
 var pickedTiles = [];
 var gameArray = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
+var countClick;
+var scoreHigh;
+var moves = 0;
+var score =0;
 var GameLatBai = cc.Layer.extend({
     ctor:function () {
         this.bg = null;
@@ -13,7 +17,16 @@ var GameLatBai = cc.Layer.extend({
         this.bg.setAnchorPoint(0.5,0.5);
         this.bg.setPosition(size.width/2 , size.height/ 2);
         this.addChild(this.bg,2);
-        
+
+        countClick = new cc.LabelTTF("Moves: 0", "Arial", 32);
+        countClick.setAnchorPoint(0.5,0.5);
+        countClick.setPosition(size.width * 0.75 , size.height * 0.75);
+        this.addChild(countClick, 2);
+
+        scoreHigh = new cc.LabelTTF("Score High: 0", "Arial", 32);
+        scoreHigh.setAnchorPoint(0.5,0.5);
+        scoreHigh.setPosition(countClick.getPositionX() - 200, countClick.getPositionY());
+        this.addChild(scoreHigh, 3);
         for ( i= 0; i< 16; i++){
         //	var tile = new cc.Sprite(res.cover);
         	var tile = new MemoryTile();
@@ -57,6 +70,8 @@ var listener = cc.EventListener.create({
 })
 
 function checkTiles(){
+    moves ++;
+    countClick.setString("Click: "+ moves);
     var pause = setTimeout(function(){
         if(pickedTiles[0].pictureValue != pickedTiles[1].pictureValue){
             console.log("Vaoooooooooooooo 1");
@@ -64,6 +79,8 @@ function checkTiles(){
             pickedTiles[1].initWithFile(res.cover);
         }
         else{
+            score ++;
+            scoreHigh.setString("Score High: " + score);
             console.log("Vaoooooooooooooo 2");
             pickedTiles[0].removeFromParent();
             pickedTiles[1].removeFromParent();
@@ -76,9 +93,15 @@ function checkTiles(){
 
 var GameLatBaiScene = cc.Scene.extend({
     onEnter:function () {
+        gameArray = shuffle(gameArray); //trộn array khi khởi tạo Scenes
         this._super();
         var layer = new GameLatBai();
         this.addChild(layer);
     }
 });
 
+var shuffle = function (array) {
+    for (var j, x, i = array.length; i; j = parseInt(Math.random() *i),
+    x = array[--i], array[i] = array[j], array[j] = x);
+    return array;
+};
