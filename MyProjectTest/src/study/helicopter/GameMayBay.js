@@ -36,7 +36,7 @@ var GameMayBayLayer = cc.Layer.extend({
     },
     addAsteroid : function (event) {
        var asteroid = new Asteroid();
-       this.addChild(asteroid,99);
+       this.addChild(asteroid, 1);
 
     },
     removeAsteroid : function (asteroid) {
