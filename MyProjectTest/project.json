@@ -8,11 +8,18 @@
     "engineDir":"frameworks/cocos2d-html5",
     "modules":[
         "cocos2d",
-        "extensions"
+        "extensions",
+        "cocostudio"
     ],
     "jsList":[
         "src/resource.js",
         "src/app.js",
+        "src/utils/Filter.js",
+        "src/utils/GameUtils.js",
+        "src/utils/LogUtils.js",
+        "src/utils/Random.js",
+        "src/utils/Sort.js",
+        "src/utils/Utility.js",
         "src/study/SceneTest.js",
         "src/study/GameLatBai.js",
         "src/study/helicopter/GameMayBay.js",
