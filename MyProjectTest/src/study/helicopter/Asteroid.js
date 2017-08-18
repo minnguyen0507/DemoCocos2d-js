@@ -9,11 +9,10 @@ var Asteroid  = cc.Sprite.extend({
         this.initWithFile(res.helicopter_store);
     },
     onEnter : function () {
-        this.setPosition(400,Math.random() *320);
-        cc.log("sssssssssssss",Math.random() *320);
-        // var moveAction= cc.MoveTo.create(2.5, new cc.Point(-100,Math.
-        //     random()*320));
-        var moveAction= new cc.MoveTo(2.5, cc.p( 60, 160 ) );
+        this._super();
+        this.setPosition(600,Math.random() *320);
+        var moveAction= cc.MoveTo.create(2.5, new cc.Point(-100,Math.
+            random()*320));
         this.runAction(moveAction);
         this.scheduleUpdate();
     },

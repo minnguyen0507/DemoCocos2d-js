@@ -28,13 +28,6 @@ var GameMayBayLayer = cc.Layer.extend({
         this.schedule(this.addAsteroid,0.5);
         ship = new Ship();
         this.addChild(ship);
-
-        // var spriteTest = new cc.Sprite(res.helicopter_store);
-        // spriteTest.setPosition(400,320);
-        // this.addChild(spriteTest,22);
-        // var moveAction= new cc.MoveTo(2.5, cc.p( 60, 160 ) );
-        // spriteTest.runAction(moveAction);
-
         return true;
     },
     update : function (dt) {

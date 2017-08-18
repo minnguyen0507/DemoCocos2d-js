@@ -9,6 +9,7 @@ var ScrollingBG  = cc.Sprite.extend({
       this.initWithFile(res.helicopter_background);
     },
     onEnter : function () {
+      this._super();
       this.setPosition(480,160);
     },
     scroll : function () {

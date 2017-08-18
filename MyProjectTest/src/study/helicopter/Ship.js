@@ -13,6 +13,7 @@ var Ship  = cc.Sprite.extend({
         this.engineOn = false;
     },
     onEnter : function () {
+        this._super();
         this.setPosition(60,160);
     },
     updateY : function () {

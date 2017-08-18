@@ -9,6 +9,7 @@ var BaseSpriteTest  = cc.Sprite.extend({
       this.initWithFile(res.cover);
     },
     onEnter : function () {
+        this._super();
       this.setPosition(200,200);
     },
     testFunction : function () {
