@@ -15,7 +15,11 @@
         "src/app.js",
         "src/study/SceneTest.js",
         "src/study/GameLatBai.js",
-        "src/study/GameMayBay.js",
-        "src/study/LayerTest.js"
+        "src/study/helicopter/GameMayBay.js",
+        "src/study/helicopter/ScrollingBG.js",
+        "src/study/helicopter/Asteroid.js",
+        "src/study/helicopter/Ship.js",
+        "src/study/BaseLayerTest.js",
+        "src/study/BaseSpriteTest.js"
     ]
 }

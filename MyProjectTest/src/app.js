@@ -46,7 +46,7 @@ var HelloWorldLayer = cc.Layer.extend({
                 break;
             case ccui.Widget.TOUCH_ENDED:
                 cc.log("Fuck you bitch");
-                // var gameLatBai = new GameLatBaiScene();
+                // var gameLatBai = new GameLatB aiScene();
                 // cc.director.runScene(gameLatBai);
 
                 var gameMayBay = new GameMayBayScene();

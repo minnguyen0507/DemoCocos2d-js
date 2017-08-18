@@ -57,11 +57,13 @@ cc.game.onStart = function(){
     cc.view.adjustViewPort(true);
     // Setup the resolution policy and design resolution size
     cc.view.setDesignResolutionSize(1136 , 640, cc.ResolutionPolicy.SHOW_ALL);
-    // The game will be resized when browser size change
+
+    cc.view.setDesignResolutionSize(480 , 320, cc.ResolutionPolicy.SHOW_ALL);  // màn hình game máy bay
+     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
-        cc.director.runScene(new HelloWorldScene());
+        cc.director.runScene(new GameMayBayScene());
     }, this);
 };
 cc.game.run();

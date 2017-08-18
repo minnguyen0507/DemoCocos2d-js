@@ -1,7 +1,7 @@
 /**
  * Created by Admin on 17/8/2017.
  */
-var LayerTest = cc.Layer.extend({
+var BaseLayerTest = cc.Layer.extend({
     ctor : function () {
       this._super();
 
@@ -11,8 +11,6 @@ var LayerTest = cc.Layer.extend({
       this.addChild(spriteTest,1);
       spriteTest.setPosition(size.width/2, size.height/2);
       spriteTest.setAnchorPoint(0.5, 0.5);
-
-
     },
 
     testLayer : function () {
