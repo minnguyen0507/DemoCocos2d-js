@@ -56,7 +56,7 @@ cc.game.onStart = function(){
     // Adjust viewport meta
     cc.view.adjustViewPort(true);
     // Setup the resolution policy and design resolution size
-    cc.view.setDesignResolutionSize(1136 , 640, cc.ResolutionPolicy.SHOW_ALL);
+   // cc.view.setDesignResolutionSize(1136 , 640, cc.ResolutionPolicy.SHOW_ALL);
 
     cc.view.setDesignResolutionSize(480 , 320, cc.ResolutionPolicy.SHOW_ALL);  // màn hình game máy bay
      // The game will be resized when browser size change

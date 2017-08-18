@@ -18,11 +18,12 @@ var Asteroid  = cc.Sprite.extend({
     restartGame : function () {
       ship.ySpeed = 0;
       ship.setPosition(ship.getPosition().x, 160);
+      ship.invulnerability =100;
     },
     update : function (dt) {
         var shipBoundingBox = ship.getBoundingBox(); //Lay doi tuong hcn cua object
         var asteroidBoundingBox = this.getBoundingBox();
-        if (cc.rectIntersectsRect(shipBoundingBox, asteroidBoundingBox)){  //Xu li va cham
+        if (cc.rectIntersectsRect(shipBoundingBox, asteroidBoundingBox) && ship.invulnerability == 0){  //Xu li va cham
            // GameMayBayLayer.removeAsteroid(this);
             this.removeFromParent();
             this.restartGame();
