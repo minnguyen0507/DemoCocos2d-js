@@ -14,7 +14,9 @@ var res = {
     helicopter_background : "res/gamemaybay/background.png",
     helicopter_particle : "res/gamemaybay/particle.png",
     helicopter_ship : "res/gamemaybay/ship.png",
-
+	//----------Sprite Sheet-------
+    cocoban_plist : "res/animation/spritesheet.plist",
+    cocoban_png : "res/animation/spritesheet.png",
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
