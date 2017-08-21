@@ -17,6 +17,9 @@ var res = {
 	//----------Sprite Sheet-------
     cocoban_plist : "res/animation/spritesheet.plist",
     cocoban_png : "res/animation/spritesheet.png",
+	//----------Sound -------------
+	sound_bang : "res/sound/bang.mp3",
+	sound_loop : "res/sound/loop.mp3",
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
