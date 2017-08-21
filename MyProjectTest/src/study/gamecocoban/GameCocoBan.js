@@ -16,6 +16,7 @@ var swipeTolerance = 10;
 var GameCocoBanLayer = cc.Layer.extend({
     ctor:function () {
     	this._super();
+        console.log("Vao game day thung");
     	this.spriteSheet = null;
     	var size = cc.winSize;
     	//Load SpriteSheet
@@ -61,12 +62,6 @@ var GameCocoBanLayer = cc.Layer.extend({
                 }
             }
         }
-
-        // var testSprite = new cc.Sprite(res.bg_test);
-        // this.addChild(testSprite,0);
-        // testSprite.setPosition(size.width/2, size.height/2);
-        console.log("Finish Scene");
-
         cc.eventManager.addListener(listener, this);
         return true;
     }
@@ -86,29 +81,57 @@ var listener = cc.EventListener.create({
 
 
 });
-
+function move(deltaX,deltaY){
+    switch(level[playerPosition.y+deltaY][playerPosition.x+deltaX]){
+        case 0:
+        case 2:
+            level[playerPosition.y][playerPosition.x]-=4;
+            playerPosition.x+=deltaX;
+            playerPosition.y+=deltaY;
+            level[playerPosition.y][playerPosition.x]+=4;
+            playerSprite.setPosition(165+25*playerPosition.x,185-
+                25*playerPosition.y);
+            break;
+        case 3:
+        case 5:
+            if(level[playerPosition.y + deltaY * 2][playerPosition.x + deltaX * 2] == 0
+                || level[playerPosition.y + deltaY * 2][playerPosition.x + deltaX * 2] == 2){
+                level[playerPosition.y][playerPosition.x] -= 4;
+                playerPosition.x += deltaX;
+                playerPosition.y += deltaY;
+                level[playerPosition.y][playerPosition.x] += 1;
+                playerSprite.setPosition(165 + 25 * playerPosition.x, 185 - 25 * playerPosition.y);
+                level[playerPosition.y + deltaY][playerPosition.x + deltaX] += 3;
+                var movingCrate = createArray[playerPosition.y][playerPosition.x];
+                movingCrate.setPosition(movingCrate.getPosition().x + 25 * deltaX,movingCrate.getPosition().y - 25 * deltaY);
+                createArray[playerPosition.y + deltaY][playerPosition.x + deltaX]=movingCrate;
+                createArray[playerPosition.y][playerPosition.x] = null;
+            }
+            break;
+    }
+};
 function swipeDirection(){
     var distX = startTouch.x - endTouch.x;
     var distY = startTouch.y - endTouch.y;
-    if(Math.abs(distX)+Math.abs(distY)>swipeTolerance){
-        if(Math.abs(distX)>Math.abs(distY)){
-            if(distX>0){
-                playerSprite.setPosition(playerSprite.getPosition().x-25,playerSprite.getPosition().y);
-//move(-1,0);
+    if(Math.abs(distX) + Math.abs(distY) > swipeTolerance){
+        if(Math.abs(distX) > Math.abs(distY)){
+            if(distX > 0){
+                //playerSprite.setPosition(playerSprite.getPosition().x-25,playerSprite.getPosition().y);
+                move(-1,0);
             }
             else{
-                playerSprite.setPosition(playerSprite.getPosition().x+25,playerSprite.getPosition().y);
-//move(1,0);
+               // playerSprite.setPosition(playerSprite.getPosition().x+25,playerSprite.getPosition().y);
+                move(1,0);
             }
         }
         else{
-            if(distY>0){
-                playerSprite.setPosition(playerSprite.getPosition().x,playerSprite.getPosition().y-25);
-//move(0,1);
+            if(distY > 0){
+               // playerSprite.setPosition(playerSprite.getPosition().x,playerSprite.getPosition().y-25);
+                move(0,1);
             }
             else{
-                playerSprite.setPosition(playerSprite.getPosition().x,playerSprite.getPosition().y+25);
-//move(0,-1);
+                //playerSprite.setPosition(playerSprite.getPosition().x,playerSprite.getPosition().y+25);
+                move(0,-1);
             }
         }
     }
