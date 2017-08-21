@@ -89,31 +89,30 @@ var listener = cc.EventListener.create({
 
 function swipeDirection(){
     var distX = startTouch.x - endTouch.x;
-    var distY = startTouch.y = endTouch.y;
-    if (Math.abs(distX) + Math.abs(distY) > swipeTolerance){
-        if(Math.abs(distX > Math.abs(distY))){
-            if(distX > 0){
-                playerSprite.setPosition(playerSprite.getPosition().x - 25, playerSprite.getPosition().y);
-                //move (-1, 0);
+    var distY = startTouch.y - endTouch.y;
+    if(Math.abs(distX)+Math.abs(distY)>swipeTolerance){
+        if(Math.abs(distX)>Math.abs(distY)){
+            if(distX>0){
+                playerSprite.setPosition(playerSprite.getPosition().x-25,playerSprite.getPosition().y);
+//move(-1,0);
             }
             else{
-                playerSprite.setPosition(playerSprite.getPosition().x + 25, playerSprite.getPosition().y);
-                //move (1, 0);
+                playerSprite.setPosition(playerSprite.getPosition().x+25,playerSprite.getPosition().y);
+//move(1,0);
             }
         }
         else{
-            if(distY > 0){
-                playerSprite.setPosition(playerSprite.getPosition().x, playerSprite.getPosition().y - 25);
-                //move (0, 1);
+            if(distY>0){
+                playerSprite.setPosition(playerSprite.getPosition().x,playerSprite.getPosition().y-25);
+//move(0,1);
             }
             else{
-                playerSprite.setPosition(playerSprite.getPosition().x,playerSprite.getPosition().y + 25);
-                //move (0, - 1);
+                playerSprite.setPosition(playerSprite.getPosition().x,playerSprite.getPosition().y+25);
+//move(0,-1);
             }
         }
     }
 };
-
 var GameCocoBanScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
