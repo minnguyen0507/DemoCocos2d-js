@@ -45,9 +45,8 @@ var HelloWorldLayer = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-                ZLog.error("Fuck you bitch");
-                var gameLatBai = new GameLatBaiScene();
-                cc.director.runScene(gameLatBai);
+                var gameLatBai = new GameLatBai();
+                cc.director.pushScene(gameLatBai);
 
                 // var gameMayBay = new GameMayBayScene();
                 // cc.director.runScene(gameMayBay);
