@@ -26,6 +26,8 @@ var res = {
     hungbia_leftbutton : "res/gamehungbia/leftbutton.png",
     hungbia_rightbutton : "res/gamehungbia/rightbutton.png",
     hungbia_strawberry : "res/gamehungbia/strawberry.png",
+    hungbia_touchend : "res/gamehungbia/touchend.png",
+    hungbia_touchorigin : "res/gamehungbia/touchorigin.png",
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
