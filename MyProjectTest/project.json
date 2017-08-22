@@ -28,6 +28,7 @@
         "src/study/helicopter/Ship.js",
         "src/study/sound/SoundScene.js",
         "src/study/gamecocoban/GameCocoBan.js",
+        "src/study/gamehungbia/GameHungBia.js",
         "src/study/BaseLayerTest.js",
         "src/study/BaseSpriteTest.js"
     ]

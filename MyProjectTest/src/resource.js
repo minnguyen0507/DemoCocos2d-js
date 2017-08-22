@@ -20,6 +20,12 @@ var res = {
 	//----------Sound -------------
 	sound_bang : "res/sound/bang.mp3",
 	sound_loop : "res/sound/loop.mp3",
+	//--------- Game Hứng Bia ---------
+	hungbia_bomb : "res/gamehungbia/bomb.png",
+    hungbia_cart : "res/gamehungbia/cart.png",
+    hungbia_leftbutton : "res/gamehungbia/leftbutton.png",
+    hungbia_rightbutton : "res/gamehungbia/rightbutton.png",
+    hungbia_strawberry : "res/gamehungbia/strawberry.png",
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
