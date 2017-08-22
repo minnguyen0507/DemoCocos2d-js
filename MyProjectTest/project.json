@@ -9,7 +9,13 @@
     "modules":[
         "cocos2d",
         "extensions",
-        "cocostudio"
+        "cocostudio",
+        "gamehungbia",
+        "helicopter",
+        "sound",
+        "gamecocoban",
+        "utils"
+
     ],
     "jsList":[
         "src/resource.js",
