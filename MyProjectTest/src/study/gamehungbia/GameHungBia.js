@@ -7,6 +7,7 @@ var right;
 var touchOrigin;
 var touchEnd;
 var touching = false;
+
 var GameHungBiaLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
@@ -56,8 +57,6 @@ var GameHungBiaLayer = cc.Layer.extend({
             }
             cart.setPosition(cart.getPositionX() + xSpeed, cart.getPositionY());
         }
-
-
     }
     // removeItem : function () {
     //     itemsLayer.removeChild(item);
@@ -67,24 +66,26 @@ var touchListener = cc.EventListener.create({
         event : cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches : true,
         onTouchBegan : function (touch, event) {
-            if (touch.getLocation().x < 240){
-                // xSpeed = -2;
-                // left.setOpacity(255);
-                // right.setOpacity(128);
-                touchOrigin = new cc.Sprite(res.hungbia_touchorigin);
-                topLayer.addChild(touchOrigin, 0);
-                touchOrigin.setPosition(touch.getLocationX(), touch.getLocationY());
+            // if (touch.getLocation().x < 240){
+            //     // xSpeed = -2;
+            //     // left.setOpacity(255);
+            //     // right.setOpacity(128);
+            //
+            // }
+            // else{
+            //     // xSpeed = 2;
+            //     // right.setOpacity(255);
+            //     // left.setOpacity(128);
+            // }
 
-                touchEnd = new cc.Sprite(res.hungbia_touchend);
-                topLayer.addChild(touchEnd, 0);
-                touchEnd.setPosition(touch.getLocationX(), touch.getLocationY());
-                touching = true;
-            }
-            else{
-                // xSpeed = 2;
-                // right.setOpacity(255);
-                // left.setOpacity(128);
-            }
+            touchOrigin = new cc.Sprite(res.hungbia_touchorigin);
+            topLayer.addChild(touchOrigin, 0);
+            touchOrigin.setPosition(touch.getLocationX(), touch.getLocationY());
+
+            touchEnd = new cc.Sprite(res.hungbia_touchend);
+            topLayer.addChild(touchEnd, 0);
+            touchEnd.setPosition(touch.getLocationX(), touch.getLocationY());
+            touching = true;
             return true;
         },
         onTouchMoved : function (touch, event) {
