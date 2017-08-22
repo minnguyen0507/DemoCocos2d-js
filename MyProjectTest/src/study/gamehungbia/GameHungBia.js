@@ -4,6 +4,9 @@ var topLayer;
 var xSpeed = 0;
 var left;
 var right;
+var touchOrigin;
+var touchEnd;
+var touching = false;
 var GameHungBiaLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
@@ -43,13 +46,18 @@ var GameHungBiaLayer = cc.Layer.extend({
         itemsLayer.addChild(item, 1);
     },
     update : function (dt) {
-        if (xSpeed > 0){
-            cart.setFlippedX(true);
+        if (touching){
+            xSpeed = (touchEnd.getPositionX() - touchOrigin.getPositionX())/50;
+            if (xSpeed > 0){
+                cart.setFlippedX(true);
+            }
+            if (xSpeed < 0){
+                cart.setFlippedX(false);
+            }
+            cart.setPosition(cart.getPositionX() + xSpeed, cart.getPositionY());
         }
-        if (xSpeed < 0){
-            cart.setFlippedX(false);
-        }
-        cart.setPosition(cart.getPositionX() + xSpeed, cart.getPositionY());
+
+
     }
     // removeItem : function () {
     //     itemsLayer.removeChild(item);
@@ -60,21 +68,37 @@ var touchListener = cc.EventListener.create({
         swallowTouches : true,
         onTouchBegan : function (touch, event) {
             if (touch.getLocation().x < 240){
-                xSpeed = -2;
-                left.setOpacity(255);
-                right.setOpacity(128);
+                // xSpeed = -2;
+                // left.setOpacity(255);
+                // right.setOpacity(128);
+                touchOrigin = new cc.Sprite(res.hungbia_touchorigin);
+                topLayer.addChild(touchOrigin, 0);
+                touchOrigin.setPosition(touch.getLocationX(), touch.getLocationY());
+
+                touchEnd = new cc.Sprite(res.hungbia_touchend);
+                topLayer.addChild(touchEnd, 0);
+                touchEnd.setPosition(touch.getLocationX(), touch.getLocationY());
+                touching = true;
             }
             else{
-                xSpeed = 2;
-                right.setOpacity(255);
-                left.setOpacity(128);
+                // xSpeed = 2;
+                // right.setOpacity(255);
+                // left.setOpacity(128);
             }
             return true;
         },
+        onTouchMoved : function (touch, event) {
+            touchEnd.setPosition(touch.getLocationX(), touch.getLocationY());
+        },
         onTouchEnded : function (touch, event) {
-            xSpeed = 0;
-            left.setOpacity(128);
-            right.setOpacity(128);
+            // xSpeed = 0;
+            // left.setOpacity(128);
+            // right.setOpacity(128);
+
+            touch = false;
+            topLayer.removeChild(touchOrigin);
+            topLayer.removeChild(touchEnd);
+
         }
 });
 var GameHungBiaScene = cc.Scene.extend({
