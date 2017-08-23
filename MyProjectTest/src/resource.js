@@ -28,6 +28,14 @@ var res = {
     hungbia_strawberry : "res/gamehungbia/strawberry.png",
     hungbia_touchend : "res/gamehungbia/touchend.png",
     hungbia_touchorigin : "res/gamehungbia/touchorigin.png",
+    //----------Game Totem --------------
+    totem_brick1x1 : "res/gametotem/brick1x1.png",
+    totem_brick2x1 : "res/gametotem/brick2x1.png",
+    totem_brick3x1 : "res/gametotem/brick3x1.png",
+    totem_brick4x1 : "res/gametotem/brick4x1.png",
+    totem_brick4x2 : "res/gametotem/brick4x2.png",
+    totem_ground : "res/gametotem/ground.png",
+    totem_totem : "res/gametotem/totem.png",
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
