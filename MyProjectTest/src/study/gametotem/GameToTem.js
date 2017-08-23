@@ -23,14 +23,29 @@ var GameToTemLayer = cc.Layer.extend({
         //False : kiểm tra xem ảnh có hoạt động không? vì  đây là ảnh tĩnh không hoạt động nên False
         //res.totem_ground : nơi chứa ảnh
         //ground : tên gọi của ảnh
+        this.addBody(204,32,24,24,true, res.totem_brick1x1, "destroyable");
+        this.addBody(276,32,24,24,true, res.totem_brick1x1, "destroyable");
+        this.addBody(240,56,96,24,true,res.totem_brick4x1, "destroyable");
+        this.addBody(240,80,48,24,true,res.totem_brick2x1,"solid");
+        this.addBody(228,104,72,24,true,res.totem_brick3x1, "destroyable");
+        this.addBody(240,140,96,48,true, res.totem_brick4x2,"solid");
+        this.addBody(240,188,24,48,true,res.totem_totem,"totem");
 
         this.scheduleUpdate();
-
+        cc.eventManager.addListener(touchListener, this);
         return true;
     },
     update : function (dt) {
         world.Step(dt, 10, 10);
-        ZLog.error("world");
+       // ZLog.error("world");
+
+        for (var b = world.GetBodyList(); b; b = b.GetNext()){
+            if (b.GetUserData() != null) {
+                var mySprite = b.GetUserData().asset;
+                mySprite.setPosition(b.GetPosition().x * worldScale, b.GetPosition().y * worldScale);
+                mySprite.setRotation(-1 * cc.radiansToDegrees(b.GetAngle()));
+            }
+        }
     },
     addBody : function (posX, posY, width, height, isDynamic, spriteImage, type) {
         var fixtureDef = new Box2D.Dynamics.b2FixtureDef;  //tạo 1 khung cảnh vật lý
@@ -61,7 +76,26 @@ var GameToTemLayer = cc.Layer.extend({
         body.CreateFixture(fixtureDef);     //CreateFixture sẽ gắn một vật cố định vào hình dạng (ở đây là ảnh)
     }
 });
-
+var touchListener = cc.EventListener.create({
+        event : cc.EventListener.TOUCH_ONE_BY_ONE,
+        swallowTouches : true,
+        onTouchBegan : function (touch, event) {
+            var worldPoint = new Box2D.Common.Math.b2Vec2(touch.getLocation().x/worldScale, touch.getLocation().y/worldScale);
+            for (var b = world.GetBodyList(); b; b = b.GetNext()){
+                if (b.GetUserData() != null && b.GetUserData().type == "destroyable"){
+                    for (var f = b.GetFixtureList(); f; f = f.GetNext()){
+                        if(f.TestPoint(worldPoint)){
+                            ZLog.error("click");
+                            var test = new GameToTemScene();
+                            test.removeChild(b.GetUserData().asset);
+                            //this.removeFromParent();
+                            world.DestroyBody(b);
+                        }
+                    }
+                }
+            }
+        }
+});
 var GameToTemScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
