@@ -1,3 +1,5 @@
+var img_tai;
+var img_xiu;
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
@@ -32,10 +34,32 @@ var HelloWorldLayer = cc.Layer.extend({
      buttonTest.setPressedActionEnabled(true);
      bgTest.addChild( buttonTest, 3);
 
+    img_tai = new cc.Sprite("res/tai1.png");
+    img_tai.setPosition(size.width/2, size.height/2);
+    img_tai.setAnchorPoint(0.5, 0.5);
+    this.addChild(img_tai, 1);
+
     cc.log("test");
 
         return true;
     },
+
+    changeBox : function () {
+        //img_tai.setTexture("res/txtTai.png");
+//---action nhap nhay
+        img_tai.runAction(cc.repeatForever(cc.spawn(cc.sequence(cc.delayTime(0.15),cc.callFunc(function () {
+            img_tai.setTexture("res/txtTai.png");
+        }),cc.delayTime(0.15),cc.callFunc(function () {
+            img_tai.setTexture("res/tai1.png");
+        })))))
+
+        // img_tai.runAction(new cc.Repeat(cc.spawn(cc.sequence(cc.delayTime(0.15),cc.callFunc(function () {
+        //     img_tai.setTexture("res/txtTai.png");
+        // }),cc.delayTime(0.15),cc.callFunc(function () {
+        //     img_tai.setTexture("res/tai1.png");
+        // })))));
+    },
+
     touchEvent : function (sender,  type) {
         switch (type){
             case ccui.Widget.TOUCH_BEGAN:
@@ -45,8 +69,9 @@ var HelloWorldLayer = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-                var gameLatBai = new GameLatBai();
-                cc.director.pushScene(gameLatBai);
+                this.changeBox();
+                // var gameLatBai = new GameLatBai();
+                // cc.director.pushScene(gameLatBai);
 
                 // var gameMayBay = new GameMayBayScene();
                 // cc.director.runScene(gameMayBay);
@@ -55,7 +80,42 @@ var HelloWorldLayer = cc.Layer.extend({
     }
 });
 
+function actionNhayTaiXiu(sprite)
+{
+    //stopNhayTaiXiu();
 
+    sprite.runAction(cc.repeatForever(cc.spawn(cc.sequence(cc.scaleTo(0.15,1.1),cc.scaleTo(0.15,1)),cc.sequence(cc.delayTime(0.15),cc.callFunc(function(){
+        if(sprite == taiXiu.sp_tai)
+        {
+            sprite.setTexture("res/tai1.png");
+        }else
+        {
+            sprite.setTexture("res/xiu1.png");
+        }
+    }),cc.delayTime(0.15),cc.callFunc(function(){
+        if(sprite == taiXiu.sp_tai)
+        {
+            sprite.setTexture("res/txtTai.png");
+        }else
+        {
+            sprite.setTexture("res/txtXiu.png");
+        }
+    })))));
+
+}
+function stopNhayTaiXiu()
+{
+    img_tai.stopAllActions();
+    img_tai.setScale(1);
+    img_tai.setTexture("res/txtTai.png");
+    // taiXiu.sp_tai.stopAllActions();
+    // taiXiu.sp_xiu.stopAllActions();
+    // taiXiu.sp_tai.setScale(1);
+    // taiXiu.sp_xiu.setScale(1);
+    // taiXiu.sp_tai.setTexture("res/txtTai.png");
+    // taiXiu.sp_xiu.setTexture("res/txtXiu.png");
+
+}
 var HelloWorldScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
