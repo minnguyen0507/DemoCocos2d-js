@@ -38,7 +38,9 @@ var HelloWorldLayer = cc.Layer.extend({
     img_tai.setPosition(size.width/2, size.height/2);
     img_tai.setAnchorPoint(0.5, 0.5);
     this.addChild(img_tai, 1);
+        img_tai.setScale(0.3);
 
+    this.changeBox();
     cc.log("test");
 
         return true;
@@ -47,11 +49,20 @@ var HelloWorldLayer = cc.Layer.extend({
     changeBox : function () {
         //img_tai.setTexture("res/txtTai.png");
 //---action nhap nhay
-        img_tai.runAction(cc.repeatForever(cc.spawn(cc.sequence(cc.delayTime(0.15),cc.callFunc(function () {
-            img_tai.setTexture("res/txtTai.png");
-        }),cc.delayTime(0.15),cc.callFunc(function () {
-            img_tai.setTexture("res/tai1.png");
-        })))))
+//         img_tai.runAction(cc.repeatForever(cc.spawn(cc.sequence(cc.delayTime(0.15),cc.callFunc(function () {
+//             img_tai.setTexture("res/txtTai.png");
+//         }),cc.delayTime(0.15),cc.callFunc(function () {
+//             img_tai.setTexture("res/tai1.png");
+//         })))))
+        var fadeIn = cc.FadeIn.create(0.3);
+        var fadeOut = cc.FadeOut.create(0.3);
+        var scaleTo = new cc.ScaleTo(0.3, 0.3, 0.3);
+        var scaleTo2 = new cc.ScaleTo(0.3, 0.6, 0.6);
+        var scaleTo3 = new cc.ScaleTo(0.3, 1.0, 1.0);
+        var rotation = cc.rotateBy(1.5, 360);
+        var sequenceAction = new cc.Sequence(fadeIn, scaleTo ,rotation, scaleTo2, scaleTo3,fadeOut);
+       // var rotationAction = cc.repeatForever(cc.rotateBy(1.5, 300));
+        img_tai.runAction(cc.repeatForever(sequenceAction));
 
         // img_tai.runAction(new cc.Repeat(cc.spawn(cc.sequence(cc.delayTime(0.15),cc.callFunc(function () {
         //     img_tai.setTexture("res/txtTai.png");
