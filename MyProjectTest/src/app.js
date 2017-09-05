@@ -1,5 +1,6 @@
 var img_tai;
 var img_xiu;
+var imgJackPot;
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
@@ -34,13 +35,13 @@ var HelloWorldLayer = cc.Layer.extend({
      buttonTest.setPressedActionEnabled(true);
      bgTest.addChild( buttonTest, 3);
 
-    img_tai = new cc.Sprite("res/tai1.png");
-    img_tai.setPosition(size.width/2, size.height/2);
-    img_tai.setAnchorPoint(0.5, 0.5);
-    this.addChild(img_tai, 1);
-        img_tai.setScale(0.3);
+        imgJackPot = new cc.Sprite("res/img_jackpot.png");
+        imgJackPot.setPosition(size.width/2, size.height/2);
+        imgJackPot.setAnchorPoint(0.5, 0.5);
+        this.addChild(imgJackPot, 1);
+        imgJackPot.setScale(0.1);
 
-    this.changeBox();
+   // this.changeBox();
     cc.log("test");
 
         return true;
@@ -56,14 +57,22 @@ var HelloWorldLayer = cc.Layer.extend({
 //         })))))
         var fadeIn = cc.FadeIn.create(0.3);
         var fadeOut = cc.FadeOut.create(0.3);
-        var scaleTo = new cc.ScaleTo(0.3, 0.3, 0.3);
-        var scaleTo2 = new cc.ScaleTo(0.3, 0.6, 0.6);
-        var scaleTo3 = new cc.ScaleTo(0.3, 1.0, 1.0);
-        var rotation = cc.rotateBy(1.5, 360);
-        var sequenceAction = new cc.Sequence(fadeIn, scaleTo ,rotation, scaleTo2, scaleTo3,fadeOut);
-       // var rotationAction = cc.repeatForever(cc.rotateBy(1.5, 300));
-        img_tai.runAction(cc.repeatForever(sequenceAction));
+        var scaleTo1 = new cc.ScaleTo(0.3, 0.1, 0.1);
+        var scaleTo2 = new cc.ScaleTo(0.3, 0.3, 0.3);
+        var scaleTo3 = new cc.ScaleTo(0.3, 0.5, 0.5);
+        var scaleTo4 = new cc.ScaleTo(0.3, 0.7,0.7);
+        var scaleTo5 = new cc.ScaleTo(0.3, 0.9, 0.9);
+        var scaleTo7 = new cc.ScaleTo(1.0, 2.0, 2.0);
+        var rotation = cc.rotateBy(0.3, 360,360);
 
+        var sequenceAction = new cc.Sequence(fadeIn,cc.spawn(scaleTo2, rotation),cc.spawn(scaleTo3, rotation),cc.spawn(scaleTo4, rotation),cc.spawn(scaleTo5, rotation), scaleTo7,fadeOut, scaleTo1);
+       // var rotationAction = cc.repeatForever(cc.rotateBy(1.5, 300));
+       // var sequenceAction = new cc.Spawn(fadeIn, fadeOut);
+       // var sequenceAction = new cc.Sequence(fadeIn, fadeOut);
+      //  var sequenceAction = new cc.Sequence(fadeIn, cc.spawn(scaleTo2,rotation1) ,fadeOut);
+       imgJackPot.runAction(sequenceAction);
+
+        //imgJackPot.runAction(cc.sequence(fadeIn,cc.spawn(),fadeOut));
         // img_tai.runAction(new cc.Repeat(cc.spawn(cc.sequence(cc.delayTime(0.15),cc.callFunc(function () {
         //     img_tai.setTexture("res/txtTai.png");
         // }),cc.delayTime(0.15),cc.callFunc(function () {
