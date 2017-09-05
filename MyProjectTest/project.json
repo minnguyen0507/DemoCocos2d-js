@@ -1,6 +1,6 @@
 {
     "project_type":"javascript",
-    "debugMode":0,
+    "debugMode":1,
     "showFPS":true,
     "loadExtension":false,
     "frameRate":60,
@@ -33,6 +33,7 @@
         "src/study/gamehungbia/GameHungBia.js",
         "src/study/gamehungbia/ItemHungBia.js",
         "src/study/gametotem/GameToTem.js",
+        "src/study/gametaixiu/GameTaiXiu.js",
         "src/study/BaseLayerTest.js",
         "src/study/BaseSpriteTest.js"
     ]
