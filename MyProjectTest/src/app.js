@@ -1,10 +1,13 @@
 var img_tai;
 var img_xiu;
 var imgJackPot;
+var cbTest;
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
         var size = cc.winSize;
+
+//tao Sprite
     var bgTest = new cc.Sprite(res.bg_test);
     bgTest.setAnchorPoint( 0.5, 0.5);
     bgTest.setPosition( size.width/2, size.height/2);
@@ -37,24 +40,49 @@ var HelloWorldLayer = cc.Layer.extend({
 
         imgJackPot = new cc.Sprite("res/img_jackpot.png");
         imgJackPot.setPosition(size.width/2, size.height/2);
+        ZLog.error("win size x =%s: , y = %s: ",size.width/2,size.height/2);
         imgJackPot.setAnchorPoint(0.5, 0.5);
         this.addChild(imgJackPot, 1);
         imgJackPot.setScale(0.1);
 
-   // this.changeBox();
-    cc.log("test");
+        this._initCheckBox();
 
         return true;
     },
 
-    changeBox : function () {
-        //img_tai.setTexture("res/txtTai.png");
-//---action nhap nhay
-//         img_tai.runAction(cc.repeatForever(cc.spawn(cc.sequence(cc.delayTime(0.15),cc.callFunc(function () {
-//             img_tai.setTexture("res/txtTai.png");
-//         }),cc.delayTime(0.15),cc.callFunc(function () {
-//             img_tai.setTexture("res/tai1.png");
-//         })))))
+    _initCheckBox: function(){
+        cbTest = new ccui.CheckBox();
+        cbTest.loadTextures("res/checkbox_bg.png", "res/checkbox_bg.png", "res/checkbox_tick.png");
+        cbTest.addEventListener(this.selectedStateEvent, this);
+        this.addChild(cbTest, 2);
+        cbTest.setPosition(cc.winSize.width/2 + 100, cc.winSize.height/2 + 100);
+    },
+
+    runImgJackpot: function(){
+       //  var fadeIn = cc.FadeIn.create(0.3);
+       //  var fadeOut = cc.FadeOut.create(0.3);
+       // /// var runImg = new cc.repeatForever(cc.sequence(fadeIn, cc.moveTo(5, imgJackPot.x - 200, imgJackPot.y), cc.moveTo(0.3,cc.winSize.width/2, cc.winSize.y/2)));
+       //  var runImg = new cc.repeatForever(cc.moveTo(5, imgJackPot.x - 200, imgJackPot.y));
+       //  //imgJackPot.runAction(runImg);
+       //  imgJackPot.runAction(cc.repeatForever(cc.sequence(fadeIn,cc.moveTo(5, imgJackPot.x - 200, imgJackPot.y),cc.moveTo(0.3,imgJackPot.x - 200, imgJackPot.y))));
+
+        var fadeIn = cc.fadeIn(0.1); // new cc.FadeIn.create(0.5);
+        var moveTo = cc.moveTo(5,cc.p(imgJackPot.x - 200, imgJackPot.y));
+        var comeBack =  cc.moveTo(0.1,cc.p(imgJackPot.x ,imgJackPot.y));
+        var fadeOut = cc.fadeOut(0.1);
+        var seq =  cc.sequence(
+            fadeIn,
+            moveTo,
+            fadeOut,
+            comeBack);
+        var repeatForeverAction =  cc.repeatForever(seq);
+        imgJackPot.runAction(repeatForeverAction);
+
+    },
+
+
+    actionQuayTronPhongTo : function () {
+
         var fadeIn = cc.FadeIn.create(0.3);
         var fadeOut = cc.FadeOut.create(0.3);
         var scaleTo1 = new cc.ScaleTo(0.3, 0.1, 0.1);
@@ -78,8 +106,29 @@ var HelloWorldLayer = cc.Layer.extend({
         // }),cc.delayTime(0.15),cc.callFunc(function () {
         //     img_tai.setTexture("res/tai1.png");
         // })))));
-    },
 
+        //img_tai.setTexture("res/txtTai.png");
+                //---action nhap nhay
+                //         img_tai.runAction(cc.repeatForever(cc.spawn(cc.sequence(cc.delayTime(0.15),cc.callFunc(function () {
+                //             img_tai.setTexture("res/txtTai.png");
+                //         }),cc.delayTime(0.15),cc.callFunc(function () {
+                //             img_tai.setTexture("res/tai1.png");
+                //         })))))
+    },
+    selectedStateEvent: function(sender, type)
+    {
+        switch (type)
+        {
+            case ccui.CheckBox.EVENT_UNSELECTED:
+                cc.log("Not selected");
+
+                break;
+
+            case ccui.CheckBox.EVENT_SELECTED:
+                cc.log("Selected");
+                break;
+        }
+    },
     touchEvent : function (sender,  type) {
         switch (type){
             case ccui.Widget.TOUCH_BEGAN:
@@ -89,7 +138,9 @@ var HelloWorldLayer = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-                this.changeBox();
+                this.runImgJackpot();
+              //  cbTest.loadTextureBackGround("res/checkbox_bg.png",0);
+                //this.changeBox();
                 // var gameLatBai = new GameLatBai();
                 // cc.director.pushScene(gameLatBai);
 
