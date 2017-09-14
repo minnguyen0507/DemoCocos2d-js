@@ -77,4 +77,18 @@ AdminSort.quickSort = function (listArray, left, right) {
 
 };
 
+AdminSort.selectionSort = function (listArray) {
+    for (var i = 0; i < listArray.length;i++){
+         var min = i;
+         for (var j = i + 1; j < listArray.length; j++){
+             if (listArray[j] < listArray[min]){
+                 min = j;
+             }
+         }
+        var temp = listArray[i];
+        listArray[i] = listArray[min];
+        listArray[min] = temp;
+    }
+    return listArray;
+};
 
