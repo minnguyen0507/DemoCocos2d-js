@@ -66,7 +66,13 @@ var HelloWorldLayer = cc.Layer.extend({
         listNewArray = listArray.sort(AdminSort.sortNumberAsc);
         ZLog.error("Sort Array" + listNewArray);
     },
-    _initCheckBox: function(){
+
+    sapXepGiamDan: function(){
+        var listNewArray= [];
+        listNewArray = listArray.sort(AdminSort.sortNumberDesc);
+        ZLog.error("Sort Array" + listNewArray);
+    },
+    _initCheckBox: function(){ // tạo checkbox
         imgJackPot = new cc.Sprite("res/img_jackpot.png");
         imgJackPot.setPosition(size.width/2, size.height/2);
         ZLog.error("win size x =%s: , y = %s: ",size.width/2,size.height/2);
@@ -81,13 +87,13 @@ var HelloWorldLayer = cc.Layer.extend({
         cbTest.setPosition(cc.winSize.width/2 + 100, cc.winSize.height/2 + 100);
     },
 
-    changeStringText: function(){
+    changeStringText: function(){ //đổi text
         configGoldTest = 1000000;
         labelTest.setString("Hight Score:" + Utility.formatMoney(configGoldTest), "Arial", 24);
         labelTest.setColor(cc.color(255,255,0));
 
     },
-    runImgJackpot: function(){
+    runImgJackpot: function(){ //action chạy ngang rồi quay về pos
        //  var fadeIn = cc.FadeIn.create(0.3);
        //  var fadeOut = cc.FadeOut.create(0.3);
        // /// var runImg = new cc.repeatForever(cc.sequence(fadeIn, cc.moveTo(5, imgJackPot.x - 200, imgJackPot.y), cc.moveTo(0.3,cc.winSize.width/2, cc.winSize.y/2)));
@@ -167,14 +173,14 @@ var HelloWorldLayer = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-
+                this.sapXepGiamDan();
 
                 break;
         }
     }
 });
 
-function actionNhayTaiXiu(sprite)
+function actionNhayTaiXiu(sprite) // action nhấp nháy
 {
     stopNhayTaiXiu();
 

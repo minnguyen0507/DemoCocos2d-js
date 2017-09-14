@@ -17,3 +17,9 @@ AdminSort.sortNumberAsc = function (a, b) {
     return a - b;
 };
 
+AdminSort.sortNumberDesc = function (a, b) {
+     //return (a > b ? - 1 : (a < b ? 1 : 0)); //  nếu a > b trả về - 1 ,  nếu a < b thì trả về giá trị trong ngoặc ( nếu a < b thì trả về 1, nếu a > b trả về 0)
+    //VD ( A < B ? 5 : 3 =>> trả về giá trị trước or sau dấu : , nếu A < B thì trả về giá trị 5, và ngược lại)
+     return b - a;
+}
+
