@@ -23,6 +23,7 @@
         "src/utils/Sort.js",
         "src/utils/Utility.js",
         "src/utils/AdminSort.js",
+        "src/utils/AdminRandom.js",
         "src/study/SceneTest.js",
         "src/study/GameLatBai.js",
         "src/study/helicopter/GameMayBay.js",

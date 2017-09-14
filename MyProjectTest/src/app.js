@@ -3,8 +3,9 @@ var imgJackPot;
 var cbTest;
 var configGoldTest = 100000;
 var labelTest;
-var listArray = [1,3,4,7,2,21,5,7,95,15,23,5,4,0];
+var listArray = [5,1,4,2,8];
 var lbArrayBeforeSort;
+var listArrayRandom = [];
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
@@ -173,8 +174,9 @@ var HelloWorldLayer = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-                this.sapXepGiamDan();
 
+                //ZLog.error("Sort Array" + JSON.stringify(AdminSort.quickSort(listArray, 0, listArray.length - 1)));
+                ZLog.error("Array random = ", AdminRandom.randomListArray(listArrayRandom, 13, 1, 52));
                 break;
         }
     }
