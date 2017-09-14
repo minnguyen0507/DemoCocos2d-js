@@ -1,7 +1,10 @@
 var img_tai;
-var img_xiu;
 var imgJackPot;
 var cbTest;
+var configGoldTest = 100000;
+var labelTest;
+var listArray = [1,3,4,7,2,21,5,7,95,15,23,5,4,0];
+var lbArrayBeforeSort;
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
@@ -24,20 +27,46 @@ var HelloWorldLayer = cc.Layer.extend({
 //    },3000);
 
 //Tạo Label
-    var labelTest = new cc.LabelTTF("Nguyen Cong Minh","Arial",24);
-    labelTest.setAnchorPoint( 0.5, 0.5);
-    labelTest.setPosition( size.width/2 , size.height * 0.75);
+
+
+    labelTest = new cc.LabelTTF("Hight Score: " + Utility.formatMoney(configGoldTest),"Arial",24);
+    labelTest.setAnchorPoint(1.0, 0.5);
+    //labelTest.setPosition( size.width/2 , size.height * 0.75);
+    labelTest.setPosition( 1050 , 600);
     bgTest.addChild( labelTest, 2);
+
+    lbArrayBeforeSort = new cc.LabelTTF("Array Before Sorted: " + listArray ,"Arial",24);
+    lbArrayBeforeSort.setAnchorPoint(0.5, 0.5);
+    //labelTest.setPosition( size.width/2 , size.height * 0.75);
+    lbArrayBeforeSort.setPosition( 350 , 550);
+    bgTest.addChild( lbArrayBeforeSort, 2);
+
+
 
 //Tao Button
      var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
      //buttonTest.loadTextures(res.btn_next, res.btn_next, res.btn_next);
      buttonTest.setAnchorPoint(0.5 , 0.5);
-     buttonTest.setPosition( size.width /2, size.height * 0.25);
+    // buttonTest.setPosition( size.width /2, size.height * 0.25);
+     buttonTest.setPosition( 1050, 50);
+
      buttonTest.addTouchEventListener(this.touchEvent,this);
      buttonTest.setPressedActionEnabled(true);
      bgTest.addChild( buttonTest, 3);
 
+
+
+      //  this._initCheckBox();
+
+        return true;
+    },
+
+    sapXepTangDan: function(){
+        var listNewArray= [];
+        listNewArray = listArray.sort(AdminSort.sortNumberAsc);
+        ZLog.error("Sort Array" + listNewArray);
+    },
+    _initCheckBox: function(){
         imgJackPot = new cc.Sprite("res/img_jackpot.png");
         imgJackPot.setPosition(size.width/2, size.height/2);
         ZLog.error("win size x =%s: , y = %s: ",size.width/2,size.height/2);
@@ -45,12 +74,6 @@ var HelloWorldLayer = cc.Layer.extend({
         this.addChild(imgJackPot, 1);
         imgJackPot.setScale(0.1);
 
-        this._initCheckBox();
-
-        return true;
-    },
-
-    _initCheckBox: function(){
         cbTest = new ccui.CheckBox();
         cbTest.loadTextures("res/checkbox_bg.png", "res/checkbox_bg.png", "res/checkbox_tick.png");
         cbTest.addEventListener(this.selectedStateEvent, this);
@@ -58,6 +81,12 @@ var HelloWorldLayer = cc.Layer.extend({
         cbTest.setPosition(cc.winSize.width/2 + 100, cc.winSize.height/2 + 100);
     },
 
+    changeStringText: function(){
+        configGoldTest = 1000000;
+        labelTest.setString("Hight Score:" + Utility.formatMoney(configGoldTest), "Arial", 24);
+        labelTest.setColor(cc.color(255,255,0));
+
+    },
     runImgJackpot: function(){
        //  var fadeIn = cc.FadeIn.create(0.3);
        //  var fadeOut = cc.FadeOut.create(0.3);
@@ -138,14 +167,8 @@ var HelloWorldLayer = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-                this.runImgJackpot();
-              //  cbTest.loadTextureBackGround("res/checkbox_bg.png",0);
-                //this.changeBox();
-                // var gameLatBai = new GameLatBai();
-                // cc.director.pushScene(gameLatBai);
 
-                // var gameMayBay = new GameMayBayScene();
-                // cc.director.runScene(gameMayBay);
+
                 break;
         }
     }
@@ -153,7 +176,7 @@ var HelloWorldLayer = cc.Layer.extend({
 
 function actionNhayTaiXiu(sprite)
 {
-    //stopNhayTaiXiu();
+    stopNhayTaiXiu();
 
     sprite.runAction(cc.repeatForever(cc.spawn(cc.sequence(cc.scaleTo(0.15,1.1),cc.scaleTo(0.15,1)),cc.sequence(cc.delayTime(0.15),cc.callFunc(function(){
         if(sprite == taiXiu.sp_tai)
