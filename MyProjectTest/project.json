@@ -26,6 +26,7 @@
         "src/utils/AdminRandom.js",
         "src/study/SceneTest.js",
         "src/study/GameLatBai.js",
+        "src/study/SceneCocostudio.js",
         "src/study/helicopter/GameMayBay.js",
         "src/study/helicopter/ScrollingBG.js",
         "src/study/helicopter/Asteroid.js",

@@ -36,6 +36,10 @@ var res = {
     totem_brick4x2 : "res/gametotem/brick4x2.png",
     totem_ground : "res/gametotem/ground.png",
     totem_totem : "res/gametotem/totem.png",
+    //---------Cocostudio ----------------
+        //-------- File JSOn-------------
+    scene_cocostudio : "res/ui/scene_cocostudio.json",
+        //--------File PNG---------------
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",

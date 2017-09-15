@@ -6,6 +6,18 @@ var SceneLayer = cc.Layer.extend({
         cc.log("vao scene test");
 
         return true;
+    },
+    touchEvent : function (sender,  type) {
+        switch (type){
+            case ccui.Widget.TOUCH_BEGAN:
+                break;
+            case ccui.Widget.TOUCH_MOVED:
+                break;
+            case ccui.Widget.TOUCH_MOVED:
+                break;
+            case ccui.Widget.TOUCH_ENDED:
+                break;
+        }
     }
 });
 
