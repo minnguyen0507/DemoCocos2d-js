@@ -4,6 +4,7 @@ var SceneCocostudioLayer = cc.Layer.extend({
         this._super();
         this.btnBack = null;
         this.btnClose = null;
+        this.spriteTest = null;
         var size = cc.winSize;
         ZLog.error("Scene Cocostudio");
 
@@ -11,6 +12,8 @@ var SceneCocostudioLayer = cc.Layer.extend({
         sceneConfig = ccs.load(res.scene_cocostudio, "res/");
         nodeCocostudio = sceneConfig.node;
         this.addChild(nodeCocostudio,0);
+
+        AdminGUI.createSprite(this.spriteTest, this, res.btn_next);
 
         this.btnBack = nodeCocostudio.getChildByName("btnBack");
         this.btnClose =  nodeCocostudio.getChildByName("btnClose");
