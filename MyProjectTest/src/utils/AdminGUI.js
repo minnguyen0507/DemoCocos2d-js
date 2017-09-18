@@ -10,7 +10,7 @@ var AdminGUI = AdminGUI || {};
  * @param res       : #string or res.
  */
 
-AdminGUI.createSprite = function (nameSprite, nodeAdd, res) {
+AdminGUI.createSprite = function (nameSprite, parent, res) {
     nameSprite = new cc.Sprite(res);
     nodeAdd.addChild(nameSprite,_localZOder );
     nameSprite.setPosition(cc.winSize.width/2, cc.winSize.height/2);
@@ -21,14 +21,14 @@ AdminGUI.createSprite = function (nameSprite, nodeAdd, res) {
 /**
  * @author ...
  * @param nameLabel : #string
- * @param nodeAdd   : #parent
+ * @param parent   : #parent
  * @param textLabel: #string
  * @param fontSize : #int
  * @param fontLabel : #string or res.
  */
-AdminGUI.createLabelTTF = function (nameLabel, nodeAdd, textLabel, fontSize, fontLabel) {
-    nameLabel = new cc.LabelTTF(textLabel, fontLabel, fontLabel);
-    nodeAdd.addChild(nameLabel, _localZOder);
+AdminGUI.createLabelTTF = function (nameLabel, parent, textLabel, fontSize, fontLabel) {
+    nameLabel = new cc.LabelTTF(textLabel, fontLabel, fontSize);
+    parent.addChild(nameLabel, _localZOder);
     nameLabel.setPosition(cc.winSize.width/2, cc.winSize.height/2);
     nameLabel.setAnchorPoint(0.5, 0.5);
     nameLabel.setScale(1);

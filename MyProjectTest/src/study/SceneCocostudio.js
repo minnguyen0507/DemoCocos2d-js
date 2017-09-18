@@ -4,6 +4,7 @@ var SceneCocostudioLayer = cc.Layer.extend({
         this._super();
         this.btnBack = null;
         this.btnClose = null;
+        this.bgLogin = null;
         this.spriteTest = null;
         this.labelTest = null;
         var size = cc.winSize;
@@ -14,9 +15,13 @@ var SceneCocostudioLayer = cc.Layer.extend({
         nodeCocostudio = sceneConfig.node;
         this.addChild(nodeCocostudio,0);
 
-        AdminGUI.createSprite(this.spriteTest, this, res.btn_next);
+      //  AdminGUI.createSprite(this.spriteTest, this, res.btn_next);
         AdminGUI.createLabelTTF(this.labelTest,this,"NoName", 23, res.FONT_ROBOTO_BOLD);
 
+
+        // this.labelTest = new cc.LabelTTF("NoName", res.FONT_ROBOTO_BOLD, 22);
+        // this.addChild(this.labelTest, 99);
+        // this.labelTest.setPosition(cc.winSize.width/2, cc.winSize.height/2);
 
 
         this.btnBack = nodeCocostudio.getChildByName("btnBack");
@@ -45,6 +50,7 @@ var SceneCocostudioLayer = cc.Layer.extend({
                     switch (sender){
                         case this.btnBack:
                             ZLog.error("Click Back");
+                            this.labelTest.setString("ancd");
                             break;
                         case  this.btnClose:
                             ZLog.error("Click Close");
