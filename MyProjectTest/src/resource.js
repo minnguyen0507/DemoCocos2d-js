@@ -42,7 +42,7 @@ var res = {
         //--------File PNG---------------
 
         //--------Font Name--------------
-    FONT_ROBOTO_BOLD : "res/ui/texture/font/Roboto-Bold.ttf",
+    //FONT_ROBOTO_BOLD : "res/ui/texture/font/Roboto-Bold.ttf",
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
