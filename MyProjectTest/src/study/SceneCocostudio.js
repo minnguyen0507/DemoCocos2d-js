@@ -5,6 +5,7 @@ var SceneCocostudioLayer = cc.Layer.extend({
         this.btnBack = null;
         this.btnClose = null;
         this.spriteTest = null;
+        this.labelTest = null;
         var size = cc.winSize;
         ZLog.error("Scene Cocostudio");
 
@@ -14,6 +15,9 @@ var SceneCocostudioLayer = cc.Layer.extend({
         this.addChild(nodeCocostudio,0);
 
         AdminGUI.createSprite(this.spriteTest, this, res.btn_next);
+        AdminGUI.createLabelTTF(this.labelTest,this,"NoName", 23, res.FONT_ROBOTO_BOLD);
+
+
 
         this.btnBack = nodeCocostudio.getChildByName("btnBack");
         this.btnClose =  nodeCocostudio.getChildByName("btnClose");
@@ -23,6 +27,9 @@ var SceneCocostudioLayer = cc.Layer.extend({
 
         this.btnClose.addTouchEventListener(this.touchEvent,this);
         this.btnClose.setPressedActionEnabled(true);
+
+
+
 
         return true;
     },

@@ -41,6 +41,9 @@ var res = {
     scene_cocostudio : "res/ui/scene_cocostudio.json",
         //--------File PNG---------------
 
+        //--------Font Name--------------
+    FONT_ROBOTO_BOLD : "res/ui/texture/font/Roboto-Bold.ttf",
+
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
     bg_test : "res/common/bg_test.png"
