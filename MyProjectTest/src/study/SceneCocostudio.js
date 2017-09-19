@@ -1,5 +1,6 @@
 
 var SceneCocostudioLayer = cc.Layer.extend({
+    _spineboy:null,
     ctor:function () {
         this._super();
         this.btnBack = null;
@@ -16,7 +17,7 @@ var SceneCocostudioLayer = cc.Layer.extend({
         this.addChild(nodeCocostudio,0);
 
       //  AdminGUI.createSprite(this.spriteTest, this, res.btn_next);
-        AdminGUI.createLabelTTF(this.labelTest,this,"NoName", 23, res.FONT_ROBOTO_BOLD);
+    //        AdminGUI.createLabelTTF(this.labelTest,this,"NoName", 23, res.FONT_ROBOTO_BOLD);
 
 
         // this.labelTest = new cc.LabelTTF("NoName", res.FONT_ROBOTO_BOLD, 22);
@@ -34,6 +35,13 @@ var SceneCocostudioLayer = cc.Layer.extend({
         this.btnClose.setPressedActionEnabled(true);
 
 
+        var spineBoy = new sp.SkeletonAnimation('res/animation/girl/girl1.json', 'res/animation/girl/girl1.atlas');
+        spineBoy.setPosition(cc.p(size.width / 2, size.height / 2 - 380));
+        spineBoy.setScale(0.7);
+        spineBoy.setAnimation(0, 'idle', true);
+        //spineBoy.setAnimationListener(this, this.animationStateEvent);
+        this.addChild(spineBoy, 4);
+        this._spineboy = spineBoy;
 
 
         return true;
@@ -50,7 +58,6 @@ var SceneCocostudioLayer = cc.Layer.extend({
                     switch (sender){
                         case this.btnBack:
                             ZLog.error("Click Back");
-                            this.labelTest.setString("ancd");
                             break;
                         case  this.btnClose:
                             ZLog.error("Click Close");
