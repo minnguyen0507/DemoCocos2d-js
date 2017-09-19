@@ -8,16 +8,21 @@ var GameTaiXiuLayer = cc.Layer.extend({
         this._super();
         var size = cc.winSize;
 
-        var bg = new cc.Sprite(res.bg_test);
-        this.addChild(bg, 0);
-        bg.setAnchorPoint(0.5,0.5);
-        bg.setPosition(size.width/2, size.height/2);
+        sceneConfig = ccs.load(res.node_mini_game_taixiu, "res/");
+        nodeTaiXiu = sceneConfig.node;
+        this.addChild(nodeTaiXiu,0);
+        nodeTaiXiu.setPosition(cc.winSize.width/2, cc.winSize.height/2);
 
-        labelTimer = new cc.LabelTTF("Timer: " + timer, "Arial", 40 );
-        bg.addChild(labelTimer, 1);
-        labelTimer.setAnchorPoint(0.5, 0.5);
-        labelTimer.setPosition(size.width/2, size.height/2);
-        this.scheduleUpdate();
+        // var bg = new cc.Sprite(res.bg_test);
+        // this.addChild(bg, 0);
+        // bg.setAnchorPoint(0.5,0.5);
+        // bg.setPosition(size.width/2, size.height/2);
+        //
+        // labelTimer = new cc.LabelTTF("Timer: " + timer, "Arial", 40 );
+        // bg.addChild(labelTimer, 1);
+        // labelTimer.setAnchorPoint(0.5, 0.5);
+        // labelTimer.setPosition(size.width/2, size.height/2);
+       //  this.scheduleUpdate();
         ZLog.error("Scene Tai Xiu nhe");
         return true;
     },

@@ -1,0 +1,1780 @@
+{
+  "ID": "81a9106c-6e78-4f3c-a65a-55b28828734b",
+  "Version": "2.3.4",
+  "Name": "node_mini_game",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 3,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/bg_popup.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1.9757,
+              "Y": 60.1629
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -378.5243,
+            "RightMargin": -382.4757,
+            "TopMargin": -324.6629,
+            "BottomMargin": -204.3371,
+            "Tag": 4,
+            "ActionTag": -1724201374,
+            "Size": {
+              "X": 761.0,
+              "Y": 529.0
+            },
+            "Name": "bgPopup",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "texture/button/btn_close.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "texture/button/btn_close.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "texture/button/btn_close.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 5,
+            "Scale9Height": 13,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 353.6827,
+              "Y": 232.5118
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 336.1827,
+            "RightMargin": -371.1827,
+            "TopMargin": -250.0118,
+            "BottomMargin": 215.0118,
+            "Tag": 17,
+            "ActionTag": 1042460507,
+            "Size": {
+              "X": 35.0,
+              "Y": 35.0
+            },
+            "Name": "btnClose",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": -88.0225,
+              "Y": -198.7722
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -88.0225,
+            "RightMargin": 88.0225,
+            "TopMargin": 198.7722,
+            "BottomMargin": -198.7722,
+            "Tag": 8,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "1000",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 96,
+                "Scale9Height": 30,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": -220.0,
+                  "Y": -35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -283.0,
+                "RightMargin": 157.0,
+                "TopMargin": 9.0,
+                "BottomMargin": -61.0,
+                "Tag": 9,
+                "ActionTag": 1248356296,
+                "Size": {
+                  "X": 126.0,
+                  "Y": 52.0
+                },
+                "Name": "btnAddGold1",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "10K",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 96,
+                "Scale9Height": 30,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": -95.0,
+                  "Y": -35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -158.0,
+                "RightMargin": 32.0,
+                "TopMargin": 9.0,
+                "BottomMargin": -61.0,
+                "Tag": 10,
+                "ActionTag": 1409145561,
+                "Size": {
+                  "X": 126.0,
+                  "Y": 52.0
+                },
+                "Name": "btnAddGold2",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "100K",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 96,
+                "Scale9Height": 30,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 30.0,
+                  "Y": -35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -33.0,
+                "RightMargin": -93.0,
+                "TopMargin": 9.0,
+                "BottomMargin": -61.0,
+                "Tag": 11,
+                "ActionTag": 1286641555,
+                "Size": {
+                  "X": 126.0,
+                  "Y": 52.0
+                },
+                "Name": "btnAddGold3",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "500K",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 96,
+                "Scale9Height": 30,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 155.0,
+                  "Y": -35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 92.0,
+                "RightMargin": -218.0,
+                "TopMargin": 9.0,
+                "BottomMargin": -61.0,
+                "Tag": 12,
+                "ActionTag": -487646055,
+                "Size": {
+                  "X": 126.0,
+                  "Y": 52.0
+                },
+                "Name": "btnAddGold4",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "1M",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 96,
+                "Scale9Height": 30,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 280.0,
+                  "Y": -35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 217.0,
+                "RightMargin": -343.0,
+                "TopMargin": 9.0,
+                "BottomMargin": -61.0,
+                "Tag": 13,
+                "ActionTag": 915498001,
+                "Size": {
+                  "X": 126.0,
+                  "Y": 52.0
+                },
+                "Name": "btnAddGold5",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "X2",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/btn_addgold.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 96,
+                "Scale9Height": 30,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 405.0,
+                  "Y": -35.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 342.0,
+                "RightMargin": -468.0,
+                "TopMargin": 9.0,
+                "BottomMargin": -61.0,
+                "Tag": 14,
+                "ActionTag": 990048483,
+                "Size": {
+                  "X": 126.0,
+                  "Y": 52.0
+                },
+                "Name": "btnAddGold6",
+                "ctype": "ButtonObjectData"
+              }
+            ],
+            "ActionTag": -1994929957,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "nodeAddGold",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/img_dia_open.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1.9757,
+              "Y": 41.23
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -121.0243,
+            "RightMargin": -124.9757,
+            "TopMargin": -164.73,
+            "BottomMargin": -82.27,
+            "Tag": 20,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 30,
+                "LabelText": "",
+                "FontResource": {
+                  "Type": "Normal",
+                  "Path": "texture/font/Roboto-Bold.ttf",
+                  "Plist": ""
+                },
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 122.5641,
+                  "Y": 135.3526
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 30,
+                  "G": 144
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4982,
+                  "Y": 0.548
+                },
+                "PreSize": {
+                  "X": 0.2439,
+                  "Y": 0.1619
+                },
+                "LeftMargin": 92.5641,
+                "RightMargin": 93.4359,
+                "TopMargin": 91.6474,
+                "BottomMargin": 115.3526,
+                "Tag": 23,
+                "ActionTag": 1571372218,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 40.0
+                },
+                "Name": "lbTimerStart",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1850350463,
+            "Size": {
+              "X": 246.0,
+              "Y": 247.0
+            },
+            "Name": "imgPlateClose",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/img_dia_close_2.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1.9757,
+              "Y": 41.23
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -121.0243,
+            "RightMargin": -124.9757,
+            "TopMargin": -164.73,
+            "BottomMargin": -82.27,
+            "Tag": 22,
+            "ActionTag": 1633819842,
+            "Size": {
+              "X": 246.0,
+              "Y": 247.0
+            },
+            "VisibleForFrame": false,
+            "Name": "imgPlateOpen",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/img_tai.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -238.0249,
+              "Y": 126.23
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -304.5249,
+            "RightMargin": 171.5249,
+            "TopMargin": -163.73,
+            "BottomMargin": 88.73,
+            "Tag": 24,
+            "ActionTag": 958328494,
+            "Size": {
+              "X": 133.0,
+              "Y": 75.0
+            },
+            "Name": "imgTai",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/img_xiu.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 251.9793,
+              "Y": 128.2302
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 181.4793,
+            "RightMargin": -322.4793,
+            "TopMargin": -167.7302,
+            "BottomMargin": 88.7302,
+            "Tag": 25,
+            "ActionTag": 1967220020,
+            "Size": {
+              "X": 141.0,
+              "Y": 79.0
+            },
+            "Name": "imgXiu",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/box_1.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 251.9788,
+              "Y": 48.2293
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 151.9788,
+            "RightMargin": -351.9788,
+            "TopMargin": -66.7293,
+            "BottomMargin": 29.7293,
+            "Tag": 27,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "0",
+                "FontResource": {
+                  "Type": "Normal",
+                  "Path": "texture/font/Roboto-Bold.ttf",
+                  "Plist": ""
+                },
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 79.9996,
+                  "Y": 17.9998
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4,
+                  "Y": 0.4865
+                },
+                "PreSize": {
+                  "X": 0.6,
+                  "Y": 0.8108
+                },
+                "LeftMargin": 19.9996,
+                "RightMargin": 60.0004,
+                "TopMargin": 4.0002,
+                "BottomMargin": 2.9998,
+                "Tag": 29,
+                "ActionTag": 1419060817,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 30.0
+                },
+                "Name": "lbTotalGoldXiu",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 384746361,
+            "Size": {
+              "X": 200.0,
+              "Y": 37.0
+            },
+            "Name": "bgTotalGoldXiu",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/box_2.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -238.0248,
+              "Y": 46.2292
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -338.0248,
+            "RightMargin": 138.0248,
+            "TopMargin": -64.7292,
+            "BottomMargin": 27.7292,
+            "Tag": 28,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "0",
+                "FontResource": {
+                  "Type": "Normal",
+                  "Path": "texture/font/Roboto-Bold.ttf",
+                  "Plist": ""
+                },
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 120.0,
+                  "Y": 18.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6,
+                  "Y": 0.4865
+                },
+                "PreSize": {
+                  "X": 0.6,
+                  "Y": 0.8108
+                },
+                "LeftMargin": 60.0,
+                "RightMargin": 20.0,
+                "TopMargin": 4.0,
+                "BottomMargin": 3.0,
+                "Tag": 30,
+                "ActionTag": 1934552994,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 30.0
+                },
+                "Name": "lbTotalGoldTai",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -800439631,
+            "Size": {
+              "X": 200.0,
+              "Y": 37.0
+            },
+            "Name": "bgTotalGoldTai",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 22,
+            "ButtonText": "ĐẶT CƯỢC",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "texture/font/SFUAngieBold.TTF",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_datcuoc_tai.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_datcuoc_tai.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_datcuoc_tai.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 135,
+            "Scale9Height": 38,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 251.9764,
+              "Y": -21.7706
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 169.4764,
+            "RightMargin": -334.4764,
+            "TopMargin": -8.2294,
+            "BottomMargin": -51.7706,
+            "Tag": 32,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "0",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 85.0,
+                  "Y": -15.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5152,
+                  "Y": -0.25
+                },
+                "PreSize": {
+                  "X": 0.7273,
+                  "Y": 0.5
+                },
+                "LeftMargin": 25.0,
+                "RightMargin": 20.0,
+                "TopMargin": 60.0,
+                "BottomMargin": -30.0,
+                "Tag": 36,
+                "ActionTag": 540814821,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 30.0
+                },
+                "Name": "lbGoldXiu",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1560109258,
+            "Size": {
+              "X": 165.0,
+              "Y": 60.0
+            },
+            "Name": "btnAddGoldXiu",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 22,
+            "ButtonText": "ĐẶT CƯỢC",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "texture/font/SFUAngieBold.TTF",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_datcuoc_tai.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_datcuoc_tai.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_datcuoc_tai.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 135,
+            "Scale9Height": 38,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -238.0248,
+              "Y": -23.7703
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -320.5248,
+            "RightMargin": 155.5248,
+            "TopMargin": -6.2297,
+            "BottomMargin": -53.7703,
+            "Tag": 33,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "0",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 80.0,
+                  "Y": -15.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4848,
+                  "Y": -0.25
+                },
+                "PreSize": {
+                  "X": 0.7273,
+                  "Y": 0.5
+                },
+                "LeftMargin": 20.0,
+                "RightMargin": 25.0,
+                "TopMargin": 60.0,
+                "BottomMargin": -30.0,
+                "Tag": 37,
+                "ActionTag": -1249074625,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 30.0
+                },
+                "Name": "lbGoldTai",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -1343475580,
+            "Size": {
+              "X": 165.0,
+              "Y": 60.0
+            },
+            "Name": "btnAddGoldTai",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "AnchorPoint": {},
+            "Position": {
+              "X": 4.8626,
+              "Y": -79.0574
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 4.8626,
+            "RightMargin": -4.8626,
+            "TopMargin": 79.0574,
+            "BottomMargin": -79.0574,
+            "Tag": 34,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "texture/minigames/taixiu/img_bar_history.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1.6709,
+                  "Y": -31.6293
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -272.8291,
+                "RightMargin": -276.1709,
+                "TopMargin": 11.6293,
+                "BottomMargin": -51.6293,
+                "Tag": 35,
+                "ActionTag": -877552762,
+                "Size": {
+                  "X": 549.0,
+                  "Y": 40.0
+                },
+                "Name": "img_bar_history_15",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1548315615,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "nodeHistory",
+            "ctype": "SingleNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/box_total_money.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -174.2032,
+              "Y": -158.7715
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -263.2032,
+            "RightMargin": 85.2032,
+            "TopMargin": 139.2715,
+            "BottomMargin": -178.2715,
+            "Tag": 38,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "0",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 91.62,
+                  "Y": 20.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5147,
+                  "Y": 0.5128
+                },
+                "PreSize": {
+                  "X": 0.6742,
+                  "Y": 0.7692
+                },
+                "LeftMargin": 31.62,
+                "RightMargin": 26.38,
+                "TopMargin": 4.0,
+                "BottomMargin": 5.0,
+                "Tag": 42,
+                "ActionTag": 293353074,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 30.0
+                },
+                "Name": "lbGoldUser",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1514521744,
+            "Size": {
+              "X": 178.0,
+              "Y": 39.0
+            },
+            "Name": "bgGoldUser",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/box_total_money.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 140.7028,
+              "Y": -158.7715
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 51.7028,
+            "RightMargin": -229.7028,
+            "TopMargin": 139.2715,
+            "BottomMargin": -178.2715,
+            "Tag": 40,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "0",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 91.1007,
+                  "Y": 20.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5118,
+                  "Y": 0.5128
+                },
+                "PreSize": {
+                  "X": 0.6742,
+                  "Y": 0.7692
+                },
+                "LeftMargin": 31.1007,
+                "RightMargin": 26.8993,
+                "TopMargin": 4.0,
+                "BottomMargin": 5.0,
+                "Tag": 43,
+                "ActionTag": 1676352831,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 30.0
+                },
+                "Name": "lbGoldDatCuoc",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1686034923,
+            "Size": {
+              "X": 178.0,
+              "Y": 39.0
+            },
+            "Name": "bgAddGold",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_clear.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_clear.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "texture/minigames/taixiu/btn_clear.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 4,
+            "Scale9Height": 12,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 256.9774,
+              "Y": -158.7717
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 239.9774,
+            "RightMargin": -273.9774,
+            "TopMargin": 141.7717,
+            "BottomMargin": -175.7717,
+            "Tag": 41,
+            "ActionTag": 1237417110,
+            "Size": {
+              "X": 34.0,
+              "Y": 34.0
+            },
+            "Name": "btnClear",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 12,
+            "LabelText": "TIỀN ĐẶT CƯỢC",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "texture/font/Roboto-Italic.ttf",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -3.3424,
+              "Y": -158.7716
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -46.8424,
+            "RightMargin": -40.1576,
+            "TopMargin": 150.7716,
+            "BottomMargin": -166.7716,
+            "Tag": 44,
+            "ActionTag": -77128480,
+            "Size": {
+              "X": 87.0,
+              "Y": 16.0
+            },
+            "Name": "Text_9",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "../texture/button/btn_close.png",
+        "../texture/font/Roboto-Bold.ttf",
+        "../texture/font/Roboto-Italic.ttf",
+        "../texture/font/SFUAngieBold.TTF",
+        "../texture/minigames/taixiu/bg_popup.png",
+        "../texture/minigames/taixiu/box_1.png",
+        "../texture/minigames/taixiu/box_2.png",
+        "../texture/minigames/taixiu/box_total_money.png",
+        "../texture/minigames/taixiu/btn_addgold.png",
+        "../texture/minigames/taixiu/btn_clear.png",
+        "../texture/minigames/taixiu/btn_datcuoc_tai.png",
+        "../texture/minigames/taixiu/img_bar_history.png",
+        "../texture/minigames/taixiu/img_dia_close_2.png",
+        "../texture/minigames/taixiu/img_dia_open.png",
+        "../texture/minigames/taixiu/img_tai.png",
+        "../texture/minigames/taixiu/img_xiu.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

@@ -39,6 +39,7 @@ var res = {
     //---------Cocostudio ----------------
         //-------- File JSOn-------------
     scene_cocostudio : "res/ui/scene_cocostudio.json",
+    node_mini_game_taixiu : "res/ui/node_mini_game.json",
         //--------File PNG---------------
 
         //--------Font Name--------------
