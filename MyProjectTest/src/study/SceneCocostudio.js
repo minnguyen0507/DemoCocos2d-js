@@ -37,6 +37,7 @@ var SceneCocostudioLayer = cc.Layer.extend({
 
         var spineBoy = new sp.SkeletonAnimation('res/animation/girl/girl1.json', 'res/animation/girl/girl1.atlas');
         spineBoy.setPosition(cc.p(size.width / 2, size.height / 2 - 380));
+        spineBoy.setAnchorPoint(0.5,0.5);
         spineBoy.setScale(0.7);
         spineBoy.setAnimation(0, 'idle', true);
         //spineBoy.setAnimationListener(this, this.animationStateEvent);
@@ -58,6 +59,7 @@ var SceneCocostudioLayer = cc.Layer.extend({
                     switch (sender){
                         case this.btnBack:
                             ZLog.error("Click Back");
+                            AdminActions.createMoveTo(this._spineboy,2,size.width / 2 + 100, size.height / 2 - 380);
                             break;
                         case  this.btnClose:
                             ZLog.error("Click Close");
