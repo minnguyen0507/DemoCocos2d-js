@@ -30,20 +30,28 @@ var CocosActions = cc.Layer.extend({
         ZLog.error("Cocos Actions Finish");
     },
 
-    _actionMoveTo : function (_object) {
-        _object.runAction(cc.moveTo(2, 80, 80));
+    actionCocos : function (object, actionType) {
+        switch (actionType){
+            case ActionsType.MOVETO:
+                return object.runAction(cc.moveTo(2, 80, 80));
+                break;
+            case ActionsType.MOVEBY:
+                return object.runAction(cc.moveBy(2, 80, 80));
+                break;
+            case ActionsType.SCALETO:
+                break;
+            case ActionsType.SCALEBY:
+                break;
+
+            default:
+                break;
+        }
+
+        var moveBy = cc.moveBy(2, 80, 80);
+
+       return object;
     },
 
-    _actionMoveBy : function (_object) {
-        _object.runAction(cc.moveBy(1, 80, 80));
-    },
-
-//action lần lượt
-    _actionSequence: function (_object) {
-        var moveBy = cc.moveBy(2,80,80);
-        var comeBack = moveBy.reverse(); // quay về vị trí cũ
-        _object.runAction(cc.sequence(moveBy,comeBack));
-    },
     touchEvent : function (sender,  type) {
         switch (type){
             case ccui.Widget.TOUCH_BEGAN:
@@ -53,8 +61,16 @@ var CocosActions = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-                 this._actionSequence(spriteTest);
+                this._actionCocos(spriteTest,ActionsType.MOVEBY);
                 break;
         }
     }
 });
+
+ActionsType = {
+    MOVETO : 0,
+    MOVEBY : 1,
+    SCALETO : 2,
+    SCALEBY : 3,
+    ROTATE : 4,
+};

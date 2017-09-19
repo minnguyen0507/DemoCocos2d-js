@@ -59,7 +59,9 @@ var SceneCocostudioLayer = cc.Layer.extend({
                     switch (sender){
                         case this.btnBack:
                             ZLog.error("Click Back");
-                            AdminActions.createMoveTo(this._spineboy,2,size.width / 2 + 100, size.height / 2 - 380);
+                            var test = new CocosActions();
+                            test._actionCocos(this._spineboy,ActionsType.MOVEBY);
+
                             break;
                         case  this.btnClose:
                             ZLog.error("Click Close");
