@@ -51,38 +51,23 @@ cc.game.onStart = function(){
     if(!cc.sys.isNative && document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
         document.body.removeChild(document.getElementById("cocosLoading"));
 
-    sceneMgr = new SceneMgr();
-    sceneMgr.setSceneFactory(new SceneFactory());
-    // // Pass true to enable retina display, disabled by default to improve performance
-    // cc.view.enableRetina(false);
-    // // Adjust viewport meta
-    // cc.view.adjustViewPort(true);
-    // // Setup the resolution policy and design resolution size
-    //  cc.view.setDesignResolutionSize(1136 , 640, cc.ResolutionPolicy.SHOW_ALL);
-    //
-    //  //cc.view.setDesignResolutionSize(480 , 320, cc.ResolutionPolicy.SHOW_ALL);  // màn hình game máy bay
-    //  // The game will be resized when browser size change
-    // cc.view.resizeWithBrowserSize(true);
+ 
+		 // Pass true to enable retina display, disabled by default to improve performance
+		 cc.view.enableRetina(false);
+		 // Adjust viewport meta
+		 cc.view.adjustViewPort(true);
+		 // Setup the resolution policy and design resolution size
+		  cc.view.setDesignResolutionSize(1136 , 640, cc.ResolutionPolicy.SHOW_ALL);
+		
+		  //cc.view.setDesignResolutionSize(480 , 320, cc.ResolutionPolicy.SHOW_ALL);  // màn hình game máy bay
+		  // The game will be resized when browser size change
+		 cc.view.resizeWithBrowserSize(true);
 
-    if(cc.sys.isNative)
-//		cc.view.setDesignResolutionSize(1136, 640, cc.ResolutionPolicy.FIXED_HEIGHT);
-        cc.view.setDesignResolutionSize(1136, 640, cc.ResolutionPolicy.SHOW_ALL);//Fix resolution test
-    else
-        cc.view.setDesignResolutionSize(1136, 640, cc.ResolutionPolicy.SHOW_ALL);
-    // The game will be resized when browser size change
-    cc.view.resizeWithBrowserSize(true);
-
-    cc.director.setDisplayStats(false);
-
-
-    GV.VISIBALE_SIZE = cc.director.getVisibleSize();
-    GV.VISIBALE_SIZE_RECT = cc.rect(0, 0, GV.VISIBALE_SIZE.width, GV.VISIBALE_SIZE.height);
-    GV.SCREEN_RATIO = GV.VISIBALE_SIZE.width / GV.VISIBALE_SIZE.height;
-    GV.SCALE_RATIO = GV.SCREEN_RATIO / 1.6; // (1024 / 640)
-    //load resources
+ 
+       //load resources
     cc.LoaderScene.preload(g_resources, function () {
-    	//cc.director.runScene(new BaseLayerTest());
-        sceneMgr.viewSceneById(GV.SCENE_IDS.SCENETEST);
+    	cc.director.runScene(new HelloWorldScene());
+        //sceneMgr.viewSceneById(GV.SCENE_IDS.SCENETEST);
     }, this);
 };
 cc.game.run();

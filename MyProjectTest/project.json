@@ -16,6 +16,8 @@
     "jsList":[
         "src/resource.js",
         "src/app.js",
+        "src/GlobalVar.js",
+        "src/frameworks/AdminBaseGUI.js",
         "src/utils/Filter.js",
         "src/utils/GameUtils.js",
         "src/utils/LogUtils.js",
@@ -38,8 +40,8 @@
         "src/study/gamehungbia/ItemHungBia.js",
         "src/study/gametotem/GameToTem.js",
         "src/study/gametaixiu/GameTaiXiu.js",
-        "src/study/BaseLayerTest.js",
         "src/study/BaseSpriteTest.js",
-        "src/study/CocosActions.js"
+        "src/study/CocosActions.js",
+        "src/study/test/TestBaseGUI.js"
     ]
 }
