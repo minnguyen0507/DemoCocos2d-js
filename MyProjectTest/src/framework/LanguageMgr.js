@@ -1,5 +1,5 @@
 /**
- * Created by huyvq2 on 11/9/2015.
+ * Created by minnguyen on 9/20/2017.
  */
 
 var LanguageMgr = cc.Class.extend({

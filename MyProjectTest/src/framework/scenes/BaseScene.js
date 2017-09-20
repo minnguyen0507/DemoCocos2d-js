@@ -1,5 +1,5 @@
 /**
- * Created by bachbv on 1/16/2017.
+ * Created by minnguyen on 9/20/2017.
  */
 var BaseScene = BaseGUI.extend({
     _className: "BaseScene",

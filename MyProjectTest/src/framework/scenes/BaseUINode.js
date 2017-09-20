@@ -1,5 +1,5 @@
 /**
- * Created by bachbv on 11/27/2015.
+ * Created by minnguyen on 9/20/2017.
  */
 
 var BaseUINode = cc.Node.extend({

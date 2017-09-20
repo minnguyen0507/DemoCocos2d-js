@@ -1,7 +1,6 @@
 /**
- * Created by bachbv on 1/16/2017.
+ * Created by minnguyen on 9/20/2017.
  */
-
 var UIKey = {
     AUTO_SCALE: "-auto-scale",
     DISABLE_PRESSED_SCALE: "-disable-pressed-scale",
@@ -70,56 +69,56 @@ var BaseGUI = cc.Layer.extend({
         this.btnOnHighlight = -1;
 
         //listen mouse on button
-        this.initHoverListener();
+        //this.initHoverListener();
     },
 
-    initHoverListener: function(){
-        if(!cc.sys.isNative){
-            if( 'mouse' in cc.sys.capabilities ) {
-                cc.eventManager.addListener({
-                    event: cc.EventListener.MOUSE,
-                    onMouseMove: function(event){
-                        var pointer = false;
-                        var pos = event.getLocation(), target = event.getCurrentTarget();
-
-                        if(!target.isVisible()) return;
-
-                        if (!target.disableMouseEvent){
-                            if(sceneMgr.isShowFog()){
-                                var aboveFog = !(target instanceof BaseScene) && compareZOrder(target, sceneMgr.getFog()) > 0;
-                                //ZLog.debug("aboveFog = " + aboveFog);
-                            }
-                            else{
-                                aboveFog = true;
-                            }
-
-                            if(aboveFog){
-                                for (var i = 0; i < target._listButtons.length; i++){
-                                    if (target.hasContain(target._listButtons[i], pos) && aboveFog){
-                                        //cc.log(JSON.stringify(target._listButton[i]._name))
-                                        target.onHoverIn && target.onHoverIn(target._listButtons[i]);
-                                        pointer = true;
-                                    }
-                                    else{
-                                        target.onHoverOut && target.onHoverOut(target._listButtons[i]);
-                                    }
-                                }
-
-                                if (pointer){
-                                    //ZLog.debug("gameCanvas = pointer, " + target._className);
-                                    cc.$("#gameCanvas").style.cursor = "pointer";
-                                }
-                                else {
-                                    //ZLog.debug("gameCanvas = default, " + target._className);
-                                    cc.$("#gameCanvas").style.cursor = "default";
-                                }
-                            }
-                        }
-                    }.bind(this)
-                }, this);
-            }
-        }
-    },
+    // initHoverListener: function(){
+    //     if(!cc.sys.isNative){
+    //         if( 'mouse' in cc.sys.capabilities ) {
+    //             cc.eventManager.addListener({
+    //                 event: cc.EventListener.MOUSE,
+    //                 onMouseMove: function(event){
+    //                     var pointer = false;
+    //                     var pos = event.getLocation(), target = event.getCurrentTarget();
+    //
+    //                     if(!target.isVisible()) return;
+    //
+    //                     if (!target.disableMouseEvent){
+    //                         if(sceneMgr.isShowFog()){
+    //                             var aboveFog = !(target instanceof BaseScene) && compareZOrder(target, sceneMgr.getFog()) > 0;
+    //                             //ZLog.debug("aboveFog = " + aboveFog);
+    //                         }
+    //                         else{
+    //                             aboveFog = true;
+    //                         }
+    //
+    //                         if(aboveFog){
+    //                             for (var i = 0; i < target._listButtons.length; i++){
+    //                                 if (target.hasContain(target._listButtons[i], pos) && aboveFog){
+    //                                     //cc.log(JSON.stringify(target._listButton[i]._name))
+    //                                     target.onHoverIn && target.onHoverIn(target._listButtons[i]);
+    //                                     pointer = true;
+    //                                 }
+    //                                 else{
+    //                                     target.onHoverOut && target.onHoverOut(target._listButtons[i]);
+    //                                 }
+    //                             }
+    //
+    //                             if (pointer){
+    //                                 //ZLog.debug("gameCanvas = pointer, " + target._className);
+    //                                 cc.$("#gameCanvas").style.cursor = "pointer";
+    //                             }
+    //                             else {
+    //                                 //ZLog.debug("gameCanvas = default, " + target._className);
+    //                                 cc.$("#gameCanvas").style.cursor = "default";
+    //                             }
+    //                         }
+    //                     }
+    //                 }.bind(this)
+    //             }, this);
+    //         }
+    //     }
+    // },
 
     addToListButton: function(btn) {
         this._listButtons.push(btn);

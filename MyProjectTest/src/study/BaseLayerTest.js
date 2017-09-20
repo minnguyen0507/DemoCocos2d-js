@@ -11,7 +11,6 @@ var BaseLayerTest = BaseGUI.extend({
         //var test = new BaseGUI();
         this.setDeepSyncChildren();
         this.syncAllChildren(res.node_mini_game_taixiu, this);
-
         ZLog.error("Finish base");
         // var spriteTest = new cc.Sprite(res.btn_next);
         // this.addChild(spriteTest,1);

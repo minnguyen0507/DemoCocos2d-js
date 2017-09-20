@@ -1,5 +1,5 @@
 /**
- * Created by bachbv on 1/16/2017.
+ * Created by minnguyen on 9/20/2017.
  */
 
 getListZOrder = function(node){
@@ -183,7 +183,7 @@ var SceneMgr = cc.Class.extend({
 
         sceneMgr.cleanFogCache();
         EffectMgr.cleanUpCurrentScene();
-        asyncTaskMgr.cleanUp();
+      //  asyncTaskMgr.cleanUp();
 
         // initialize director
         if(this._oldSceneId == -1){

@@ -77,19 +77,7 @@ var servicesMgr = null;
 // SCENE IDS
 //==============================================
 GV.SCENE_IDS = {
-	LOADING: 0,
-    LOGIN: 1,
-    LOBBY: 2,
-    LIST_TABLES: 3,
-    TABLE: 4,
-    STORE: 5,
-    MAINTAIN: 6,
-    TOURNAMENT: 7,
-    LIST_TOURNAMENTS: 8,
-    GUIDE_LOBBY: 9,
-    LOADING_DATA: 10,
-    DOITHUONG : 11,
-    NOIDUNG : 12,
+	SCENETEST: 0,
 };
 
 //==============================================
