@@ -42,6 +42,8 @@ var CocosActions = cc.Layer.extend({
                 break;
             case ActionsType.SCALEBY:
                 break;
+            case  ActionsType.REVERSE:
+                break;
 
             default:
                 break;
@@ -73,4 +75,21 @@ ActionsType = {
     SCALETO : 2,
     SCALEBY : 3,
     ROTATE : 4,
+    ROTATEXY : 5,
+    SKEW : 6,
+    SKEWROTATESCALE : 7,
+    JUMP: 8,
+    BEZIER : 9,
+    BEZIERTOCOPY: 10,
+    BLINK: 11,
+    FADE: 12,
+    TINT : 13,
+    SEQUENCE : 14,
+    SPAWN : 15,
+    REVERSE :16,
+    DELAYTIME: 17,
+    REPEAT : 18,
+    REPEATFOREVER :19,
+    CALLFUNCTION : 20,
+    REVERSESEQUENCE :21,
 };
