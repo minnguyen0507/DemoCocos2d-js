@@ -44,6 +44,18 @@ var CocosActions = cc.Layer.extend({
                 break;
             case  ActionsType.REVERSE:
                 break;
+            case  ActionsType.BLINK:
+                return object.runAction(cc.blink(2, 10));
+                break;
+            case ActionsType.FADE:
+                var fadeIn  = cc.fadeIn(0.5);
+                var fadeInBack = fadeIn.reverse();
+                var delay = cc.delayTime(0.25);
+                var fadeOut = cc.fadeOut(1.0);
+                var fadeOutBack = fadeOut.reverse();
+
+                return object.runAction(cc.sequence(fadeOut, delay.clone(), fadeOutBack));
+                break;
 
             default:
                 break;
@@ -63,7 +75,7 @@ var CocosActions = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-                this._actionCocos(spriteTest,ActionsType.MOVEBY);
+                this.actionCocos(spriteTest,ActionsType.MOVEBY);
                 break;
         }
     }
