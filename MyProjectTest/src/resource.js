@@ -17,6 +17,9 @@ var res = {
 	//----------Sprite Sheet-------
     cocoban_plist : "res/animation/spritesheet.plist",
     cocoban_png : "res/animation/spritesheet.png",
+    tx_animations_plist : "res/animation/tx_animations.plist",
+    tx_animations_png : "res/animation/tx_animations.png",
+
 	//----------Sound -------------
 	sound_bang : "res/sound/bang.mp3",
 	sound_loop : "res/sound/loop.mp3",

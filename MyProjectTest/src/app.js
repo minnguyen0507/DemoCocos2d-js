@@ -6,9 +6,12 @@ var labelTest;
 var listArray = [5,1,4,2,8];
 var lbArrayBeforeSort;
 var listArrayRandom = [];
+
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
+        this.sprite = null;
+        this.runningAction = null;
         this._guiTest = null;
         var size = cc.winSize;
 
@@ -128,7 +131,29 @@ var HelloWorldLayer = cc.Layer.extend({
 
     },
 
+    _loadSpriteSheet: function () {
+        cc.spriteFrameCache.addSpriteFrames("res/animation/tx_animations.plist");
 
+        // init runningAction
+        var animFrames = [];
+        for (var i = 1; i < 19; i++) {
+            var str = "tx_animation_00" + (i < 10 ? ("0" + i) :  i) + ".png";
+            var frame = cc.spriteFrameCache.getSpriteFrame(str);
+            animFrames.push(frame);
+            cc.log(str);
+        }
+
+
+        var animation = new cc.Animation(animFrames, 0.1);
+        animation.setDelayPerUnit(0.1);
+        animation.setRestoreOriginalFrame(true);
+        var runningAction = new cc.RepeatForever(new cc.Animate(animation));
+
+        var sprite = new cc.Sprite("#tx_animation_0001.png");
+        sprite.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        sprite.runAction(runningAction);
+        this.addChild(sprite, 2);
+    },
     actionQuayTronPhongTo : function () {
 
         var fadeIn = cc.FadeIn.create(0.3);
@@ -197,7 +222,8 @@ var HelloWorldLayer = cc.Layer.extend({
               //   var test = new CocosActions();
               //   test.actionCocos(labelTest,ActionsType.SCALEBY);
 
-                this._loadSpriteIndex();
+               // this._loadSpriteIndex();
+                this._loadSpriteSheet();
                 //ZLog.error("Sort Array" + JSON.stringify(AdminSort.quickSort(listArray, 0, listArray.length - 1)));
                // ZLog.error("Array random = ", AdminRandom.randomListArray(listArrayRandom, 13, 1, 52));
                 break;
