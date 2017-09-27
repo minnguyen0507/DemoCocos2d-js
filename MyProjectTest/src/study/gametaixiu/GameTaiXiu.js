@@ -1,70 +1,50 @@
 /**
  * Created by Admin on 3/9/2017.
  */
-var btnIconTX;
-var timer = 41;
-var labelTimer;
-var GameTaiXiuLayer = cc.Layer.extend({
-    ctor:function () {
+
+var timer = 40;
+var GameTaiXiuLayer = AdminBaseGUI.extend({
+    ctor: function() {
         this._super();
         this.btnClose = null;
-        this.nodeTaiXiu = null;
         this.lbTimerStart = null;
 
-        var size = cc.winSize;
+        this.init();
+    },
+    init: function() {
+        this._super();
+        this.setDeepSyncChildren();
+        this.syncAllChildren(res.node_mini_game_taixiu, this);
+        //this.showCountDownStart(timer);
 
-        sceneConfig = ccs.load(res.node_mini_game_taixiu, "res/");
-        this.nodeTaiXiu = sceneConfig.node;
-        this.addChild(this.nodeTaiXiu,1);
-        this.nodeTaiXiu.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this.scheduleUpdate();
 
-        var bg = new cc.Sprite(res.bg_test);
-        this.addChild(bg, 0);
-        bg.setTag(999);
-        bg.setAnchorPoint(0.5,0.5);
-        bg.setPosition(size.width/2, size.height/2);
-
-        btnIconTX = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
-        btnIconTX.setAnchorPoint(0.5 , 0.5);
-        btnIconTX.setPosition( 1050, 50);
-        btnIconTX.addTouchEventListener(this.touchEvent,this);
-        btnIconTX.setPressedActionEnabled(true);
-        this.getResource();
-        bg.addChild(btnIconTX, 3);
-
-       // this.lbTimerStart.setString("22");
-
-        //this.scheduleUpdate();
-        ZLog.error("Scene Tai Xiu nhe");
-
-        return true;
+        this.alignCenter();
     },
 
-    getResource: function () {
-        var bgg = this.getChildByTag(999);
-        bgg.setVisible(false);
-        this.lbTimerStart = this.nodeTaiXiu.getChildByName("lbTimerStart");
-        this.btnClose =  this.nodeTaiXiu.getChildByName("btnClose");
-        this.btnClose.addTouchEventListener(this.touchEvent,this);
-        this.btnClose.setPressedActionEnabled(true);
-    },
-    touchEvent : function (sender,  type) {
+    showGameInfo: function (type) {
         switch (type){
-            case ccui.Widget.TOUCH_BEGAN:
+            case TXConst.START:
                 break;
-            case ccui.Widget.TOUCH_MOVED:
+            case TXConst.INFO:
                 break;
-            case ccui.Widget.TOUCH_MOVED:
+            case TXConst.CANBANG:
                 break;
-            case ccui.Widget.TOUCH_ENDED:
-                switch (sender){
-                    case btnIconTX:
-                        ZLog.error("btnIcon");
-                        break;
-                    case  this.btnClose:
-                        ZLog.error("Click Close");
-                        break;
-                }
+            case TXConst.ENDGAME:
+                break;
+            case TXConst.PRESTART:
+                break;
+            default:
+                break;
+        }
+    },
+
+    onTouchUIEndEvent: function(sender){
+        switch (sender) {
+            case this.btnClose:
+                ZLog.error("ok");
+                break;
+            default:
                 break;
         }
     },
@@ -72,29 +52,24 @@ var GameTaiXiuLayer = cc.Layer.extend({
         //timer--;
         timer -= dt ; // or timer = timer -dt;
         ZLog.error("timer::", parseInt(timer));
-        this.lbTimerStart.setString("Timer: " + parseInt(timer));
-        if (timer <= 0){
-            timer = 41; // quay lai thoi gian dau tien
-        }
-        if (timer < 31){
-            ZLog.error("Start Game");
-        }
 
-        if (timer >31 && timer < 41 ){
-            ZLog.error("End Game ");
+        if (timer <= 40){
+            this.lbTimerStart.setString(parseInt(timer));
         }
+        else if (timer == 0){
+            timer = 40;
 
+        }
     },
     stopUpdate : function () {
     this.unscheduleUpdate();
     }
 });
 
-var GameTaiXiuScene = cc.Scene.extend({
-    onEnter:function () {
-        this._super();
-        var layer = new GameTaiXiuLayer();
-        this.addChild(layer);
-    }
-});
-
+TXConst = {
+    START: 0,
+    INFO: 1,
+    CANBANG: 2,
+    ENDGAME: 3,
+    PRESTART: 4,
+}
