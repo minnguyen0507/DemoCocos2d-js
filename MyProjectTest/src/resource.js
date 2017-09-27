@@ -36,6 +36,12 @@ var res = {
     totem_brick4x2 : "res/gametotem/brick4x2.png",
     totem_ground : "res/gametotem/ground.png",
     totem_totem : "res/gametotem/totem.png",
+    //-----------cards-----------------
+    card_0: "res/cards/at_0.png",
+    card_1: "res/cards/at_1.png",
+    card_2: "res/cards/at_2.png",
+    card_3: "res/cards/at_3.png",
+
     //---------Cocostudio ----------------
         //-------- File JSOn-------------
     scene_cocostudio : "res/ui/scene_cocostudio.json",

@@ -9,6 +9,7 @@ var listArrayRandom = [];
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
+        this._guiTest = null;
         var size = cc.winSize;
 
 //tao Sprite
@@ -116,6 +117,17 @@ var HelloWorldLayer = cc.Layer.extend({
 
     },
 
+    _loadSpriteIndex: function () {
+        for (var i = 0; i < 4; i++){
+         //   var iconCards = new cc.Sprite("res/cards/at_" + i + ".png"); //cách 1
+            var iconCards = new cc.Sprite(res["card_" + i]);
+            this.addChild(iconCards, 1);
+            iconCards.setAnchorPoint(0.5, 0.5);
+            iconCards.setPosition(cc.winSize.width/2 + i * 30, cc.winSize.height/2);
+        }
+
+    },
+
 
     actionQuayTronPhongTo : function () {
 
@@ -174,9 +186,20 @@ var HelloWorldLayer = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
+              //   var test = new GUITest();
+              // if (this._guiTest == null){
+              //     this.addChild(test, 1);
+              //     this._guiTest = true;
+              // }
+              // else{
+              //     test.setVisible(true);
+              // }
+              //   var test = new CocosActions();
+              //   test.actionCocos(labelTest,ActionsType.SCALEBY);
 
+                this._loadSpriteIndex();
                 //ZLog.error("Sort Array" + JSON.stringify(AdminSort.quickSort(listArray, 0, listArray.length - 1)));
-                ZLog.error("Array random = ", AdminRandom.randomListArray(listArrayRandom, 13, 1, 52));
+               // ZLog.error("Array random = ", AdminRandom.randomListArray(listArrayRandom, 13, 1, 52));
                 break;
         }
     }
