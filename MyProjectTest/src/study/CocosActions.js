@@ -39,10 +39,10 @@ var CocosActions = cc.Layer.extend({
                 return object.runAction(cc.moveBy(2, 80, 80));
                 break;
             case ActionsType.SCALETO:
+                return object.runAction(cc.scaleTo(2, 0.5));
                 break;
             case ActionsType.SCALEBY:
-                break;
-            case  ActionsType.REVERSE:
+                return object.runAction(cc.scaleBy(2, 2));
                 break;
             case  ActionsType.BLINK:
                 return object.runAction(cc.blink(2, 10));
@@ -55,6 +55,9 @@ var CocosActions = cc.Layer.extend({
                 var fadeOutBack = fadeOut.reverse();
 
                 return object.runAction(cc.sequence(fadeOut, delay.clone(), fadeOutBack));
+                break;
+            case ActionsType.ROTATE:
+
                 break;
 
             default:

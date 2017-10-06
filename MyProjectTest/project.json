@@ -1,8 +1,8 @@
 {
     "project_type":"javascript",
     "debugMode":1,
-    "showFPS":true,
-   	"loadExtension":false,
+    "showFPS":true,  
+    "loadExtension":false,
     "frameRate":60,
     "id":"gameCanvas",
     "renderMode":0,
@@ -42,6 +42,7 @@
         "src/study/gametaixiu/GameTaiXiu.js",
         "src/study/BaseSpriteTest.js",
         "src/study/CocosActions.js",
-        "src/study/test/TestBaseGUI.js"
+        "src/study/test/TestBaseGUI.js",
+        "src/rapidgame/SingleTouch.js"
     ]
 }
