@@ -24,6 +24,7 @@ var TouchEventLayers = cc.Layer.extend({
                     //Check the click area
                     if(cc.rectContainsPoint(rect, locationInNode)){
                         ZLog.error("Ben trong Sprite");
+                        target.runAction(cc.moveTo(0.2, target.getPositionX(),target.getPositionY() + 20));
                         return true;
                     }
 
