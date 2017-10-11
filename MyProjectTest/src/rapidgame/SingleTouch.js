@@ -1,5 +1,9 @@
 
 listCards = [];
+listener = null;
+check = true;
+chatBai = null;
+soBai = null;
 var TouchEventLayers = cc.Layer.extend({
         ctor: function () {
             this._super();
@@ -13,7 +17,7 @@ var TouchEventLayers = cc.Layer.extend({
                 listCards[i].setTag(i);
                 listCards[i].setPosition(size.width/2 + i * 30 - 200, size.height/2 - 150); // My pos cards
                 this.addChild(listCards[i]);
-                var listener = cc.EventListener.create({
+                 listener = cc.EventListener.create({
                     event : cc.EventListener.TOUCH_ONE_BY_ONE,
                     swallowTouches : true,
                     onTouchBegan: this.onTouchBegan.bind(this),
@@ -26,7 +30,7 @@ var TouchEventLayers = cc.Layer.extend({
             buttonTest.setAnchorPoint(0.5 , 0.5);
             buttonTest.setPosition( 1050, 50);
 
-            buttonTest.addTouchEventListener(this.touchEvent,this);
+            buttonTest.addTouchEventListener(listener,buttonTest);
             buttonTest.setPressedActionEnabled(true);
             this.addChild( buttonTest, 3);
         return true;
@@ -41,10 +45,12 @@ var TouchEventLayers = cc.Layer.extend({
 
             //Check the click area
             if(cc.rectContainsPoint(rect, locationInNode)){
-                    ZLog.error("Up Sprite");
-                    target.runAction(cc.moveTo(0.2, target.getPositionX(),target.getPositionY() + 40));
+                ZLog.error("Up Sprite", target.getTag());
+                target.runAction(cc.moveTo(0.2, target.getPositionX(),target.getPositionY() + 40));
                 return true;
             }
+            ZLog.error("NULL");
+            target.runAction(cc.moveTo(0.2, target.getPositionX(),target.getPositionY()));
             return false;
         },
         onTouchMoved: function (touch, event) {

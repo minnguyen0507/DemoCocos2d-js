@@ -44,6 +44,7 @@ var res = {
     card_1: "res/cards/at_1.png",
     card_2: "res/cards/at_2.png",
     card_3: "res/cards/at_3.png",
+    card_black : "res/cards/card_black.png",
 
     //---------Cocostudio ----------------
         //-------- File JSOn-------------
