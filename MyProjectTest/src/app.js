@@ -59,6 +59,7 @@ var HelloWorldLayer = cc.Layer.extend({
      buttonTest.setPressedActionEnabled(true);
      bgTest.addChild( buttonTest, 3);
 
+     this._createMenuItem();
 
 
       //  this._initCheckBox();
@@ -66,6 +67,32 @@ var HelloWorldLayer = cc.Layer.extend({
         return true;
     },
 
+    _createMenuItem: function () {
+        this.Menu = new cc.Menu();
+        this.Menu.setPosition(cc.winSize.width/2 - 600 , cc.winSize.height/2 - 300);
+        this.Menu.setAnchorPoint(0.5, 0.5);
+
+        //Menu item with label ( Label trong button);
+        var _labelTest = new cc.LabelTTF("MenuItem", 36);
+        this.MenuItem1 = new cc.MenuItemLabel(_labelTest, "onMenuClicked",this);
+        this.MenuItem1.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this.MenuItem1.setTag(0);
+        this.Menu.addChild(this.MenuItem1, 1);
+
+        //Menu Item Image
+        this.MenuItem2 = new cc.MenuItemImage(res.tile_0, res.tile_1,null,"onMenuClicked",this);
+        this.MenuItem2.setPosition(cc.winSize.width/2, cc.winSize.height/2 - 100);
+        this.Menu.addChild(this.MenuItem2, 1);
+        this.MenuItem2.setTag(1);
+
+
+
+        this.addChild(this.Menu, 1);
+    },
+
+    onMenuClicked:function () {
+          ZLog.error("Touch Menu");
+    },
     sapXepTangDan: function(){
         var listNewArray= [];
         listNewArray = listArray.sort(AdminSort.sortNumberAsc);
@@ -211,21 +238,12 @@ var HelloWorldLayer = cc.Layer.extend({
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-              //   var test = new GUITest();
+                this._loadSpriteIndex();
+              //   var test = new GameTaiXiuLayer();
               // if (this._guiTest == null){
               //     this.addChild(test, 1);
               //     this._guiTest = true;
               // }
-              // else{
-              //     test.setVisible(true);
-              // }
-              //   var test = new CocosActions();
-              //   test.actionCocos(labelTest,ActionsType.SCALEBY);
-
-               // this._loadSpriteIndex();
-                this._loadSpriteSheet();
-                //ZLog.error("Sort Array" + JSON.stringify(AdminSort.quickSort(listArray, 0, listArray.length - 1)));
-               // ZLog.error("Array random = ", AdminRandom.randomListArray(listArrayRandom, 13, 1, 52));
                 break;
         }
     }
@@ -274,4 +292,3 @@ var HelloWorldScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
-
