@@ -63,8 +63,14 @@ var HelloWorldLayer = cc.Layer.extend({
 
 
       //  this._initCheckBox();
-        this._testFuncInterval();
+       // this._testFuncInterval();
+        setTimeout(this._testSetTimeout,3000);
         return true;
+    },
+
+    _testSetTimeout: function () {
+        ZLog.error("something...");
+        alert("Chào mừng bạn đến với MyProject");
     },
 
     _testFuncInterval: function () {
