@@ -63,10 +63,16 @@ var HelloWorldLayer = cc.Layer.extend({
 
 
       //  this._initCheckBox();
-
+        this._testFuncInterval();
         return true;
     },
 
+    _testFuncInterval: function () {
+      var testInterval =  setInterval(function () {
+            ZLog.error("something...");
+            clearInterval(testInterval);
+        },2000);
+    },
     _createMenuItem: function () {
         this.Menu = new cc.Menu();
         this.Menu.setPosition(cc.winSize.width/2 - 600 , cc.winSize.height/2 - 300);
