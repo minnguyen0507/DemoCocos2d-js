@@ -112,7 +112,8 @@ BaCayEffectLayer = cc.Layer.extend({
                     this.addChild(card);
                     this.cardChiaBai.push(card);
                     cc.log("chiaBai 1: " + i);
-                    var action = cc.sequence(cc.delayTime(timeOffsetAppear * i), cc.show(), cc.delayTime(timeOffsetAppear * (num*3 - 1 - i)), cc.delayTime(timeDif* (num*3 - 1 - i)), cc.hide());
+                    var action = cc.sequence(cc.delayTime(timeOffsetAppear * i), cc.show(), cc.delayTime(timeOffsetAppear * (num *
+                        3 - 1 - i)), cc.delayTime(timeDif* (num*3 - 1 - i)), cc.hide());
                     card.runAction(action);
                 }
             }
@@ -133,7 +134,8 @@ BaCayEffectLayer = cc.Layer.extend({
                 mycard.setPosition(winSizeW/2, winSizeH/2 + cardImg.getContentSize().height/2 + offset*(3*num -1 - i*num - stt));
                 mycard.setRotation(-90);
                 mycard.setVisible(false);
-                var cardPos = player.cardList[i].convertToWorldSpaceAR(cc.p(0,0));
+               // var cardPos = player.cardList[i].convertToWorldSpaceAR(cc.p(0,0));
+                var cardPos = cc.p(100,100);
                 cardPos = this.convertToNodeSpace(cardPos);
                 var acSpawn =  cc.spawn(cc.moveTo(timeDealOne,cardPos), cc.scaleTo(timeDealOne, scaleFactor), cc.rotateTo(timeDealOne,0));
                 var sequence =  cc.sequence(cc.delayTime(timeOffsetAppear*(3*num-1)), cc.delayTime(timeDif*(i*num + stt)), cc.show(),
@@ -141,10 +143,10 @@ BaCayEffectLayer = cc.Layer.extend({
                 mycard.runAction(sequence);
             }
             for(var i = 0; i< 3; i++){
-                player.cardList[i].runAction(cc.sequence(cc.delayTime(timeOffsetAppear*(3*num -1)),
-                    cc.delayTime(timeDif*(i*num+stt) + timeDealOne),
-                    cc.show()
-                ));
+                // player.cardList[i].runAction(cc.sequence(cc.delayTime(timeOffsetAppear*(3*num -1)),
+                //     cc.delayTime(timeDif*(i*num+stt) + timeDealOne),
+                //     cc.show()
+                // ));
             }
         }
     },
