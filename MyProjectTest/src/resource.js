@@ -45,6 +45,8 @@ var res = {
     card_2: "res/cards/at_2.png",
     card_3: "res/cards/at_3.png",
     card_black : "res/cards/card_black.png",
+    cards_chips_plist : "res/cards/cards_chips.plist",
+    cards_chips_png : "res/cards/cards_chips.png",
 
     //---------Cocostudio ----------------
         //-------- File JSOn-------------
@@ -57,7 +59,11 @@ var res = {
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",
-    bg_test : "res/common/bg_test.png"
+    //------------COMMON-----------------
+    bg_test : "res/common/bg_test.png",
+    slider_thumb : "res/common/btn_slider.png",
+    slider_progress : "res/common/slider_main.png",
+    slider_track : "res/common/slider_bg.png"
 };
 
 var g_resources = [];
