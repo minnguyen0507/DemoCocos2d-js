@@ -4,7 +4,7 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     ctor: function() {
         this._super();
         this.loadingBar = null;
-        this.count = 0;
+        this.count = 100;
         this.init();
     },
     init: function() {
@@ -40,7 +40,7 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         this.loadingBar.setName("LoadingBar");
         this.loadingBar.loadTexture(res.slider_progress);
         this.loadingBar.setPosition(cc.winSize.width/2, cc.winSize.height/2);
-        this.loadingBar.setPercent(0);
+        this.loadingBar.setPercent(100);
         this.addChild(this.loadingBar,2);
         ZLog.error("Finish UI LoadingBar");
     },
@@ -75,9 +75,9 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     },
 
     update: function (dt) {
-        this.count ++;
-        if ( this.count > 100){
-            this.count = 0; // Sau khi chạy đến 100% thì làm gì thì làm
+        this.count --;
+        if ( this.count < 0){
+            this.count = 100; // Sau khi chạy đến 100% thì làm gì thì làm
         }
         this.loadingBar.setPercent(this.count);
     },
