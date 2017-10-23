@@ -3,11 +3,15 @@ var GUIUICocos2d = AdminBaseGUI.extend({
 
     ctor: function() {
         this._super();
+        this.loadingBar = null;
+        this.count = 0;
         this.init();
     },
     init: function() {
         this._super();
-        this._createUISlider();
+        //this._createUISlider();
+        this._createUILoadingBar();
+        this.scheduleUpdate();
         ZLog.error("Finish new UI");
         return true;
 
@@ -32,7 +36,13 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     },
 
     _createUILoadingBar: function(){
-
+        this.loadingBar = new ccui.LoadingBar();
+        this.loadingBar.setName("LoadingBar");
+        this.loadingBar.loadTexture(res.slider_progress);
+        this.loadingBar.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this.loadingBar.setPercent(0);
+        this.addChild(this.loadingBar,2);
+        ZLog.error("Finish UI LoadingBar");
     },
 
     _createUIScrollView: function(){
@@ -45,8 +55,8 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     _createUISlider: function () {
         var uiSlider = new ccui.Slider();
         uiSlider.setTouchEnabled(true);
-        uiSlider.loadBarTexture(res.slider_track); // Nút kéo
-        uiSlider.loadSlidBallTextures(res.slider_thumb,res.slider_thumb,"");
+        uiSlider.loadBarTexture(res.slider_track);
+        uiSlider.loadSlidBallTextures(res.slider_thumb,res.slider_thumb,""); // Nút kéo
         uiSlider.loadProgressBarTexture(res.slider_progress);
         uiSlider.setPosition(cc.winSize.width/2, cc.winSize.height/2);
         uiSlider.setRotation(-90); // Xoay 90 độ
@@ -62,6 +72,14 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     },
     _createUITextField: function(){
 
+    },
+
+    update: function (dt) {
+        this.count ++;
+        if ( this.count > 100){
+            this.count = 0; // Sau khi chạy đến 100% thì làm gì thì làm
+        }
+        this.loadingBar.setPercent(this.count);
     },
     onTouchUIEndEvent: function(sender){
         switch (sender) {
