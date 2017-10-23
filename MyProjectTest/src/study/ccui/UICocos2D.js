@@ -9,9 +9,13 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     },
     init: function() {
         this._super();
+
+        this._createProgressTimerBar();
+
         //this._createUISlider();
-        this._createUILoadingBar();
-        this.scheduleUpdate();
+        //this._createUILoadingBar();
+
+        //this.schedule(this.update, 0.2);
         ZLog.error("Finish new UI");
         return true;
 
@@ -62,6 +66,17 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         uiSlider.setRotation(-90); // Xoay 90 độ
         this.addChild(uiSlider, 2);
         uiSlider.addEventListener(this.sliderEvent ,this);
+    },
+    _createProgressTimerBar: function(){ //Tạo UI chạy thời gian kiểu loading bar
+        var testProgressTimer = new cc.ProgressTimer(new cc.Sprite(res.slider_progress));
+        testProgressTimer.setType(cc.ProgressTimer.TYPE_BAR);
+        testProgressTimer.setBarChangeRate(cc.p(1,0));
+        testProgressTimer.setPercentage(100); //set giá trị = 100%
+        testProgressTimer.setMidpoint(cc.p(0,0));
+        testProgressTimer.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this.addChild(testProgressTimer, 1);
+        var to1 = cc.progressTo(5, 0); //trong vòng 5s chạy từ 100-> 0
+        testProgressTimer.runAction(to1);
     },
     sliderEvent: function (sender, type) {
         switch (type){
