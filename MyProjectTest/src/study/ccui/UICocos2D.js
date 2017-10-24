@@ -10,7 +10,11 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     init: function() {
         this._super();
 
-        this._createProgressTimerBar();
+
+
+       this._createUIScrollView();
+       this._createUIButton();
+       // this._createProgressTimerBar();
 
         //this._createUISlider();
         //this._createUILoadingBar();
@@ -22,17 +26,48 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     },
 
     _createUILabel: function () {
-
+        var lbTest = new cc.LabelTTF("Hello World", "Arial", 32);
+        this.addChild(lbTest);
+        lbTest.setPosition(cc.winSize.width/2, cc.winSize.height/2);
     },
-    _createUILabelEffects: function () {
+    _createUILabelBMT: function () {
 
     },
 
     _createUIMenu: function(){
+        this.Menu = new cc.Menu();
+        this.Menu.setPosition(cc.winSize.width/2 - 600 , cc.winSize.height/2 - 300);
+        this.Menu.setAnchorPoint(0.5, 0.5);
 
+        //Menu item with label ( Label trong button);
+        var _labelTest = new cc.LabelTTF("MenuItem", 36);
+        this.MenuItem1 = new cc.MenuItemLabel(_labelTest, "onMenuClicked",this);
+        this.MenuItem1.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this.MenuItem1.setTag(0);
+        this.Menu.addChild(this.MenuItem1, 1);
+
+        //Menu Item Image
+        this.MenuItem2 = new cc.MenuItemImage(res.tile_0, res.tile_1,null,"onMenuClicked",this);
+        this.MenuItem2.setPosition(cc.winSize.width/2, cc.winSize.height/2 - 100);
+        this.Menu.addChild(this.MenuItem2, 1);
+        this.MenuItem2.setTag(1);
+
+        this.addChild(this.Menu, 1);
     },
-    _createUIButton: function () {
 
+    onMenuClicked:function () {
+        ZLog.error("Touch Menu");
+    },
+
+    _createUIButton: function () {
+        var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
+        //buttonTest.loadTextures(res.btn_next, res.btn_next, res.btn_next);
+        buttonTest.setAnchorPoint(0.5 , 0.5);
+        // buttonTest.setPosition( size.width /2, size.height * 0.25);
+        buttonTest.setPosition( 1050, 50);
+        buttonTest.addTouchEventListener(this.touchEvent,this);
+        buttonTest.setPressedActionEnabled(true);
+        this.addChild( buttonTest, 3);
     },
 
     _createUICheckBox: function(){
@@ -50,7 +85,29 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     },
 
     _createUIScrollView: function(){
+        var scrollView = new ccui.ScrollView();
+        scrollView.setDirection(ccui.ScrollView.DIR_VERTICAL);
+        scrollView.setTouchEnabled(true);
+        scrollView.setBounceEnabled(true);
+        scrollView.setBackGroundImage(res.popup_mini);
+        scrollView.setContentSize(cc.size(300, 200));
+        scrollView.setInnerContainerSize(cc.size(1280, 2500));
+        scrollView.setAnchorPoint(cc.p(0.5, 0.5));
+        scrollView.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this.addChild(scrollView);
+        for (var i = 0; i < 50; i++)
+        {
+            var button = new ccui.Button();
+            button.setTouchEnabled();
+            button.setTag(i);
+            button.setPosition(cc.p(scrollView.width / 2 - 80, i * 50));
+            button.loadTextures(res.btn_next, res.btn_next, "");
+            scrollView.addChild(button);
+            button.addTouchEventListener(this.touchEvent, this);
+            button.setPressedActionEnabled(true);
+        }
 
+        ZLog.error("Finish UI ScrollView");
     },
     _createUIListView: function(){
 
@@ -121,6 +178,21 @@ var GUIUICocos2d = AdminBaseGUI.extend({
             this.count = 100; // Sau khi chạy đến 100% thì làm gì thì làm
         }
         this.loadingBar.setPercent(this.count);
+    },
+
+    touchEvent : function (sender,  type) {
+        switch (type) {
+            case ccui.Widget.TOUCH_BEGAN:
+                break;
+            case ccui.Widget.TOUCH_MOVED:
+                break;
+            case ccui.Widget.TOUCH_MOVED:
+                break;
+            case ccui.Widget.TOUCH_ENDED:
+
+                ZLog.error("Touch Event");
+                break;
+        }
     },
     onTouchUIEndEvent: function(sender){
         switch (sender) {

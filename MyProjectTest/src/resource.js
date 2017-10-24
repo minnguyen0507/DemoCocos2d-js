@@ -63,7 +63,9 @@ var res = {
     bg_test : "res/common/bg_test.png",
     slider_thumb : "res/common/btn_slider.png",
     slider_progress : "res/common/slider_main.png",
-    slider_track : "res/common/slider_bg.png"
+    slider_track : "res/common/slider_bg.png",
+    popup_mini : "res/common/popup_mini.png",
+    img_progress_vongtron : "res/common/img_progress.png"
 };
 
 var g_resources = [];
