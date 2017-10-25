@@ -12,7 +12,7 @@ var GUIUICocos2d = AdminBaseGUI.extend({
 
 
 
-       this._createUIScrollView();
+       this._createUIAnimation();
        this._createUIButton();
        // this._createProgressTimerBar();
 
@@ -170,6 +170,41 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     },
     _createUITextField: function(){
 
+    },
+
+    _createUISkeleton: function(){
+        //????
+        var spineClock = new sp.SkeletonAnimation('res/spine/demgio/skeleton.json', 'res/spine/demgio/skeleton.atlas');
+        spineClock.setPosition(cc.p(size.width / 2, size.height / 2 ));
+        spineClock.setAnchorPoint(0.5,0.5);
+        spineClock.setAnimation(-1, 'danhchuong', true);
+        //spineBoy.setAnimationListener(this, this.animationStateEvent);
+        this.addChild(spineClock, 4);
+    },
+
+    _createUIAnimation: function () {
+        //cc.spriteFrameCache.addSpriteFrames("res/animation/tx_mobat/actionmobat.plist");
+        cc.spriteFrameCache.addSpriteFrames("res/animation/tx_socdia/actionsocdia.plist");
+
+        //init runningAction
+        var animFrames = [];
+        for (var i = 0; i < 49; i++) {
+            var str = "anim"+ i + ".png";
+            var frame = cc.spriteFrameCache.getSpriteFrame(str);
+            animFrames.push(frame);
+            cc.log(str);
+        }
+
+        var animation = new cc.Animation(animFrames, 0.1);
+        animation.setDelayPerUnit(0.1);
+        animation.setRestoreOriginalFrame(true);
+        var runningAction = new cc.RepeatForever(new cc.Animate(animation));
+
+        var sprite = new cc.Sprite("#anim0.png");
+        sprite.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        //sprite.setRotation(-180);
+        sprite.runAction(runningAction);
+        this.addChild(sprite, 2);
     },
 
     update: function (dt) {

@@ -19,6 +19,10 @@ var res = {
     cocoban_png : "res/animation/spritesheet.png",
     tx_animations_plist : "res/animation/tx_animations.plist",
     tx_animations_png : "res/animation/tx_animations.png",
+    actionmobat_plist : "res/animation/tx_mobat/actionmobat.plist",
+    actionmobat_png : "res/animation/tx_mobat/actionmobat.png",
+    actionsocdia_plist : "res/animation/tx_socdia/actionsocdia.plist",
+    actionsocdia_png : "res/animation/tx_socdia/actionsocdia.png",
 
 	//----------Sound -------------
 	sound_bang : "res/sound/bang.mp3",
