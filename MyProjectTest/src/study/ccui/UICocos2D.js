@@ -5,6 +5,7 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         this._super();
         this.loadingBar = null;
         this.count = 100;
+        this.serverList = [9,14,7];
         this.init();
     },
     init: function() {
@@ -12,14 +13,24 @@ var GUIUICocos2d = AdminBaseGUI.extend({
 
 
 
-       this._createUIAnimation();
-       this._createUIButton();
+       // this._createUIAnimation();
+       // this._createUIButton();
        // this._createProgressTimerBar();
 
         //this._createUISlider();
         //this._createUILoadingBar();
 
         //this.schedule(this.update, 0.2);
+        var listCard = [];
+        for (var i = 0; i < this.serverList.length; i++){
+            var card = new CardGame(this.serverList[i]).getDiemById();
+
+
+            ZLog.error("Show Cards", card);
+            ZLog.error("Sum diem bo bai", sum);
+
+        }
+
         ZLog.error("Finish new UI");
         return true;
 
