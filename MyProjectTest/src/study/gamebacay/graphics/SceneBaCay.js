@@ -126,7 +126,6 @@ var BaCayLayer = cc.Layer.extend({
 
 	},
 
-
 	touchEvent : function (sender,  type) {
 		switch (type){
 		case ccui.Widget.TOUCH_BEGAN:
@@ -139,16 +138,29 @@ var BaCayLayer = cc.Layer.extend({
             // var getIndexCard = AdminRandom.randomBetweenNumber(0,35);
             // ZLog.error("test",getIndexCard);
             // this.cardIndex.setSpriteFrame("card_" + getIndexCard + ".png");
-                for (var i = 0 ; i < this.listCardsPlayer.length; i++){
-                   var self = this;
-                   var scaleTo = cc.scaleTo(0.4, 0.1, 1);
-                   var comeBack = cc.scaleTo(0.4, 1, 1);
-                   var delay = cc.delayTime(0.05);
 
-                   this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
-                       sender.setTexture(res.card_0);
-                   },this.listCardsPlayer[i]),comeBack)));
-                }
+            var labelTest = new cc.LabelTTF("Min","Arial",32);
+            labelTest.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+            labelTest.setTag(1);
+            this.addChild(labelTest);
+            ZLog.error("addLabel");
+            setTimeout(function(){
+                this.removeChildByTag(1); // remove sprite by tag
+            }.bind(this), 3000); // after 3 seconds
+
+            
+
+            //     for (var i = 0 ; i < this.listCardsPlayer.length; i++){
+            //        var self = this;
+            //        var scaleTo = cc.scaleTo(0.4, 0.1, 1);
+            //        var comeBack = cc.scaleTo(0.4, 1, 1);
+            //        var delay = cc.delayTime(0.05);
+            //
+            //        this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
+            //            //sender.setTexture(res.card_0);
+            //            sender.setSpriteFrame("card_" + 32 + ".png");
+            //        },this.listCardsPlayer[i]),comeBack)));
+            //     }
 
 
 			break;
