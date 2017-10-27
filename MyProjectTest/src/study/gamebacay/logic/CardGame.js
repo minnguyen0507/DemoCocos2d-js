@@ -4,9 +4,9 @@
 var CardGame = cc.Class.extend({
     ctor: function (id) {
         this.id = id;
-        this.so = this.getSoById(id);
-        this.chat = this.getChatById(id);
-        this.diem = this.getDiemById(id);
+        // this.so = this.getSoById(id);
+        // this.chat = this.getChatById(id);
+        // this.diem = this.getDiemById(id);
     },
 
     getSoById: function(){
@@ -14,24 +14,26 @@ var CardGame = cc.Class.extend({
     },
 
     getDiemById: function(){
-        return Math.floor(this.id/4) + 1;
+        return Math.floor(this.id/4) + 1; //-- Rô - Cơ  - Bích - Tép
     },
 
     getChatById: function(){
         return this.id % 4;
     },
+
+
     getNormalId: function(){
         var realSo;
-        if(id < 4){
+        if(this.id < 4){
             realSo = 11;
-        }else if(id < 8){
+        }else if(this.id < 8){
             realSo = 12
         }
         else{
-            realSo = Math.floor(id/4) - 2;
+            realSo = Math.floor(this.id/4) - 2;
         }
 
-        var chat = Math.floor(id%4);
+        var chat = Math.floor(this.id%4);
         if(chat == 3){
             chat = 2;
         }

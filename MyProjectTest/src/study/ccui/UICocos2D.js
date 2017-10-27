@@ -5,36 +5,57 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         this._super();
         this.loadingBar = null;
         this.count = 100;
-        this.serverList = [9,14,7];
+        this.serverList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35];
+        this._lbTest = null;
+        this.cards = null;
+        this.slotPos = [{x: 410, y: 150},
+            {x: 68, y: 380},  {x: 300, y: 580},
+            {x: 700, y: 580}, {x: 1050, y: 500}, {x: 1050, y: 250}];
+        this.slots = [];
         this.init();
     },
     init: function() {
         this._super();
 
 
+        var _tableMaxPlayer = 6;
 
-       // this._createUIAnimation();
-       // this._createUIButton();
-       // this._createProgressTimerBar();
+        for (var i = 0; i < _tableMaxPlayer; ++i) {
+            var newSlot = new cc.Sprite(res.btn_next);
 
-        //this._createUISlider();
-        //this._createUILoadingBar();
+            newSlot.setPosition(this.slotPos[i]);
+            this.addChild(newSlot, 1);
+            this.slots.push(newSlot);
+        }
+
+         this._createUIButton();
+
+        this.cards = new cc.Sprite(res.card_black);
+        this.addChild(this.cards, 1);
+        this.cards.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this.cards.setScale(0.3);
 
         //this.schedule(this.update, 0.2);
         var listCard = [];
         for (var i = 0; i < this.serverList.length; i++){
-            var card = new CardGame(this.serverList[i]).getDiemById();
-
-
+            var card = new CardGame(this.serverList[i]);
             ZLog.error("Show Cards", card);
-            ZLog.error("Sum diem bo bai", sum);
-
+            //ZLog.error("Sum diem bo bai", sum);
         }
 
         ZLog.error("Finish new UI");
         return true;
 
     },
+
+    deal: function(){
+        var index = Math.floor(Math.random() * 52) + 1;
+        var card = this.deckNames[index];
+        this.deckNames.splice(index, 1);
+        return card;
+    },
+
+
 
     _createUILabel: function () {
         var lbTest = new cc.LabelTTF("Hello World", "Arial", 32);
@@ -230,13 +251,17 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         switch (type) {
             case ccui.Widget.TOUCH_BEGAN:
                 break;
-            case ccui.Widget.TOUCH_MOVED:
+            case ccui.Widget.TOUCH_CANCELED:
                 break;
             case ccui.Widget.TOUCH_MOVED:
                 break;
             case ccui.Widget.TOUCH_ENDED:
-
-                ZLog.error("Touch Event");
+               var test = new BaCayEffectLayer();
+                for (var i = 0; i < 6; ++i) {
+                    var moveTo = cc.moveTo(0.2, this.slots[0].x,this.slots[0].y);
+                    this.cards.runAction();
+                }
+                ZLog.error("Touch Event",this.slots[0].x, this.slots[0].y);
                 break;
         }
     },
