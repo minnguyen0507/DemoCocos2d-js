@@ -13,6 +13,7 @@ var BaCayLayer = cc.Layer.extend({
         this.cards = null;
         this.cardIndex = null;
         this.listCardIndex = [];
+        this.listCardsPlayer = [];
 		this.init();
 
 	},
@@ -65,12 +66,39 @@ var BaCayLayer = cc.Layer.extend({
             for (var j = 0; j < 3; ++j) {
                 var addCards = new cc.Sprite(res.card_black);
                 this.addChild(addCards, 2);
-
-                addCards.setPosition(newSlot.getPosition().x + j*30,newSlot.getPosition().y);
-                if (i != 0){
-                    addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
-                }
                 addCards.setScale(0.3);
+                switch (i){
+                    case POS.ISME:
+                        this.listCardsPlayer.push(addCards);
+                        addCards.setScale(0.8);
+                        addCards.setPosition(newSlot.getPosition().x + j* 30 + 100,newSlot.getPosition().y);
+                        break;
+                    case POS.PLAYER1:
+                        addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
+                        break;
+                    case POS.PLAYER2:
+                        addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
+                        break;
+                    case POS.PLAYER3:
+                        addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
+                        break;
+                    case POS.PLAYER4:
+                        addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
+                        break;
+                    case POS.PLAYER5:
+                        addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
+                        break;
+                    case 6:
+                        addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
+
+
+                }
+
+                // addCards.setPosition(newSlot.getPosition().x + j*30,newSlot.getPosition().y);
+                // if (i != 0){
+                //     addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
+                // }
+
             }
         }
 
@@ -111,16 +139,16 @@ var BaCayLayer = cc.Layer.extend({
             // var getIndexCard = AdminRandom.randomBetweenNumber(0,35);
             // ZLog.error("test",getIndexCard);
             // this.cardIndex.setSpriteFrame("card_" + getIndexCard + ".png");
-                // for (var i = 0 ; i < this.listCards.length; i++){
-                //    var self = this;
-                //    var scaleTo = cc.scaleTo(0.4, 0.1, 1);
-                //    var comeBack = cc.scaleTo(0.4, 1, 1);
-                //    var delay = cc.delayTime(0.05);
-                //
-                //    this.listCards[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
-                //        sender.setTexture(res.card_0);
-                //    },this.listCards[i]),comeBack)));
-                // }
+                for (var i = 0 ; i < this.listCardsPlayer.length; i++){
+                   var self = this;
+                   var scaleTo = cc.scaleTo(0.4, 0.1, 1);
+                   var comeBack = cc.scaleTo(0.4, 1, 1);
+                   var delay = cc.delayTime(0.05);
+
+                   this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
+                       sender.setTexture(res.card_0);
+                   },this.listCardsPlayer[i]),comeBack)));
+                }
 
 
 			break;
@@ -134,4 +162,15 @@ var SceneBaCay = cc.Scene.extend({
 		this.addChild(layer);
 	}
 });
+
+
+POS ={
+    ISME: 0,
+    PLAYER1: 1,
+    PLAYER2: 2,
+    PLAYER3: 3,
+    PLAYER4: 4,
+    PLAYER5: 5,
+}
+
 
