@@ -12,6 +12,7 @@ var BaCayLayer = cc.Layer.extend({
         this.slots = [];
         this.cards = null;
         this.cardIndex = null;
+        this.listCardIndex = [];
 		this.init();
 
 	},
@@ -33,28 +34,19 @@ var BaCayLayer = cc.Layer.extend({
         this.addChild( buttonTest, 3);
 
         cc.spriteFrameCache.addSpriteFrames(res.cards_chips_plist);
-        //
-        // var cardTest = new cc.Sprite("#card_2.png");
-        // bg.addChild(cardTest,1);
-        // cardTest.setPosition(bg.x/2,bg.y/2);
-        //
 
-
-        this.cardIndex = new cc.Sprite("#card_2.png");
-        this.addChild(this.cardIndex,2);
-        this.cardIndex.setPosition(cc.winSize.width/2,cc.winSize.height/2);
+        var arrayTest = [11,12,13,14,15,16,17,18,19,10];
 
         //
-        // for (var i= 1; i < 19; i++){ //tao 18 con bai
-        //     var spCards = new cc.Sprite(res.card_black);
-        //     this.addChild(spCards, 3);
-        //     spCards.setTag(i);
-        //     spCards.setPosition(size.width/2 , size.height/2 );
-        //     spCards.setAnchorPoint(0.5, 0.5);
-        //     this.listCards.push(spCards);
+        // for (var i = 1; i < arrayTest.length ; i++){
+        //     var cardsInDex= new cc.Sprite("#card_" + arrayTest[i] + ".png");
+        //     this.addChild(cardsInDex,2);
+        //     cardsInDex.setPosition(cc.winSize.width/2 + i * 30,cc.winSize.height/2);
+        //     this.listCardIndex.push(cardsInDex);
         // }
 
-		//this._testGameUI();
+
+		this._testGameUI();
         ZLog.error("Finish SceneBaCay");
 
         return true;
@@ -66,35 +58,43 @@ var BaCayLayer = cc.Layer.extend({
 
         for (var i = 0; i < _tableMaxPlayer; ++i) {
             var newSlot = new cc.Sprite(res.btn_next);
-
             newSlot.setPosition(this.slotPos[i]);
             this.addChild(newSlot, 1);
             this.slots.push(newSlot);
+
+            for (var j = 0; j < 3; ++j) {
+                var addCards = new cc.Sprite(res.card_black);
+                this.addChild(addCards, 2);
+
+                addCards.setPosition(newSlot.getPosition().x + j*30,newSlot.getPosition().y);
+                if (i != 0){
+                    addCards.setPosition(newSlot.getPosition().x + 30,newSlot.getPosition().y+ j*30);
+                }
+                addCards.setScale(0.3);
+            }
         }
-        this.cards = new cc.Sprite(res.card_black);
-        this.addChild(this.cards, 1);
-        this.cards.setPosition(cc.winSize.width/2, cc.winSize.height/2);
-        this.cards.setScale(0.3);
 
 
-        var listCards1 = [];
-        for (var i = 0; i < 3; i++) {
-			var card = new CardGame(i);
-            ZLog.error("card ",card.getDiemById());
-			listCards1.push(card);
-        }
-        var test  = new BaCayBoTest(listCards1);
-        test.getDiem();
 
 
-        var sum = 0;
-        var listCards2 = [9,6,35];
-        for (var i = 0; i < listCards2.length; i++) {
-            var showList2 = new CardGame(listCards2[i]).getDiemById();
-            sum += showList2;
-            ZLog.error("Show Cards 2222", showList2);
-        }
-        ZLog.error("SUMMMMMM", sum % 10);
+        // var listCards1 = [];
+        // for (var i = 0; i < 3; i++) {
+			// var card = new CardGame(i);
+        //     ZLog.error("card ",card.getDiemById());
+			// listCards1.push(card);
+        // }
+        // var test  = new BaCayBoTest(listCards1);
+        // test.getDiem();
+        //
+        //
+        // var sum = 0;
+        // var listCards2 = [9,6,35];
+        // for (var i = 0; i < listCards2.length; i++) {
+        //     var showList2 = new CardGame(listCards2[i]).getDiemById();
+        //     sum += showList2;
+        //     ZLog.error("Show Cards 2222", showList2);
+        // }
+        // ZLog.error("SUMMMMMM", sum % 10);
 
 	},
 
@@ -108,9 +108,9 @@ var BaCayLayer = cc.Layer.extend({
 		case ccui.Widget.TOUCH_MOVED:
 			break;
 		case ccui.Widget.TOUCH_ENDED:
-            var getIndexCard = AdminRandom.randomBetweenNumber(0,35);
-            ZLog.error("test",getIndexCard);
-            this.cardIndex.setSpriteFrame("card_" + getIndexCard + ".png");
+            // var getIndexCard = AdminRandom.randomBetweenNumber(0,35);
+            // ZLog.error("test",getIndexCard);
+            // this.cardIndex.setSpriteFrame("card_" + getIndexCard + ".png");
                 // for (var i = 0 ; i < this.listCards.length; i++){
                 //    var self = this;
                 //    var scaleTo = cc.scaleTo(0.4, 0.1, 1);
