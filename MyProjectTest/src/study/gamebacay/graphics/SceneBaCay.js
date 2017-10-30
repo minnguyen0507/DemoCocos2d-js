@@ -190,6 +190,15 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     },
 
+    showBai: function () {
+
+    },
+
+    hideBai: function () {
+
+    },
+
+
     onTouchUIEndEvent: function(sender){
         switch (sender) {
             case this.btnDatCuoc:
