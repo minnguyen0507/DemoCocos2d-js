@@ -1,7 +1,7 @@
 {
     "project_type":"javascript",
     "debugMode":1,
-    "showFPS":true,
+    "showFPS":false,
     "loadExtension":false,
     "frameRate":60,
     "id":"gameCanvas",
@@ -44,6 +44,8 @@
         "src/study/gamebacay/logic/CardGame.js",
         "src/study/gamebacay/logic/BaCayBoTest.js",
         "src/study/gamebacay/graphics/SceneBaCay.js",
+        "src/study/gamebacay/graphics/GUISlot.js",
+        "src/study/gamebacay/graphics/GUIDatCuoc.js",
         "src/study/gamebacay/effect/BaCayEffectLayer.js",
         "src/study/gametotem/GameToTem.js",
         "src/study/gametaixiu/GameTaiXiu.js",

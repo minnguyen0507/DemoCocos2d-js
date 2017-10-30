@@ -43,6 +43,9 @@ var res = {
     totem_brick4x2 : "res/gametotem/brick4x2.png",
     totem_ground : "res/gametotem/ground.png",
     totem_totem : "res/gametotem/totem.png",
+    //----------Game Bacay--------------
+    bg_bacay: "res/texture/bacay/bg_bacay.png",
+
     //-----------cards-----------------
     card_0: "res/cards/at_0.png",
     card_1: "res/cards/at_1.png",
@@ -56,6 +59,9 @@ var res = {
         //-------- File JSOn-------------
     scene_cocostudio : "res/ui/scene_cocostudio.json",
     node_mini_game_taixiu : "res/ui/node_mini_game.json",
+    node_slot_table : "res/ui/node_slot_table.json",
+    scene_bacay : "res/ui/scene_bacay.json",
+    node_betting_bacay : "res/ui/node_betting_bacay.json",
         //--------File PNG---------------
 
         //--------Font Name--------------
