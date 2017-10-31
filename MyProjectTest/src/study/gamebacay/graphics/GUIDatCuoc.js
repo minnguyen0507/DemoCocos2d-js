@@ -17,9 +17,10 @@ var GUIDatCuoc = AdminBaseGUI.extend({
     },
 
     showGui : function (tag) {
+        this.setVisible(true);
         ZLog.error("Taggg",tag);
 
-        if(tag % 2 ){
+        if(tag % 2 == 0){
             this.setPosition(cc.winSize.width/2, cc.winSize.height/2); // ngang
             this.imgSlider.setPosition(0,0);
             this.lbGoldBet.setPosition(38,66);
@@ -37,6 +38,9 @@ var GUIDatCuoc = AdminBaseGUI.extend({
         }
 
 
+    },
+    hideGui: function(){
+        this.setVisible(false);
     },
 
     sliderEvent: function (sender, type) {

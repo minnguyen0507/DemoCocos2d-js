@@ -86,7 +86,7 @@ var GUINanBai = AdminBaseGUI.extend({
         switch (sender) {
             case this.btnLatBai:
                 this.setVisible(false);
-                var sceneBaCay = new SceneBaCay();
+                var sceneBaCay = this.getParent();
                 sceneBaCay.actionLatBai();
                 break;
 

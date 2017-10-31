@@ -46,7 +46,7 @@ var res = {
     //----------Game Bacay--------------
     bg_bacay: "res/texture/bacay/bg_bacay.png",
     icon_coin: "res/texture/bacay/icon_coin.png",
-    bgLayout: "res/texture/bacay/btn_ke_cua.png",
+    btn_ke_cua: "res/texture/bacay/btn_ke_cua.png",
     box_my_avatar: "res/texture/bacay/box_myAvatar.png",
 
     //-----------cards-----------------

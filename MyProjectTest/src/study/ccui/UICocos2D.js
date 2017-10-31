@@ -65,16 +65,16 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         var layout = new ccui.Layout();
         layout.setLayoutType(ccui.Layout.DIR_VERTICAL);
         layout.setContentSize(100,30);
+        layout.setAnchorPoint(0.5,0.5);
         this.addChild(layout, 1);
-        layout.setAnchorPoint(0.5);
         layout.setPosition(cc.winSize.width/2, cc.winSize.height/2);
 
             var iconCoin = new cc.Sprite(res.icon_coin);
-            iconCoin.setPosition(layout.getPosition()/2);
+            iconCoin.setPosition(layout.getContentSize().width/2, layout.getContentSize().height/2);
             layout.addChild(iconCoin,1);
 
-            var labelGold = new cc.LabelTTF("$2", "Arial", 10);
-            labelGold.setPosition(iconCoin.x + 30, iconCoin.y);
+            var labelGold = new cc.LabelTTF("$2", "Arial", 30);
+            labelGold.setPosition(iconCoin.getPositionX()+ 30, iconCoin.getPositionY());
             layout.addChild(labelGold, 2);
     },
     _createUIButton: function () {

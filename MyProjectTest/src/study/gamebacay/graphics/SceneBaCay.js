@@ -1,6 +1,7 @@
 playerList =[3,2,4];
 TIMERSTART = 2;
 TIMERCHICKEN = 10;
+CHECKBETGOLD = 1;
 var BaCayLayer = AdminBaseGUI.extend({
 	ctor:function () {
 		this._super();
@@ -99,7 +100,7 @@ var BaCayLayer = AdminBaseGUI.extend({
                 clearInterval(self._timerVaoGa);
                 self.nodeChicken.setVisible(false);
                 ZLog.error("Show Bai - Tinh Diem");
-               // self._showNanBai();
+                self._showNanBai();
                 //moduleMgr.getBaCayModule().showGUIBaCay();
             }
         }, 1000);
@@ -127,6 +128,7 @@ var BaCayLayer = AdminBaseGUI.extend({
 
             newSlot.testLabelWinLose(i);
             newSlot.testIconAndLabel(i);
+            newSlot.testKeCuaDanhBien(i);
 
             for (var j = 0; j < 3; ++j) {
                 var addCards = new cc.Sprite(res.card_black);
@@ -136,6 +138,7 @@ var BaCayLayer = AdminBaseGUI.extend({
                     case POS.ISME:
                         newSlot.lbGold.setString("1$");
                         newSlot.lbName.setString("Min");
+                        newSlot.nodeKeCuaDanhBien.setVisible(false);
                         this.listCardsPlayer.push(addCards);
                         addCards.setScale(1);
                         addCards.setPosition(newSlot.getPosition().x + j* 30 + 150,newSlot.getPosition().y);
@@ -210,17 +213,12 @@ var BaCayLayer = AdminBaseGUI.extend({
     onTouchUIEndEvent: function(sender){
         switch (sender) {
             case this.btnDatCuoc:
-
-               var tagDatCuoc = 1;
-               this._showDatCuoc(tagDatCuoc);
+               this._showDatCuoc(CHECKBETGOLD);
                // this.setOpacity(100);
                //  this.setCascadeOpacityEnabled(true);
                break;
             case this.btnHuyBo:
-                var tagHuyBo = 2;
-                this._showDatCuoc(tagHuyBo);
-                // this.setOpacity(100);
-                // this.setCascadeOpacityEnabled(true);
+                this._guiBetting.hideGui();
                 break;
             case this.btnVaoGa:
                 this.runEffectAddGold(450, 96, 568,320);
