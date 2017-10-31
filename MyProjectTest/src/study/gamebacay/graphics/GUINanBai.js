@@ -1,3 +1,4 @@
+listCardsServer = [3,9,12];
 var GUINanBai = AdminBaseGUI.extend({
 
     ctor: function () {
@@ -5,6 +6,7 @@ var GUINanBai = AdminBaseGUI.extend({
         this.btnClose = null;
         this.listCards = [];
         this.cardCenter = null;
+        this.btnLatBai = null;
         this.init();
     },
     init:function () {
@@ -16,12 +18,14 @@ var GUINanBai = AdminBaseGUI.extend({
 
         cc.spriteFrameCache.addSpriteFrames(res.cards_chips_plist);
 
-        for (var i =0 ; i< 3; i++){
-            var cardTest = new cc.Sprite("#card_1.png");
-            this.addChild(cardTest,22);
+        for (var i =0 ; i < listCardsServer.length; i++){
+            var cardTest= new cc.Sprite("#card_" + listCardsServer[i] + ".png");
+            this.addChild(cardTest,2);
             cardTest.setTag(i);
-            cardTest.setPosition(580,309);
+            cardTest.setPosition(this.cardCenter.getPosition());
             this.listCards.push(cardTest);
+            ZLog.error("POs Convert", cardTest.convertToNodeSpace(this.cardCenter.getPosition()));
+            ZLog.error("POs Cards", this.cardCenter.getPosition());
 
             listener = cc.EventListener.create({
                 event : cc.EventListener.TOUCH_ONE_BY_ONE,
@@ -34,7 +38,7 @@ var GUINanBai = AdminBaseGUI.extend({
     },
 
     showGui: function () {
-        //this.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this.setPosition(cc.winSize.width/2, cc.winSize.height/2);
     },
     onTouchBegan: function (touch, event) {
         var target = event.getCurrentTarget();
@@ -52,7 +56,9 @@ var GUINanBai = AdminBaseGUI.extend({
     onTouchMoved: function (touch, event) {
 
         var target = event.getCurrentTarget();
-        target.setPosition(touch.getLocation());
+        //target.setPosition(touch.getLocation());
+        var locationInNode = target.convertToNodeSpace(touch.getLocation());
+        target.setPosition(locationInNode);
         ZLog.error("TOUCH MOVED" + JSON.stringify(touch.getLocation()));
 
 
@@ -78,6 +84,11 @@ var GUINanBai = AdminBaseGUI.extend({
 
     onTouchUIEndEvent: function (sender) {
         switch (sender) {
+            case this.btnLatBai:
+                this.setVisible(false);
+                var sceneBaCay = new SceneBaCay();
+                sceneBaCay.actionLatBai();
+                break;
 
         }
     },

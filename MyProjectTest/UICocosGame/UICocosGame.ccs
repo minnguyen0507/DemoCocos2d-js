@@ -181,6 +181,7 @@
             <Image Name="btn_cuoc_press.png" />
             <Image Name="btn_invite.png" />
             <Image Name="btn_ke_cua.png" />
+            <Image Name="btn_lat-bai.png" />
             <Image Name="btn_progessbar1.png" />
             <Image Name="btn_progessbar2.png" />
             <Image Name="btn_progessbar3.png" />
@@ -226,9 +227,9 @@
         </Folder>
         <Folder Name="ui">
           <Project Name="node_betting_bacay.csd" Type="Node" />
+          <Project Name="node_nan_bai_bacay.csd" Type="Node" />
           <Project Name="node_slot_table.csd" Type="Node" />
           <Project Name="scene_bacay.csd" Type="Scene" />
-          <Project Name="node_nan_bai_bacay.csd" Type="Node" />
         </Folder>
         <Image Name="checkbox_bg.png" />
         <Image Name="checkbox_tick.png" />

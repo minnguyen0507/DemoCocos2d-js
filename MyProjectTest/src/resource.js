@@ -45,6 +45,9 @@ var res = {
     totem_totem : "res/gametotem/totem.png",
     //----------Game Bacay--------------
     bg_bacay: "res/texture/bacay/bg_bacay.png",
+    icon_coin: "res/texture/bacay/icon_coin.png",
+    bgLayout: "res/texture/bacay/btn_ke_cua.png",
+    box_my_avatar: "res/texture/bacay/box_myAvatar.png",
 
     //-----------cards-----------------
     card_0: "res/cards/at_0.png",

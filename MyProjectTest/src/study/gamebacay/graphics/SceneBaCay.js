@@ -1,4 +1,6 @@
 playerList =[3,2,4];
+TIMERSTART = 2;
+TIMERCHICKEN = 10;
 var BaCayLayer = AdminBaseGUI.extend({
 	ctor:function () {
 		this._super();
@@ -71,12 +73,11 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     showStartGame:function () {
         var self = this;
-        var counter = 10;
         this._timerStart = setInterval(function () {
-            self.lbTimer.setString(counter);
-            counter--;
-            ZLog.error("CountDown", counter);
-            if (counter === 1) {
+            self.lbTimer.setString(TIMERSTART);
+            TIMERSTART--;
+            ZLog.error("CountDown", TIMERSTART);
+            if (TIMERSTART === 1) {
                 clearInterval(self._timerStart);
                 ZLog.error("Chia bai - Hien dat cuoc");
                 self.imgClockStart.setVisible(false);
@@ -90,16 +91,15 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     showStartVaoGa:function () {
         var self = this;
-        var counter = 5;
         this._timerVaoGa = setInterval(function () {
-            self.lbTimerGa.setString(counter);
-            counter--;
-            ZLog.error("CountDown", counter);
-            if (counter === 0) {
+            self.lbTimerGa.setString(TIMERCHICKEN);
+            TIMERCHICKEN--;
+            ZLog.error("CountDown", TIMERCHICKEN);
+            if (TIMERCHICKEN === 0) {
                 clearInterval(self._timerVaoGa);
                 self.nodeChicken.setVisible(false);
                 ZLog.error("Show Bai - Tinh Diem");
-                self._showNanBai();
+               // self._showNanBai();
                 //moduleMgr.getBaCayModule().showGUIBaCay();
             }
         }, 1000);
@@ -114,15 +114,7 @@ var BaCayLayer = AdminBaseGUI.extend({
             this.addChild(KeCuaDatBien, 3);
         }
     },
-    _testEndGame : function () {
-        var _tableMaxPlayer = 9;
 
-        for (var i = 0; i < _tableMaxPlayer; ++i) {
-            var playerDiem = new cc.LabelTTF("WIN", "Arial", 30);
-            playerDiem.setPosition(this.slotPos[i].x,this.slotPos[i].y - 50 );
-            this.addChild(playerDiem, 3);
-        }
-    },
 
 	_testGameUI : function(){
         var _tableMaxPlayer = 9;
@@ -132,6 +124,9 @@ var BaCayLayer = AdminBaseGUI.extend({
             newSlot.setPosition(this.slotPos[i]);
             this.addChild(newSlot, 1);
             this.slots.push(newSlot);
+
+            newSlot.testLabelWinLose(i);
+            newSlot.testIconAndLabel(i);
 
             for (var j = 0; j < 3; ++j) {
                 var addCards = new cc.Sprite(res.card_black);
@@ -152,7 +147,7 @@ var BaCayLayer = AdminBaseGUI.extend({
                         break;
                     case POS.PLAYER4:
                     case POS.PLAYER5:
-                        addCards.setPosition(newSlot.getPosition().x - (j* 15) + 20,newSlot.getPosition().y - 100 );
+                        addCards.setPosition(newSlot.getPosition().x - (j* 15) + 15,newSlot.getPosition().y - 125 );
                         break;
                     case POS.PLAYER6:
                     case POS.PLAYER7:
@@ -226,9 +221,43 @@ var BaCayLayer = AdminBaseGUI.extend({
                 this._showDatCuoc(tagHuyBo);
                 // this.setOpacity(100);
                 // this.setCascadeOpacityEnabled(true);
+                break;
+            case this.btnVaoGa:
+                this.runEffectAddGold(450, 96, 568,320);
 
                 break;
 
+        }
+    },
+    runEffectAddGold: function (_fromX, _fromY, _toX, _toY) {
+        for (var i = 0; i < 5; i++) {
+            var iconGold = new cc.Sprite(res.icon_coin);
+            this.addChild(iconGold);
+            iconGold.setAnchorPoint(0.5, 0.5);
+            // iconGold.setPosition(95, 13);
+            iconGold.setPosition(_fromX, _fromY);
+            var iconGoldMoveToTai = new cc.MoveTo(0.5, cc.p(_toX, _toY));
+            iconGold.runAction(
+                cc.sequence(
+                    cc.fadeIn(0.2 * i),
+                    iconGoldMoveToTai,
+                    cc.fadeOut(0.2 * i)
+                )
+            );
+        }
+    },
+    actionLatBai: function () {
+        ZLog.error("vao day ko?");
+        for (var i = 0 ; i < this.listCardsPlayer.length; i++){
+           var self = this;
+           var scaleTo = cc.scaleTo(0.4, 0.1, 1);
+           var comeBack = cc.scaleTo(0.4, 1, 1);
+           var delay = cc.delayTime(0.05);
+
+           this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
+               //sender.setTexture(res.card_0);
+               sender.setSpriteFrame("card_" + i + ".png");
+           },this.listCardsPlayer[i]),comeBack)));
         }
     },
 
@@ -245,28 +274,18 @@ var BaCayLayer = AdminBaseGUI.extend({
             // ZLog.error("test",getIndexCard);
             // this.cardIndex.setSpriteFrame("card_" + getIndexCard + ".png");
 
-            var labelTest = new cc.LabelTTF("Min","Arial",32);
-            labelTest.setPosition(cc.winSize.width/2, cc.winSize.height/2);
-            labelTest.setTag(1);
-            this.addChild(labelTest);
-            ZLog.error("addLabel");
-            setTimeout(function(){
-                this.removeChildByTag(1); // remove sprite by tag
-            }.bind(this), 3000); // after 3 seconds
+            // var labelTest = new cc.LabelTTF("Min","Arial",32);
+            // labelTest.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+            // labelTest.setTag(1);
+            // this.addChild(labelTest);
+            // ZLog.error("addLabel");
+            // setTimeout(function(){
+            //     this.removeChildByTag(1); // remove sprite by tag
+            // }.bind(this), 3000); // after 3 seconds
 
             
 
-            //     for (var i = 0 ; i < this.listCardsPlayer.length; i++){
-            //        var self = this;
-            //        var scaleTo = cc.scaleTo(0.4, 0.1, 1);
-            //        var comeBack = cc.scaleTo(0.4, 1, 1);
-            //        var delay = cc.delayTime(0.05);
-            //
-            //        this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
-            //            //sender.setTexture(res.card_0);
-            //            sender.setSpriteFrame("card_" + 32 + ".png");
-            //        },this.listCardsPlayer[i]),comeBack)));
-            //     }
+            this.actionLatBai();
 
 
 			break;

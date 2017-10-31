@@ -17,44 +17,14 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     init: function() {
         this._super();
 
+        //this._createUILabel();
+        this._createUILayout();
 
-        var _tableMaxPlayer = 6;
-
-        for (var i = 0; i < _tableMaxPlayer; ++i) {
-            var newSlot = new cc.Sprite(res.btn_next);
-
-            newSlot.setPosition(this.slotPos[i]);
-            this.addChild(newSlot, 1);
-            this.slots.push(newSlot);
-        }
-
-         this._createUIButton();
-
-        this.cards = new cc.Sprite(res.card_black);
-        this.addChild(this.cards, 1);
-        this.cards.setPosition(cc.winSize.width/2, cc.winSize.height/2);
-        this.cards.setScale(0.3);
-
-        //this.schedule(this.update, 0.2);
-        var listCard = [];
-        for (var i = 0; i < this.serverList.length; i++){
-            var card = new CardGame(this.serverList[i]);
-            ZLog.error("Show Cards", card);
-            //ZLog.error("Sum diem bo bai", sum);
-        }
 
         ZLog.error("Finish new UI");
         return true;
 
     },
-
-    deal: function(){
-        var index = Math.floor(Math.random() * 52) + 1;
-        var card = this.deckNames[index];
-        this.deckNames.splice(index, 1);
-        return card;
-    },
-
 
 
     _createUILabel: function () {
@@ -91,6 +61,22 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         ZLog.error("Touch Menu");
     },
 
+    _createUILayout: function () {
+        var layout = new ccui.Layout();
+        layout.setLayoutType(ccui.Layout.DIR_VERTICAL);
+        layout.setContentSize(100,30);
+        this.addChild(layout, 1);
+        layout.setAnchorPoint(0.5);
+        layout.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+
+            var iconCoin = new cc.Sprite(res.icon_coin);
+            iconCoin.setPosition(layout.getPosition()/2);
+            layout.addChild(iconCoin,1);
+
+            var labelGold = new cc.LabelTTF("$2", "Arial", 10);
+            labelGold.setPosition(iconCoin.x + 30, iconCoin.y);
+            layout.addChild(labelGold, 2);
+    },
     _createUIButton: function () {
         var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
         //buttonTest.loadTextures(res.btn_next, res.btn_next, res.btn_next);
