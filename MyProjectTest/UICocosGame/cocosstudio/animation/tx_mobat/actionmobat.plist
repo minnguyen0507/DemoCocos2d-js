@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>b1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{146,146}}</string>
+				<key>offset</key>
+				<string>{-37,-2}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{274,179}</string>
+			</dict>
+			<key>b2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,146},{141,146}}</string>
+				<key>offset</key>
+				<string>{-30,-3}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{274,179}</string>
+			</dict>
+			<key>b3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,292},{134,151}}</string>
+				<key>offset</key>
+				<string>{-18,-1}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{274,179}</string>
+			</dict>
+			<key>b4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,443},{125,154}}</string>
+				<key>offset</key>
+				<string>{-6,-3}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{274,179}</string>
+			</dict>
+			<key>b5.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,597},{113,153}}</string>
+				<key>offset</key>
+				<string>{7,-3}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{274,179}</string>
+			</dict>
+			<key>b6.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,750},{101,152}}</string>
+				<key>offset</key>
+				<string>{20,-4}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{274,179}</string>
+			</dict>
+			<key>b7.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,902},{89,152}}</string>
+				<key>offset</key>
+				<string>{33,-4}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{274,179}</string>
+			</dict>
+			<key>b8.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{101,750},{75,152}}</string>
+				<key>offset</key>
+				<string>{68,-4}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{274,179}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>actionmobat.png</string>
+			<key>realTextureFileName</key>
+			<string>actionmobat.png</string>
+			<key>size</key>
+			<string>{176,991}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>176</integer>
+			<key>height</key>
+			<integer>991</integer>
+		</dict>
+	</dict>
+</plist>

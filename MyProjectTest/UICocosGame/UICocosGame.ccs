@@ -1,0 +1,240 @@
+<Solution>
+  <PropertyGroup Name="UICocosGame" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="animation">
+          <Folder Name="girl">
+            <File Name="girl1.atlas" />
+            <File Name="girl1.json" />
+            <Image Name="girl1.png" />
+          </Folder>
+          <PlistImageFolder Image="spritesheet.png" PListFile="spritesheet.plist" Name=".spritesheet_PList.Dir">
+            <PlistImageFile Name="background.png" Key="background.png" />
+            <PlistImageFile Name="crate.png" Key="crate.png" />
+            <PlistImageFile Name="level.png" Key="level.png" />
+            <PlistImageFile Name="player.png" Key="player.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="tx_animations.png" PListFile="tx_animations.plist" Name=".tx_animations_PList.Dir">
+            <PlistImageFile Name="tx_animation_0001.png" Key="tx_animation_0001.png" />
+            <PlistImageFile Name="tx_animation_0002.png" Key="tx_animation_0002.png" />
+            <PlistImageFile Name="tx_animation_0003.png" Key="tx_animation_0003.png" />
+            <PlistImageFile Name="tx_animation_0004.png" Key="tx_animation_0004.png" />
+            <PlistImageFile Name="tx_animation_0005.png" Key="tx_animation_0005.png" />
+            <PlistImageFile Name="tx_animation_0006.png" Key="tx_animation_0006.png" />
+            <PlistImageFile Name="tx_animation_0007.png" Key="tx_animation_0007.png" />
+            <PlistImageFile Name="tx_animation_0008.png" Key="tx_animation_0008.png" />
+            <PlistImageFile Name="tx_animation_0009.png" Key="tx_animation_0009.png" />
+            <PlistImageFile Name="tx_animation_0010.png" Key="tx_animation_0010.png" />
+            <PlistImageFile Name="tx_animation_0011.png" Key="tx_animation_0011.png" />
+            <PlistImageFile Name="tx_animation_0012.png" Key="tx_animation_0012.png" />
+            <PlistImageFile Name="tx_animation_0013.png" Key="tx_animation_0013.png" />
+            <PlistImageFile Name="tx_animation_0014.png" Key="tx_animation_0014.png" />
+            <PlistImageFile Name="tx_animation_0015.png" Key="tx_animation_0015.png" />
+            <PlistImageFile Name="tx_animation_0016.png" Key="tx_animation_0016.png" />
+            <PlistImageFile Name="tx_animation_0017.png" Key="tx_animation_0017.png" />
+            <PlistImageFile Name="tx_animation_0018.png" Key="tx_animation_0018.png" />
+          </PlistImageFolder>
+          <Folder Name="tx_mobat">
+            <PlistImageFolder Image="actionmobat.png" PListFile="actionmobat.plist" Name=".actionmobat_PList.Dir">
+              <PlistImageFile Name="b1.png" Key="b1.png" />
+              <PlistImageFile Name="b2.png" Key="b2.png" />
+              <PlistImageFile Name="b3.png" Key="b3.png" />
+              <PlistImageFile Name="b4.png" Key="b4.png" />
+              <PlistImageFile Name="b5.png" Key="b5.png" />
+              <PlistImageFile Name="b6.png" Key="b6.png" />
+              <PlistImageFile Name="b7.png" Key="b7.png" />
+              <PlistImageFile Name="b8.png" Key="b8.png" />
+            </PlistImageFolder>
+          </Folder>
+          <Folder Name="tx_socdia">
+            <PlistImageFolder Image="actionsocdia.png" PListFile="actionsocdia.plist" Name=".actionsocdia_PList.Dir">
+              <PlistImageFile Name="anim0.png" Key="anim0.png" />
+              <PlistImageFile Name="anim1.png" Key="anim1.png" />
+              <PlistImageFile Name="anim10.png" Key="anim10.png" />
+              <PlistImageFile Name="anim11.png" Key="anim11.png" />
+              <PlistImageFile Name="anim12.png" Key="anim12.png" />
+              <PlistImageFile Name="anim13.png" Key="anim13.png" />
+              <PlistImageFile Name="anim14.png" Key="anim14.png" />
+              <PlistImageFile Name="anim15.png" Key="anim15.png" />
+              <PlistImageFile Name="anim16.png" Key="anim16.png" />
+              <PlistImageFile Name="anim17.png" Key="anim17.png" />
+              <PlistImageFile Name="anim18.png" Key="anim18.png" />
+              <PlistImageFile Name="anim19.png" Key="anim19.png" />
+              <PlistImageFile Name="anim2.png" Key="anim2.png" />
+              <PlistImageFile Name="anim20.png" Key="anim20.png" />
+              <PlistImageFile Name="anim21.png" Key="anim21.png" />
+              <PlistImageFile Name="anim22.png" Key="anim22.png" />
+              <PlistImageFile Name="anim23.png" Key="anim23.png" />
+              <PlistImageFile Name="anim24.png" Key="anim24.png" />
+              <PlistImageFile Name="anim25.png" Key="anim25.png" />
+              <PlistImageFile Name="anim26.png" Key="anim26.png" />
+              <PlistImageFile Name="anim27.png" Key="anim27.png" />
+              <PlistImageFile Name="anim28.png" Key="anim28.png" />
+              <PlistImageFile Name="anim29.png" Key="anim29.png" />
+              <PlistImageFile Name="anim3.png" Key="anim3.png" />
+              <PlistImageFile Name="anim30.png" Key="anim30.png" />
+              <PlistImageFile Name="anim31.png" Key="anim31.png" />
+              <PlistImageFile Name="anim32.png" Key="anim32.png" />
+              <PlistImageFile Name="anim33.png" Key="anim33.png" />
+              <PlistImageFile Name="anim34.png" Key="anim34.png" />
+              <PlistImageFile Name="anim35.png" Key="anim35.png" />
+              <PlistImageFile Name="anim36.png" Key="anim36.png" />
+              <PlistImageFile Name="anim37.png" Key="anim37.png" />
+              <PlistImageFile Name="anim38.png" Key="anim38.png" />
+              <PlistImageFile Name="anim39.png" Key="anim39.png" />
+              <PlistImageFile Name="anim4.png" Key="anim4.png" />
+              <PlistImageFile Name="anim40.png" Key="anim40.png" />
+              <PlistImageFile Name="anim41.png" Key="anim41.png" />
+              <PlistImageFile Name="anim42.png" Key="anim42.png" />
+              <PlistImageFile Name="anim43.png" Key="anim43.png" />
+              <PlistImageFile Name="anim44.png" Key="anim44.png" />
+              <PlistImageFile Name="anim45.png" Key="anim45.png" />
+              <PlistImageFile Name="anim46.png" Key="anim46.png" />
+              <PlistImageFile Name="anim47.png" Key="anim47.png" />
+              <PlistImageFile Name="anim48.png" Key="anim48.png" />
+              <PlistImageFile Name="anim5.png" Key="anim5.png" />
+              <PlistImageFile Name="anim6.png" Key="anim6.png" />
+              <PlistImageFile Name="anim7.png" Key="anim7.png" />
+              <PlistImageFile Name="anim8.png" Key="anim8.png" />
+              <PlistImageFile Name="anim9.png" Key="anim9.png" />
+            </PlistImageFolder>
+          </Folder>
+        </Folder>
+        <Folder Name="button">
+          <Image Name="btn_next.png" />
+        </Folder>
+        <Folder Name="cards">
+          <Image Name="at_0.png" />
+          <Image Name="at_1.png" />
+          <Image Name="at_2.png" />
+          <Image Name="at_3.png" />
+          <Image Name="card_black.png" />
+        </Folder>
+        <Folder Name="common">
+          <Image Name="bg_test.png" />
+          <Image Name="btn_slider.png" />
+          <Image Name="img_progress.png" />
+          <Image Name="popup_mini.png" />
+          <Image Name="slider_bg.png" />
+          <Image Name="slider_main.png" />
+        </Folder>
+        <Folder Name="Default">
+          <Image Name="Sprite.png" />
+        </Folder>
+        <Folder Name="gamehungbia">
+          <Image Name="bomb.png" />
+          <Image Name="cart.png" />
+          <Image Name="leftbutton.png" />
+          <Image Name="rightbutton.png" />
+          <Image Name="strawberry.png" />
+          <Image Name="touchend.png" />
+          <Image Name="touchorigin.png" />
+        </Folder>
+        <Folder Name="gamelatbai">
+          <Image Name="cover.png" />
+          <Image Name="tile_0.png" />
+          <Image Name="tile_1.png" />
+          <Image Name="tile_2.png" />
+          <Image Name="tile_3.png" />
+          <Image Name="tile_4.png" />
+          <Image Name="tile_5.png" />
+          <Image Name="tile_6.png" />
+          <Image Name="tile_7.png" />
+        </Folder>
+        <Folder Name="gamemaybay">
+          <Image Name="asteroid.png" />
+          <Image Name="background.png" />
+          <Image Name="particle.png" />
+          <Image Name="ship.png" />
+        </Folder>
+        <Folder Name="gametotem">
+          <Image Name="brick1x1.png" />
+          <Image Name="brick2x1.png" />
+          <Image Name="brick3x1.png" />
+          <Image Name="brick4x1.png" />
+          <Image Name="brick4x2.png" />
+          <Image Name="ground.png" />
+          <Image Name="totem.png" />
+        </Folder>
+        <Folder Name="sound">
+          <Audio Name="bang.mp3" />
+          <Audio Name="loop.mp3" />
+        </Folder>
+        <Folder Name="spine">
+          <Folder Name="demgio">
+            <File Name="skeleton.atlas" />
+            <File Name="skeleton.json" />
+            <Image Name="skeleton.png" />
+          </Folder>
+        </Folder>
+        <Folder Name="texture">
+          <Folder Name="bacay">
+            <Image Name="avatar_player.png" />
+            <Image Name="bg_bacay.png" />
+            <Image Name="btn_back.png" />
+            <Image Name="btn_back_press.png" />
+            <Image Name="btn_chatbox.png" />
+            <Image Name="btn_chicken.png" />
+            <Image Name="btn_cuoc.png.png" />
+            <Image Name="btn_cuoc_press.png" />
+            <Image Name="btn_invite.png" />
+            <Image Name="btn_ke_cua.png" />
+            <Image Name="btn_progessbar1.png" />
+            <Image Name="btn_progessbar2.png" />
+            <Image Name="btn_progessbar3.png" />
+            <Image Name="btn_setting.png" />
+            <Image Name="btn_setting_press.png" />
+            <Image Name="btn_store.png" />
+            <Image Name="icon_chicken.png" />
+            <Image Name="icon_vip.png" />
+            <Image Name="o_clock1.png" />
+            <Image Name="o_clock2.png" />
+          </Folder>
+          <Folder Name="button">
+            <Image Name="btn_back.png" />
+            <Image Name="btn_close.png" />
+          </Folder>
+          <Folder Name="font">
+            <TTF Name="Roboto-Bold.ttf" />
+            <TTF Name="Roboto-Italic.ttf" />
+            <TTF Name="SFUAngieBold.TTF" />
+          </Folder>
+          <Folder Name="login">
+            <Image Name="bg_login.png" />
+          </Folder>
+          <Folder Name="minigames">
+            <Folder Name="taixiu">
+              <Image Name="bg_popup.png" />
+              <Image Name="box_1.png" />
+              <Image Name="box_2.png" />
+              <Image Name="box_total_money.png" />
+              <Image Name="btn_addgold.png" />
+              <Image Name="btn_clear.png" />
+              <Image Name="btn_datcuoc_tai.png" />
+              <Image Name="img_bar_history.png" />
+              <Image Name="img_dia_close_2.png" />
+              <Image Name="img_dia_open.png" />
+              <Image Name="img_tai.png" />
+              <Image Name="img_xiu.png" />
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="ui">
+          <Project Name="node_betting_bacay.csd" Type="Node" />
+          <Project Name="node_slot_table.csd" Type="Node" />
+          <Project Name="scene_bacay.csd" Type="Scene" />
+        </Folder>
+        <Image Name="checkbox_bg.png" />
+        <Image Name="checkbox_tick.png" />
+        <File Name="favicon.ico" />
+        <Image Name="HelloWorld.png" />
+        <Image Name="img_jackpot.png" />
+        <Image Name="tai1.png" />
+        <Image Name="txtTai.png" />
+        <Image Name="txtXiu.png" />
+        <Image Name="xiu1.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
