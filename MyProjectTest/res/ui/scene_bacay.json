@@ -1,6 +1,6 @@
 {
   "ID": "7b746c36-2fd3-4cc0-b9fb-1c4c5e422645",
-  "Version": "2.3.2.3",
+  "Version": "2.3.4",
   "Name": "scene_bacay",
   "Content": {
     "Content": {
@@ -280,6 +280,11 @@
               {
                 "FontSize": 30,
                 "LabelText": "03",
+                "FontResource": {
+                  "Type": "Normal",
+                  "Path": "texture/font/Roboto-Bold.ttf",
+                  "Plist": ""
+                },
                 "HorizontalAlignmentType": "HT_Center",
                 "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
@@ -316,18 +321,18 @@
                   "Y": 0.4996
                 },
                 "PreSize": {
-                  "X": 0.4096,
-                  "Y": 0.3542
+                  "X": 0.4337,
+                  "Y": 0.4167
                 },
-                "LeftMargin": 25.0401,
-                "RightMargin": 23.9599,
-                "TopMargin": 31.0398,
-                "BottomMargin": 30.9602,
+                "LeftMargin": 24.0401,
+                "RightMargin": 22.9599,
+                "TopMargin": 28.0398,
+                "BottomMargin": 27.9602,
                 "Tag": 185,
                 "ActionTag": 707523841,
                 "Size": {
-                  "X": 34.0,
-                  "Y": 34.0
+                  "X": 36.0,
+                  "Y": 40.0
                 },
                 "Name": "lbTimer",
                 "ctype": "TextObjectData"
@@ -386,7 +391,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 1100.0,
+              "X": 1095.0002,
               "Y": 250.0
             },
             "Scale": {
@@ -396,15 +401,15 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.9683,
+              "X": 0.9639,
               "Y": 0.3906
             },
             "PreSize": {
               "X": 0.0731,
               "Y": 0.1969
             },
-            "LeftMargin": 1058.5,
-            "RightMargin": -5.5,
+            "LeftMargin": 1053.5002,
+            "RightMargin": -0.5002,
             "TopMargin": 327.0,
             "BottomMargin": 187.0,
             "Tag": 183,
@@ -417,8 +422,13 @@
             "ctype": "ButtonObjectData"
           },
           {
-            "FontSize": 10,
+            "FontSize": 14,
             "ButtonText": "BET",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "texture/font/Roboto-Bold.ttf",
+              "Plist": ""
+            },
             "TextColor": {},
             "DisabledFileData": {
               "Type": "Normal",
@@ -488,8 +498,13 @@
             "ctype": "ButtonObjectData"
           },
           {
-            "FontSize": 10,
+            "FontSize": 14,
             "ButtonText": "CANCLE",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "texture/font/Roboto-Bold.ttf",
+              "Plist": ""
+            },
             "TextColor": {},
             "DisabledFileData": {
               "Type": "Normal",
@@ -651,8 +666,14 @@
                 "Tag": 520,
                 "Children": [
                   {
+                    "IsCustomSize": true,
                     "FontSize": 20,
                     "LabelText": "VAO GA",
+                    "FontResource": {
+                      "Type": "Normal",
+                      "Path": "texture/font/SFUAngieBold.TTF",
+                      "Plist": ""
+                    },
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -685,18 +706,18 @@
                       "Y": 0.6874
                     },
                     "PreSize": {
-                      "X": 0.4524,
-                      "Y": 0.4107
+                      "X": 0.7143,
+                      "Y": 0.5
                     },
-                    "LeftMargin": 63.566,
-                    "RightMargin": 28.434,
-                    "TopMargin": 6.0068,
-                    "BottomMargin": 26.9932,
+                    "LeftMargin": 41.566,
+                    "RightMargin": 6.434,
+                    "TopMargin": 3.5068,
+                    "BottomMargin": 24.4932,
                     "Tag": 521,
                     "ActionTag": 962648332,
                     "Size": {
-                      "X": 76.0,
-                      "Y": 23.0
+                      "X": 120.0,
+                      "Y": 28.0
                     },
                     "Name": "lbVaoGa",
                     "ctype": "TextObjectData"
@@ -804,6 +825,11 @@
                     "IsCustomSize": true,
                     "FontSize": 20,
                     "LabelText": "0",
+                    "FontResource": {
+                      "Type": "Normal",
+                      "Path": "texture/font/Roboto-Bold.ttf",
+                      "Plist": ""
+                    },
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -829,7 +855,11 @@
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "CColor": {},
+                    "CColor": {
+                      "R": 139,
+                      "G": 105,
+                      "B": 20
+                    },
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.5013,
@@ -889,7 +919,9 @@
         "../texture/bacay/btn_setting_press.png",
         "../texture/bacay/btn_store.png",
         "../texture/bacay/o_clock1.png",
-        "../texture/bacay/o_clock2.png"
+        "../texture/bacay/o_clock2.png",
+        "../texture/font/Roboto-Bold.ttf",
+        "../texture/font/SFUAngieBold.TTF"
       ],
       "ctype": "GameFileData"
     }

@@ -62,6 +62,7 @@ var res = {
     node_slot_table : "res/ui/node_slot_table.json",
     scene_bacay : "res/ui/scene_bacay.json",
     node_betting_bacay : "res/ui/node_betting_bacay.json",
+    node_nan_bai_bacay : "res/ui/node_nan_bai_bacay.json",
         //--------File PNG---------------
 
         //--------Font Name--------------

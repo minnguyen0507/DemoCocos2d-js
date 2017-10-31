@@ -28,25 +28,27 @@
             <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lbName" ActionTag="158550890" Tag="189" IconVisible="False" LeftMargin="-31.7042" RightMargin="-32.2958" TopMargin="-61.5759" BottomMargin="41.5759" FontSize="14" LabelText="Text Label" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="64.0000" Y="20.0000" />
+          <AbstractNodeData Name="lbName" ActionTag="158550890" Tag="189" IconVisible="False" LeftMargin="-33.2042" RightMargin="-33.7958" TopMargin="-60.5759" BottomMargin="42.5759" FontSize="14" LabelText="Text Label" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="67.0000" Y="18.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="0.2958" Y="51.5759" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lbGold" ActionTag="397925254" Tag="190" IconVisible="False" LeftMargin="-32.0226" RightMargin="-31.9774" TopMargin="36.8672" BottomMargin="-56.8672" FontSize="14" LabelText="Text Label" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="64.0000" Y="20.0000" />
+          <AbstractNodeData Name="lbGold" ActionTag="397925254" Tag="190" IconVisible="False" LeftMargin="-33.5226" RightMargin="-33.4774" TopMargin="37.8672" BottomMargin="-55.8672" FontSize="14" LabelText="Text Label" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="67.0000" Y="18.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-0.0226" Y="-46.8672" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="0" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

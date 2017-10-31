@@ -1,6 +1,6 @@
 {
   "ID": "ac96b3fc-b040-4515-8d4b-d96bb315ac3e",
-  "Version": "2.3.2.3",
+  "Version": "2.3.4",
   "Name": "node_slot_table",
   "Content": {
     "Content": {
@@ -108,6 +108,11 @@
           {
             "FontSize": 14,
             "LabelText": "Text Label",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "texture/font/Roboto-Bold.ttf",
+              "Plist": ""
+            },
             "HorizontalAlignmentType": "HT_Center",
             "VerticalAlignmentType": "VT_Center",
             "OutlineColor": {
@@ -143,15 +148,15 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -31.7042,
-            "RightMargin": -32.2958,
-            "TopMargin": -61.5759,
-            "BottomMargin": 41.5759,
+            "LeftMargin": -33.2042,
+            "RightMargin": -33.7958,
+            "TopMargin": -60.5759,
+            "BottomMargin": 42.5759,
             "Tag": 189,
             "ActionTag": 158550890,
             "Size": {
-              "X": 64.0,
-              "Y": 20.0
+              "X": 67.0,
+              "Y": 18.0
             },
             "Name": "lbName",
             "ctype": "TextObjectData"
@@ -159,6 +164,11 @@
           {
             "FontSize": 14,
             "LabelText": "Text Label",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "texture/font/Roboto-Bold.ttf",
+              "Plist": ""
+            },
             "HorizontalAlignmentType": "HT_Center",
             "VerticalAlignmentType": "VT_Center",
             "OutlineColor": {
@@ -196,15 +206,15 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -32.0226,
-            "RightMargin": -31.9774,
-            "TopMargin": 36.8672,
-            "BottomMargin": -56.8672,
+            "LeftMargin": -33.5226,
+            "RightMargin": -33.4774,
+            "TopMargin": 37.8672,
+            "BottomMargin": -55.8672,
             "Tag": 190,
             "ActionTag": 397925254,
             "Size": {
-              "X": 64.0,
-              "Y": 20.0
+              "X": 67.0,
+              "Y": 18.0
             },
             "Name": "lbGold",
             "ctype": "TextObjectData"
@@ -387,7 +397,8 @@
         "../texture/bacay/avatar_player.png",
         "../texture/bacay/btn_invite.png",
         "../texture/bacay/icon_chicken.png",
-        "../texture/bacay/icon_vip.png"
+        "../texture/bacay/icon_vip.png",
+        "../texture/font/Roboto-Bold.ttf"
       ],
       "ctype": "GameFileData"
     }

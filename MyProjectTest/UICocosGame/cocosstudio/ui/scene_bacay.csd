@@ -54,14 +54,15 @@
           <AbstractNodeData Name="imgClockStart" ActionTag="887157858" Tag="182" IconVisible="False" LeftMargin="526.5000" RightMargin="526.5000" TopMargin="272.0000" BottomMargin="272.0000" ctype="SpriteObjectData">
             <Size X="83.0000" Y="96.0000" />
             <Children>
-              <AbstractNodeData Name="lbTimer" ActionTag="707523841" Tag="185" IconVisible="False" LeftMargin="25.0401" RightMargin="23.9599" TopMargin="31.0398" BottomMargin="30.9602" FontSize="30" LabelText="03" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="34.0000" Y="34.0000" />
+              <AbstractNodeData Name="lbTimer" ActionTag="707523841" Tag="185" IconVisible="False" LeftMargin="24.0401" RightMargin="22.9599" TopMargin="28.0398" BottomMargin="27.9602" FontSize="30" LabelText="03" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="36.0000" Y="40.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="42.0401" Y="47.9602" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="139" G="105" B="20" />
                 <PrePosition X="0.5065" Y="0.4996" />
-                <PreSize X="0.4096" Y="0.3542" />
+                <PreSize X="0.4337" Y="0.4167" />
+                <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -75,13 +76,13 @@
             <FileData Type="Normal" Path="texture/bacay/o_clock2.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnChatBox" ActionTag="862921871" Tag="183" IconVisible="False" LeftMargin="1058.5000" RightMargin="-5.5000" TopMargin="327.0000" BottomMargin="187.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="53" Scale9Height="104" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnChatBox" ActionTag="862921871" Tag="183" IconVisible="False" LeftMargin="1053.5002" RightMargin="-0.5002" TopMargin="327.0000" BottomMargin="187.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="53" Scale9Height="104" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="83.0000" Y="126.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1100.0000" Y="250.0000" />
+            <Position X="1095.0002" Y="250.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9683" Y="0.3906" />
+            <PrePosition X="0.9639" Y="0.3906" />
             <PreSize X="0.0731" Y="0.1969" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Normal" Path="texture/bacay/btn_chatbox.png" Plist="" />
@@ -90,7 +91,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnDatCuoc" ActionTag="214809119" Tag="184" IconVisible="False" LeftMargin="14.0000" RightMargin="1050.0000" TopMargin="524.0000" BottomMargin="44.0000" TouchEnable="True" FontSize="10" ButtonText="BET" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnDatCuoc" ActionTag="214809119" Tag="184" IconVisible="False" LeftMargin="14.0000" RightMargin="1050.0000" TopMargin="524.0000" BottomMargin="44.0000" TouchEnable="True" FontSize="14" ButtonText="BET" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="72.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="50.0000" Y="80.0000" />
@@ -98,6 +99,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0440" Y="0.1250" />
             <PreSize X="0.0634" Y="0.1125" />
+            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="Normal" Path="texture/bacay/btn_cuoc.png.png" Plist="" />
             <PressedFileData Type="Normal" Path="texture/bacay/btn_cuoc.png.png" Plist="" />
@@ -105,7 +107,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnHuyBo" ActionTag="666428053" Tag="338" IconVisible="False" LeftMargin="94.0000" RightMargin="970.0000" TopMargin="524.0000" BottomMargin="44.0000" TouchEnable="True" FontSize="10" ButtonText="CANCLE" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnHuyBo" ActionTag="666428053" Tag="338" IconVisible="False" LeftMargin="94.0000" RightMargin="970.0000" TopMargin="524.0000" BottomMargin="44.0000" TouchEnable="True" FontSize="14" ButtonText="CANCLE" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="72.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="130.0000" Y="80.0000" />
@@ -113,6 +115,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1144" Y="0.1250" />
             <PreSize X="0.0634" Y="0.1125" />
+            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="Normal" Path="texture/bacay/btn_cuoc_press.png" Plist="" />
             <PressedFileData Type="Normal" Path="texture/bacay/btn_cuoc_press.png" Plist="" />
@@ -126,14 +129,15 @@
               <AbstractNodeData Name="btnVaoGa" ActionTag="244677334" Tag="520" IconVisible="False" LeftMargin="484.0001" RightMargin="-652.0001" TopMargin="-448.0000" BottomMargin="392.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="138" Scale9Height="34" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="168.0000" Y="56.0000" />
                 <Children>
-                  <AbstractNodeData Name="lbVaoGa" ActionTag="962648332" Tag="521" IconVisible="False" LeftMargin="63.5660" RightMargin="28.4340" TopMargin="6.0068" BottomMargin="26.9932" FontSize="20" LabelText="VAO GA" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="76.0000" Y="23.0000" />
+                  <AbstractNodeData Name="lbVaoGa" ActionTag="962648332" Tag="521" IconVisible="False" LeftMargin="41.5660" RightMargin="6.4340" TopMargin="3.5068" BottomMargin="24.4932" IsCustomSize="True" FontSize="20" LabelText="VAO GA" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="120.0000" Y="28.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="101.5660" Y="38.4932" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6046" Y="0.6874" />
-                    <PreSize X="0.4524" Y="0.4107" />
+                    <PreSize X="0.7143" Y="0.5000" />
+                    <FontResource Type="Normal" Path="texture/font/SFUAngieBold.TTF" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -170,9 +174,10 @@
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="25.5648" Y="31.4100" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
+                    <CColor A="255" R="139" G="105" B="20" />
                     <PrePosition X="0.5013" Y="0.5416" />
                     <PreSize X="0.9804" Y="0.5172" />
+                    <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

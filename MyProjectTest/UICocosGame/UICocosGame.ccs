@@ -110,6 +110,7 @@
           <Image Name="at_2.png" />
           <Image Name="at_3.png" />
           <Image Name="card_black.png" />
+          <Image Name="card_highlight.png" />
         </Folder>
         <Folder Name="common">
           <Image Name="bg_test.png" />
@@ -193,6 +194,9 @@
           </Folder>
           <Folder Name="button">
             <Image Name="btn_back.png" />
+            <Image Name="btn_bg_164x59.png" />
+            <Image Name="btn_bg_orange_2.png" />
+            <Image Name="btn_bg_violet.png" />
             <Image Name="btn_close.png" />
           </Folder>
           <Folder Name="font">
@@ -224,6 +228,7 @@
           <Project Name="node_betting_bacay.csd" Type="Node" />
           <Project Name="node_slot_table.csd" Type="Node" />
           <Project Name="scene_bacay.csd" Type="Scene" />
+          <Project Name="node_nan_bai_bacay.csd" Type="Node" />
         </Folder>
         <Image Name="checkbox_bg.png" />
         <Image Name="checkbox_tick.png" />

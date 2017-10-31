@@ -97,7 +97,9 @@ var BaCayLayer = AdminBaseGUI.extend({
             ZLog.error("CountDown", counter);
             if (counter === 0) {
                 clearInterval(self._timerVaoGa);
+                self.nodeChicken.setVisible(false);
                 ZLog.error("Show Bai - Tinh Diem");
+                self._showNanBai();
                 //moduleMgr.getBaCayModule().showGUIBaCay();
             }
         }, 1000);
@@ -137,6 +139,8 @@ var BaCayLayer = AdminBaseGUI.extend({
                 addCards.setScale(0.3);
                 switch (i){
                     case POS.ISME:
+                        newSlot.lbGold.setString("1$");
+                        newSlot.lbName.setString("Min");
                         this.listCardsPlayer.push(addCards);
                         addCards.setScale(1);
                         addCards.setPosition(newSlot.getPosition().x + j* 30 + 150,newSlot.getPosition().y);
@@ -190,6 +194,15 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     },
 
+    _showNanBai: function () {
+        if(this._guiNanBai == null){
+            this._guiNanBai  = new GUINanBai();
+            this.addChild(this._guiNanBai,11);
+            this.retain();
+        }
+        this._guiNanBai.showGui();
+    },
+
     showBai: function () {
 
     },
@@ -202,12 +215,17 @@ var BaCayLayer = AdminBaseGUI.extend({
     onTouchUIEndEvent: function(sender){
         switch (sender) {
             case this.btnDatCuoc:
+
                var tagDatCuoc = 1;
                this._showDatCuoc(tagDatCuoc);
+               // this.setOpacity(100);
+               //  this.setCascadeOpacityEnabled(true);
                break;
             case this.btnHuyBo:
                 var tagHuyBo = 2;
                 this._showDatCuoc(tagHuyBo);
+                // this.setOpacity(100);
+                // this.setCascadeOpacityEnabled(true);
 
                 break;
 
