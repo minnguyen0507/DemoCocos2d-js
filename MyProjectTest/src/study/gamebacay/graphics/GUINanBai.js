@@ -152,7 +152,7 @@ var GUINanBai = AdminBaseGUI.extend({
         ZLog.error("Serverrrrr", listCardsSever);
         for (var i = 0; i < listCardsSever.length; ++i) {
             ZLog.error("Serverrrrr", listCardsSever[i]);
-            var pCard = new cc.Sprite("#card_" + listCardsSever[i] + ".png");
+            var pCard = new cc.Sprite("#newcardschips/card_" + listCardsSever[i] + ".png");
             pCard.setPosition(this.leftCard, this.bottomCard);
             pCard.setLocalZOrder(i + 1);
 

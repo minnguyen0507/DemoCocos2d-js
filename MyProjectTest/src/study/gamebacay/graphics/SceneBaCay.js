@@ -40,6 +40,19 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.setDeepSyncChildren();
         this.syncAllChildren(res.scene_bacay, this);
 
+        cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
+
+        // var test  = new BaseCards();
+        // this.addChild(test);
+        // test.setPosition(size.width/2, size.height/2);
+        // test.setIdx(52);
+        // test.setTypeCard(TYPE_CARD.CARD_NORMAL);
+        // test.flipCards();
+        // ZLog.error("cay bai", test.getNumOfCard());
+        // ZLog.error("chat bai ", test.getSuitOfCard());
+        //
+        // return true;
+
         var bgBaCay = new cc.Sprite(res.bg_bacay);
         this.addChild(bgBaCay, -1);
         bgBaCay.setPosition(size.width/2, size.height/2);
@@ -52,7 +65,7 @@ var BaCayLayer = AdminBaseGUI.extend({
         buttonTest.setPressedActionEnabled(true);
         this.addChild( buttonTest, 3);
 
-        cc.spriteFrameCache.addSpriteFrames(res.cards_chips_plist);
+        cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
 
         var arrayTest = [11,12,13,14,15,16,17,18,19,10];
 
@@ -66,8 +79,6 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.lbTimer.setString("10");
         this.nodeChicken.setVisible(false);
 		this._testGameUI();
-		//this._testEndGame();
-        //this._showKeCuaDatBien();
         this.showStartGame();
         ZLog.error("Finish SceneBaCay");
 
@@ -125,12 +136,12 @@ var BaCayLayer = AdminBaseGUI.extend({
             newSlot.testKeCuaDanhBien(i);
 
             for (var j = 0; j < 3; ++j) {
-                var addCards = new cc.Sprite("#card_" + AdminRandom.randomBetweenNumber(1,35) + ".png");
+                var addCards = new cc.Sprite("#newcardschips/card_" + AdminRandom.randomBetweenNumber(1,36) + ".png");
                 this.addChild(addCards, 2);
                 addCards.setScale(0.3);
                 switch (i){
                     case POS.ISME:
-                        addCards.setTexture(res.card_black);
+                        addCards.setSpriteFrame("newcardschips/card_black.png");
                         newSlot.lbGold.setString("1$");
                         newSlot.lbName.setString("Min");
                         newSlot.nodeKeCuaDanhBien.setVisible(false);
@@ -259,9 +270,10 @@ var BaCayLayer = AdminBaseGUI.extend({
             this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender,data) {
                 ZLog.error("Call back lat bai", data);
                 //sender.setTexture(res.card_0);
-                sender.setSpriteFrame("card_" + data + ".png");
+                sender.setSpriteFrame("newcardschips/card_" + data + ".png");
                 sum += data;
-                ZLog.error("diem bo bai", sum % 10 );
+
+                ZLog.error("Tinh diem", sum % 10 );
             },this.listCardsPlayer[i],this.serverCardTest[i]),comeBack)));
         }
     },

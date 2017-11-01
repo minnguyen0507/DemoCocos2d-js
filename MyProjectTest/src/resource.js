@@ -1,3 +1,5 @@
+
+var new_card_dir = "newcardschips/";
 var res = {
 	//----game lat bai----
 	cover : "res/gamelatbai/cover.png",
@@ -57,6 +59,8 @@ var res = {
     card_black : "res/cards/card_black.png",
     cards_chips_plist : "res/cards/cards_chips.plist",
     cards_chips_png : "res/cards/cards_chips.png",
+    new_cards_chips_plist : "res/" + new_card_dir + "new_cards_chips.plist",
+    new_cards_chips_png : "res/" + new_card_dir + "new_cards_chips.png",
 
     //---------Cocostudio ----------------
         //-------- File JSOn-------------

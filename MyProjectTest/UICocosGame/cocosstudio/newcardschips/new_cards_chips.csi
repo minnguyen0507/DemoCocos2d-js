@@ -1,0 +1,61 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="new_cards_chips" Type="Plist" ID="3f44f99e-6503-44a0-9b26-f318fb353eb4" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="True" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="newcardschips/card_1.png" />
+      <FilePathData Path="newcardschips/card_10.png" />
+      <FilePathData Path="newcardschips/card_11.png" />
+      <FilePathData Path="newcardschips/card_12.png" />
+      <FilePathData Path="newcardschips/card_13.png" />
+      <FilePathData Path="newcardschips/card_14.png" />
+      <FilePathData Path="newcardschips/card_15.png" />
+      <FilePathData Path="newcardschips/card_16.png" />
+      <FilePathData Path="newcardschips/card_17.png" />
+      <FilePathData Path="newcardschips/card_18.png" />
+      <FilePathData Path="newcardschips/card_19.png" />
+      <FilePathData Path="newcardschips/card_2.png" />
+      <FilePathData Path="newcardschips/card_20.png" />
+      <FilePathData Path="newcardschips/card_21.png" />
+      <FilePathData Path="newcardschips/card_22.png" />
+      <FilePathData Path="newcardschips/card_23.png" />
+      <FilePathData Path="newcardschips/card_24.png" />
+      <FilePathData Path="newcardschips/card_25.png" />
+      <FilePathData Path="newcardschips/card_26.png" />
+      <FilePathData Path="newcardschips/card_27.png" />
+      <FilePathData Path="newcardschips/card_28.png" />
+      <FilePathData Path="newcardschips/card_29.png" />
+      <FilePathData Path="newcardschips/card_3.png" />
+      <FilePathData Path="newcardschips/card_30.png" />
+      <FilePathData Path="newcardschips/card_31.png" />
+      <FilePathData Path="newcardschips/card_32.png" />
+      <FilePathData Path="newcardschips/card_33.png" />
+      <FilePathData Path="newcardschips/card_34.png" />
+      <FilePathData Path="newcardschips/card_35.png" />
+      <FilePathData Path="newcardschips/card_36.png" />
+      <FilePathData Path="newcardschips/card_37.png" />
+      <FilePathData Path="newcardschips/card_38.png" />
+      <FilePathData Path="newcardschips/card_39.png" />
+      <FilePathData Path="newcardschips/card_4.png" />
+      <FilePathData Path="newcardschips/card_40.png" />
+      <FilePathData Path="newcardschips/card_41.png" />
+      <FilePathData Path="newcardschips/card_42.png" />
+      <FilePathData Path="newcardschips/card_43.png" />
+      <FilePathData Path="newcardschips/card_44.png" />
+      <FilePathData Path="newcardschips/card_45.png" />
+      <FilePathData Path="newcardschips/card_46.png" />
+      <FilePathData Path="newcardschips/card_47.png" />
+      <FilePathData Path="newcardschips/card_48.png" />
+      <FilePathData Path="newcardschips/card_49.png" />
+      <FilePathData Path="newcardschips/card_5.png" />
+      <FilePathData Path="newcardschips/card_50.png" />
+      <FilePathData Path="newcardschips/card_51.png" />
+      <FilePathData Path="newcardschips/card_52.png" />
+      <FilePathData Path="newcardschips/card_6.png" />
+      <FilePathData Path="newcardschips/card_7.png" />
+      <FilePathData Path="newcardschips/card_8.png" />
+      <FilePathData Path="newcardschips/card_9.png" />
+      <FilePathData Path="newcardschips/card_black.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>
