@@ -227,7 +227,6 @@
         </Folder>
         <Folder Name="ui">
           <Project Name="node_betting_bacay.csd" Type="Node" />
-          <Project Name="node_nan_bai_bacay.csd" Type="Node" />
           <Project Name="node_slot_table.csd" Type="Node" />
           <Project Name="scene_bacay.csd" Type="Scene" />
         </Folder>

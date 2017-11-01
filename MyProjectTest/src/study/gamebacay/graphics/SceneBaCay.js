@@ -1,6 +1,6 @@
 playerList =[3,2,4];
 TIMERSTART = 2;
-TIMERCHICKEN = 10;
+TIMERCHICKEN = 2;
 CHECKBETGOLD = 1;
 var BaCayLayer = AdminBaseGUI.extend({
 	ctor:function () {
@@ -106,15 +106,6 @@ var BaCayLayer = AdminBaseGUI.extend({
         }, 1000);
     },
 
-    _showKeCuaDatBien: function(){
-        var _tableMaxPlayer = 9;
-
-        for (var i = 0; i < _tableMaxPlayer; ++i) {
-            var KeCuaDatBien = new GUIDanhNgoai();
-            KeCuaDatBien.setPosition(this.slotPos[i]);
-            this.addChild(KeCuaDatBien, 3);
-        }
-    },
 
 
 	_testGameUI : function(){
@@ -131,7 +122,7 @@ var BaCayLayer = AdminBaseGUI.extend({
             newSlot.testKeCuaDanhBien(i);
 
             for (var j = 0; j < 3; ++j) {
-                var addCards = new cc.Sprite(res.card_black);
+                var addCards = new cc.Sprite("#card_" + AdminRandom.randomBetweenNumber(1,35) + ".png");
                 this.addChild(addCards, 2);
                 addCards.setScale(0.3);
                 switch (i){
@@ -194,11 +185,15 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     _showNanBai: function () {
         if(this._guiNanBai == null){
-            this._guiNanBai  = new GUINanBai();
+            this._guiNanBai  = new NanBaiLayer();
             this.addChild(this._guiNanBai,11);
             this.retain();
         }
-        this._guiNanBai.showGui();
+
+        this._guiNanBai.InitListCardHand();
+        // test.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        this._guiNanBai.SetCallbackFunc(this.callBackNanBai,this);
+
     },
 
     showBai: function () {
@@ -244,18 +239,19 @@ var BaCayLayer = AdminBaseGUI.extend({
             );
         }
     },
-    actionLatBai: function () {
-        ZLog.error("vao day ko?");
-        for (var i = 0 ; i < this.listCardsPlayer.length; i++){
-           var self = this;
-           var scaleTo = cc.scaleTo(0.4, 0.1, 1);
-           var comeBack = cc.scaleTo(0.4, 1, 1);
-           var delay = cc.delayTime(0.05);
 
-           this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
-               //sender.setTexture(res.card_0);
-               sender.setSpriteFrame("card_" + i + ".png");
-           },this.listCardsPlayer[i]),comeBack)));
+    callBackNanBai: function(sender){
+        ZLog.error("Call back lat bai");
+        for (var i = 0 ; i < this.listCardsPlayer.length; i++){
+            var self = this;
+            var scaleTo = cc.scaleTo(0.4, 0.1, 1);
+            var comeBack = cc.scaleTo(0.4, 1, 1);
+            var delay = cc.delayTime(0.05);
+
+            this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
+                //sender.setTexture(res.card_0);
+                sender.setSpriteFrame("card_" + i + ".png");
+            },this.listCardsPlayer[i]),comeBack)));
         }
     },
 
@@ -282,9 +278,6 @@ var BaCayLayer = AdminBaseGUI.extend({
             // }.bind(this), 3000); // after 3 seconds
 
             
-
-            this.actionLatBai();
-
 
 			break;
 		}

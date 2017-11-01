@@ -46,7 +46,7 @@
         "src/study/gamebacay/graphics/SceneBaCay.js",
         "src/study/gamebacay/graphics/GUISlot.js",
         "src/study/gamebacay/graphics/GUIDatCuoc.js",
-        "src/study/gamebacay/graphics/GUINanBai.js",
+        "src/study/gamebacay/graphics/NanBaiLayer.js",
         "src/study/gamebacay/effect/BaCayEffectLayer.js",
         "src/study/gametotem/GameToTem.js",
         "src/study/gametaixiu/GameTaiXiu.js",
