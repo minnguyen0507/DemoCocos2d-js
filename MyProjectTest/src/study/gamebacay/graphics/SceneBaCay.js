@@ -50,8 +50,22 @@ var BaCayLayer = AdminBaseGUI.extend({
         // test.flipCards();
         // ZLog.error("cay bai", test.getNumOfCard());
         // ZLog.error("chat bai ", test.getSuitOfCard());
+var listCards =[];
+        for (var i = 0; i < 3 ; i++) {
+        var card = new BaseCards();
+        card.setIdx(AdminRandom.randomBetweenNumber(1,35));
+        card.flipCards();
+        listCards.push(card);
+        this.addChild(card);
+        card.setPosition(cc.winSize.width/2 + i *30, cc.winSize.height/2);
+        }
+
+        var test = new BaCayBo(listCards);
+        test.getDiem();
+
+        ZLog.error("Finish SceneBaCay",test.getDiem());
         //
-        // return true;
+        return true;
 
         var bgBaCay = new cc.Sprite(res.bg_bacay);
         this.addChild(bgBaCay, -1);
@@ -80,7 +94,11 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.nodeChicken.setVisible(false);
 		this._testGameUI();
         this.showStartGame();
-        ZLog.error("Finish SceneBaCay");
+
+        var testA = new BaCayBo();
+
+
+        ZLog.error("Finish SceneBaCay", testA.getDiem(this.serverCardTest));
 
         return true;
 

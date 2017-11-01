@@ -8,7 +8,7 @@ BaCayBo = cc.Class.extend({
         var sum = 0;
         var i = 0;
         for(i =0; i < this.cards.length; i++){
-            sum += this.cards[i].diem;
+            sum += this.cards[i].getNumOfCard();
         }
         sum = sum %10;
         if(sum == 0)
@@ -18,16 +18,16 @@ BaCayBo = cc.Class.extend({
 
     isSap: function(){
         var count = 0;
-        var so = this.cards[0].so;
+        var so = this.cards[0].getNumOfCard;
         for(var i = 1; i < this.cards.length; i++){
-            if(so == this.cards[i].so)
+            if(so == this.cards[i].getNumOfCard())
                 count++;
         }
         return (count == 2);
     },
 
     getSo: function() {
-        return this.cards[0].diem;
+        return this.cards[0].getNumOfCard();
     },
 
     hasAtCu: function(){
