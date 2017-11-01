@@ -40,7 +40,7 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.setDeepSyncChildren();
         this.syncAllChildren(res.scene_bacay, this);
 
-        cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
+       // cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
 
         // var test  = new BaseCards();
         // this.addChild(test);
@@ -50,18 +50,19 @@ var BaCayLayer = AdminBaseGUI.extend({
         // test.flipCards();
         // ZLog.error("cay bai", test.getNumOfCard());
         // ZLog.error("chat bai ", test.getSuitOfCard());
-var listCards =[];
-        for (var i = 0; i < 3 ; i++) {
-        var card = new BaseCards();
-        card.setIdx(AdminRandom.randomBetweenNumber(1,35));
-        card.flipCards();
-        listCards.push(card);
-        this.addChild(card);
-        card.setPosition(cc.winSize.width/2 + i *30, cc.winSize.height/2);
-        }
 
-        var test = new BaCayBo(listCards);
-        test.getDiem();
+        // var listCards =[];
+        // for (var i = 0; i < 3 ; i++) {
+        // var card = new BaseCards();
+        // card.setIdx(AdminRandom.randomBetweenNumber(1,35));
+        // card.flipCards();
+        // listCards.push(card);
+        // this.addChild(card);
+        // card.setPosition(cc.winSize.width/2 + i *30, cc.winSize.height/2);
+        // }
+        //
+        // var test = new BaCayBo(listCards);
+        // test.getDiem();
 
         ZLog.error("Finish SceneBaCay",test.getDiem());
         //
@@ -95,10 +96,8 @@ var listCards =[];
 		this._testGameUI();
         this.showStartGame();
 
-        var testA = new BaCayBo();
 
-
-        ZLog.error("Finish SceneBaCay", testA.getDiem(this.serverCardTest));
+        ZLog.error("Finish SceneBaCay");
 
         return true;
 
@@ -149,9 +148,10 @@ var listCards =[];
             this.addChild(newSlot, 1);
             this.slots.push(newSlot);
 
-            newSlot.testLabelWinLose(i);
-            newSlot.testIconAndLabel(i);
-            newSlot.testKeCuaDanhBien(i);
+             newSlot.testLabelWinLose(i,1);
+            // newSlot.testIconAndLabel(i);
+             newSlot.testKeCuaDanhBien(i);
+            // newSlot.testLabelDiemAndGold(i);i
 
             for (var j = 0; j < 3; ++j) {
                 var addCards = new cc.Sprite("#newcardschips/card_" + AdminRandom.randomBetweenNumber(1,36) + ".png");
@@ -160,6 +160,7 @@ var listCards =[];
                 switch (i){
                     case POS.ISME:
                         addCards.setSpriteFrame("newcardschips/card_black.png");
+                        newSlot.imgAvatar.setTexture("res/box_myAvatar.png");
                         newSlot.lbGold.setString("1$");
                         newSlot.lbName.setString("Min");
                         newSlot.nodeKeCuaDanhBien.setVisible(false);

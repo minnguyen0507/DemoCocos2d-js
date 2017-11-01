@@ -40,7 +40,6 @@
         "src/study/gamehungbia/GameHungBia.js",
         "src/study/gamehungbia/ItemHungBia.js",
         "src/study/gamebacay/logic/BaCayBo.js",
-        "src/study/gamebacay/logic/CardGame.js",
         "src/study/gamebacay/logic/BaseCards.js",
         "src/study/gamebacay/graphics/SceneBaCay.js",
         "src/study/gamebacay/graphics/GUISlot.js",

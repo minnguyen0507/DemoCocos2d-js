@@ -9,9 +9,6 @@ var GUISlot = AdminBaseGUI.extend({
         this.btnKeCua = null;
         this.btnDanhBien = null;
         this.nodeKeCuaDanhBien = null;
-
-
-
         this.init();
 
     },
@@ -24,14 +21,54 @@ var GUISlot = AdminBaseGUI.extend({
         ZLog.error("Finish Slots");
     },
 
+    testLabelDiemAndGold : function (slotUIIdx) {
+        var layout = new ccui.Layout();
+        layout.setLayoutType(ccui.Layout.DIR_VERTICAL);
+        layout.setContentSize(80,60);
+        layout.setAnchorPoint(0.5,0.5);
+        this.addChild(layout, 1);
 
-    testLabelWinLose : function (slotUIIdx) {
-        var playerDiem = new cc.LabelTTF("WIN", "Arial", 30);
-        playerDiem.setPosition(0, -50);
-        playerDiem.setLocalZOrder(3);
-        this.addChild(playerDiem, 3);
+        switch(slotUIIdx) {
+            case POS.ISME:
+                layout.setPosition(0,110);
+                break;
+            case POS.PLAYER1:
+            case POS.PLAYER2:
+            case POS.PLAYER3:
+                layout.setPosition(-100,10);
+                break;
+            case POS.PLAYER4:
+            case POS.PLAYER5:
+                layout.setPosition(100,10);
+                break;
+            case POS.PLAYER6:
+            case POS.PLAYER7:
+            case POS.PLAYER8:
+                layout.setPosition(100,10);
+                break;
+        }
+        var labelDiem = new cc.LabelTTF("1 Diem", "Arial", 20);
+        labelDiem.setPosition(45,45);
+        layout.addChild(labelDiem,1);
 
-        ZLog.error("Finish Lose and Win");
+        var labelGoldWin =  new cc.LabelTTF("+200K", "Arial", 20);
+        labelGoldWin.setPosition(45, 20);
+        layout.addChild(labelGoldWin, 2);
+
+
+    },
+
+    testLabelWinLose : function (slotUIIdx, result) {
+        var spWinLose = new cc.Sprite();
+        spWinLose.setPosition(0, -68);
+        spWinLose.setLocalZOrder(3);
+        this.addChild(spWinLose, 3);
+        if(result == 1){ //1 = thang
+            spWinLose.setTexture(res.icon_thang);
+        }
+        else
+            spWinLose.setTexture(res.icon_thua);
+
     },
     
     testIconAndLabel: function (slotUIIdx) {
@@ -67,6 +104,7 @@ var GUISlot = AdminBaseGUI.extend({
             var labelGold = new cc.LabelTTF("$2", "Arial", 20);
             labelGold.setPosition(iconCoin.getPositionX()+ 30, iconCoin.getPositionY());
             layout.addChild(labelGold, 2);
+
     },
 
     testKeCuaDanhBien: function (slotUIIdx) {

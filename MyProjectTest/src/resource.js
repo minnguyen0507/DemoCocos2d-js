@@ -50,6 +50,8 @@ var res = {
     icon_coin: "res/texture/bacay/icon_coin.png",
     btn_ke_cua: "res/texture/bacay/btn_ke_cua.png",
     box_my_avatar: "res/texture/bacay/box_myAvatar.png",
+    icon_thang: "res/texture/bacay/icon_thang.png",
+    icon_thua: "res/texture/bacay/icon_thua.png",
 
     //-----------cards-----------------
     card_0: "res/cards/at_0.png",
