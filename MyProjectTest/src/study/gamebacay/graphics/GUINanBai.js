@@ -1,4 +1,4 @@
-var NanBaiLayer = AdminBaseGUI.extend({
+var GUINanBai = AdminBaseGUI.extend({
     arrCardTypes: [],
     CardOnHand: [],
     sizeScreen: cc.size(0, 0),
@@ -148,11 +148,12 @@ var NanBaiLayer = AdminBaseGUI.extend({
         return point;
     },
 
-    InitListCardHand: function () {
-        for (var i = 0; i < 3; ++i) {
-            var pCard = new cc.Sprite("#card_" + AdminRandom.randomBetweenNumber(10,30) + ".png");
+    initListCardHand: function (listCardsSever) {
+        ZLog.error("Serverrrrr", listCardsSever);
+        for (var i = 0; i < listCardsSever.length; ++i) {
+            ZLog.error("Serverrrrr", listCardsSever[i]);
+            var pCard = new cc.Sprite("#card_" + listCardsSever[i] + ".png");
             pCard.setPosition(this.leftCard, this.bottomCard);
-            // pCard.setPosition(cc.winSize.width/2, cc.winSize.height/2);
             pCard.setLocalZOrder(i + 1);
 
             this.addChild(pCard);
@@ -165,7 +166,7 @@ var NanBaiLayer = AdminBaseGUI.extend({
         this.cardIndex = parseInt(this.CardOnHand.length - 1);
     },
 
-    SetCallbackFunc: function (target, callfun) {
+    setCallbackFunc: function (target, callfun) {
         this.m_callback = target;
         this.m_callbackListener = callfun;
     },

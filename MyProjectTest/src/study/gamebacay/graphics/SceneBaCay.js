@@ -1,4 +1,4 @@
-playerList =[3,2,4];
+
 TIMERSTART = 2;
 TIMERCHICKEN = 2;
 CHECKBETGOLD = 1;
@@ -8,6 +8,7 @@ var BaCayLayer = AdminBaseGUI.extend({
 		this._cocos2D = new BaCayEffectLayer();
 		this.spCard = null;
 		this.listCards = [];
+        this.serverCardTest =[6,26,13];
         this.serverList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35];
         this.slotPos = [{x: 450, y: 96},
             {x: 190, y: 180},  {x: 190, y: 330},
@@ -27,6 +28,8 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.imgClockStart = null;
         this.btnDatCuoc = null;
         this.btnHuyBo = null;
+        this.btnStore = null;
+        this.btnChatBox = null;
 
 		this.init();
 
@@ -127,26 +130,27 @@ var BaCayLayer = AdminBaseGUI.extend({
                 addCards.setScale(0.3);
                 switch (i){
                     case POS.ISME:
+                        addCards.setTexture(res.card_black);
                         newSlot.lbGold.setString("1$");
                         newSlot.lbName.setString("Min");
                         newSlot.nodeKeCuaDanhBien.setVisible(false);
                         this.listCardsPlayer.push(addCards);
                         addCards.setScale(1);
-                        addCards.setPosition(newSlot.getPosition().x + j* 30 + 150,newSlot.getPosition().y);
+                        addCards.setPosition(newSlot.getPosition().x + j* 40 + 150,newSlot.getPosition().y + 40);
                         break;
                     case POS.PLAYER1:
                     case POS.PLAYER2:
                     case POS.PLAYER3:
-                        addCards.setPosition(newSlot.getPosition().x + 80,newSlot.getPosition().y - (j * 20) + 5);
+                        addCards.setPosition(newSlot.getPosition().x + 80,newSlot.getPosition().y - (j * 25) + 12);
                         break;
                     case POS.PLAYER4:
                     case POS.PLAYER5:
-                        addCards.setPosition(newSlot.getPosition().x - (j* 15) + 15,newSlot.getPosition().y - 125 );
+                        addCards.setPosition(newSlot.getPosition().x + ( j* 15) - 15,newSlot.getPosition().y - 125 );
                         break;
                     case POS.PLAYER6:
                     case POS.PLAYER7:
                     case POS.PLAYER8:
-                        addCards.setPosition(newSlot.getPosition().x - 80,newSlot.getPosition().y - (j * 20) + 5);
+                        addCards.setPosition(newSlot.getPosition().x - 80,newSlot.getPosition().y - (j * 25) + 12);
                     break;
 
                 }
@@ -185,14 +189,14 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     _showNanBai: function () {
         if(this._guiNanBai == null){
-            this._guiNanBai  = new NanBaiLayer();
+            this._guiNanBai  = new GUINanBai();
             this.addChild(this._guiNanBai,11);
             this.retain();
         }
 
-        this._guiNanBai.InitListCardHand();
+        this._guiNanBai.initListCardHand(this.serverCardTest);
         // test.setPosition(cc.winSize.width/2, cc.winSize.height/2);
-        this._guiNanBai.SetCallbackFunc(this.callBackNanBai,this);
+        this._guiNanBai.setCallbackFunc(this.callBackNanBai,this);
 
     },
 
@@ -217,7 +221,10 @@ var BaCayLayer = AdminBaseGUI.extend({
                 break;
             case this.btnVaoGa:
                 this.runEffectAddGold(450, 96, 568,320);
-
+                break;
+            case this.btnStore:
+                break;
+            case this.btnChatBox:
                 break;
 
         }
@@ -240,21 +247,24 @@ var BaCayLayer = AdminBaseGUI.extend({
         }
     },
 
-    callBackNanBai: function(sender){
-        ZLog.error("Call back lat bai");
-        for (var i = 0 ; i < this.listCardsPlayer.length; i++){
+    callBackNanBai: function(){
+        for (var i = 0 ; i < this.serverCardTest.length; i++){
+            var x = this.serverCardTest[i];
+            ZLog.error("Call back lat bai", this.serverCardTest[i]);
             var self = this;
             var scaleTo = cc.scaleTo(0.4, 0.1, 1);
             var comeBack = cc.scaleTo(0.4, 1, 1);
             var delay = cc.delayTime(0.05);
-
-            this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender) {
+            var sum = 0;
+            this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender,data) {
+                ZLog.error("Call back lat bai", data);
                 //sender.setTexture(res.card_0);
-                sender.setSpriteFrame("card_" + i + ".png");
-            },this.listCardsPlayer[i]),comeBack)));
+                sender.setSpriteFrame("card_" + data + ".png");
+                sum += data;
+                ZLog.error("diem bo bai", sum % 10 );
+            },this.listCardsPlayer[i],this.serverCardTest[i]),comeBack)));
         }
     },
-
 	touchEvent : function (sender,  type) {
 		switch (type){
 		case ccui.Widget.TOUCH_BEGAN:
@@ -277,7 +287,7 @@ var BaCayLayer = AdminBaseGUI.extend({
             //     this.removeChildByTag(1); // remove sprite by tag
             // }.bind(this), 3000); // after 3 seconds
 
-            
+
 
 			break;
 		}
