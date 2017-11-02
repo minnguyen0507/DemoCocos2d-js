@@ -37,6 +37,19 @@ var BaCayLayer = AdminBaseGUI.extend({
 	init: function () {
         var size = cc.winSize;
         this._super();
+
+        var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
+        buttonTest.setAnchorPoint(0.5 , 0.5);
+        buttonTest.setPosition( 1050, 50);
+
+        buttonTest.addTouchEventListener(this.touchEvent,this);
+        buttonTest.setPressedActionEnabled(true);
+        this.addChild( buttonTest, 3);
+        cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
+
+        this._actionChiaBai();
+
+        return true;
         this.setDeepSyncChildren();
         this.syncAllChildren(res.scene_bacay, this);
 
@@ -63,10 +76,6 @@ var BaCayLayer = AdminBaseGUI.extend({
         //
         // var test = new BaCayBo(listCards);
         // test.getDiem();
-
-        ZLog.error("Finish SceneBaCay",test.getDiem());
-        //
-        return true;
 
         var bgBaCay = new cc.Sprite(res.bg_bacay);
         this.addChild(bgBaCay, -1);
@@ -103,6 +112,30 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     },
 
+    _actionChiaBai : function () {
+
+            // for (var j = 0; j < 3; j++)
+            // {
+            //     var card = new BaseCards();
+            //     this.addChild(card,1);
+            //     card.setIdx(j);
+            //     card.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+            //     card.runAction(cc.sequence(cc.delayTime(j*0.1),cc.moveTo(0.5,cc.p(this.slotPos[0].x + j*30,this.slotPos[0].y)),cc.delayTime(j*0.1)));
+            // }
+        var time = 0;
+        for (var i = 1; i <= 3; i++)
+        {
+
+            for (var j = 1; j <= this.slotPos.length; j++) {
+            time  = time + 0.3;
+                var card = new BaseCards();
+                this.addChild(card,1);
+                card.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+                card.runAction(cc.sequence(cc.delayTime(time),cc.moveTo(0.5,cc.p(this.slotPos[j-1].x,this.slotPos[j-1].y)),cc.delayTime(time)));
+            }
+
+        }
+    },
     showStartGame:function () {
         var self = this;
         this._timerStart = setInterval(function () {
@@ -160,7 +193,7 @@ var BaCayLayer = AdminBaseGUI.extend({
                 switch (i){
                     case POS.ISME:
                         addCards.setSpriteFrame("newcardschips/card_black.png");
-                        newSlot.imgAvatar.setTexture("res/box_myAvatar.png");
+                       // newSlot.imgAvatar.setTexture("res/box_myAvatar.png");
                         newSlot.lbGold.setString("1$");
                         newSlot.lbName.setString("Min");
                         newSlot.nodeKeCuaDanhBien.setVisible(false);
