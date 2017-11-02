@@ -123,15 +123,29 @@ var BaCayLayer = AdminBaseGUI.extend({
             //     card.runAction(cc.sequence(cc.delayTime(j*0.1),cc.moveTo(0.5,cc.p(this.slotPos[0].x + j*30,this.slotPos[0].y)),cc.delayTime(j*0.1)));
             // }
         var time = 0;
-        for (var i = 1; i <= 3; i++)
+        var dtPos = cc.p (0,0);
+        for (var i = 1; i <= 3; i++)  //Tổng số quân bài muốn
         {
 
             for (var j = 1; j <= this.slotPos.length; j++) {
-            time  = time + 0.3;
+                dtPos = this.slotPos[j-1]; 
+                time  = time + 0.1; // Tốc độ chia bài
+
                 var card = new BaseCards();
-                this.addChild(card,1);
                 card.setPosition(cc.winSize.width/2, cc.winSize.height/2);
-                card.runAction(cc.sequence(cc.delayTime(time),cc.moveTo(0.5,cc.p(this.slotPos[j-1].x,this.slotPos[j-1].y)),cc.delayTime(time)));
+                this.addChild(card,1);
+
+                if(j == 1 ){        // Bộ bài của minh
+                    dtPos.x += i * 20;
+                }
+                 else if( j == 5 || j ==6){ // bộ bài dịch sang phải theo index
+                    dtPos.x += i * 10;
+                }
+                else{ //bộ bài dịch xuống theo index
+                    dtPos.y += i * 10;
+                }
+
+                card.runAction(cc.sequence(cc.delayTime(time),cc.moveTo(0.5,dtPos),cc.delayTime(time)));
             }
 
         }
