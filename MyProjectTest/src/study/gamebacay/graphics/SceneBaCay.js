@@ -123,29 +123,49 @@ var BaCayLayer = AdminBaseGUI.extend({
             //     card.runAction(cc.sequence(cc.delayTime(j*0.1),cc.moveTo(0.5,cc.p(this.slotPos[0].x + j*30,this.slotPos[0].y)),cc.delayTime(j*0.1)));
             // }
         var time = 0;
+        var scale = 0.5;
         var dtPos = cc.p (0,0);
-        for (var i = 1; i <= 3; i++)  //Tổng số quân bài muốn
+        var timeSlow = 3*8/3;
+        var timeDealOne = 0.05*timeSlow;
+        var count = 0;
+        for (var i = 1; i <= 3; i++)  //Tổng số quân bài muốn chia
         {
-
             for (var j = 1; j <= this.slotPos.length; j++) {
-                dtPos = this.slotPos[j-1]; 
+                count++;
+                dtPos = this.slotPos[j-1];
                 time  = time + 0.1; // Tốc độ chia bài
 
                 var card = new BaseCards();
                 card.setPosition(cc.winSize.width/2, cc.winSize.height/2);
                 this.addChild(card,1);
+                card.setScale(0.5);
+                card.setLocalZOrder(-count);
+                ZLog.error("aaaa", count);
 
                 if(j == 1 ){        // Bộ bài của minh
-                    dtPos.x += i * 20;
+                    //dtPos.x  += (i * 10) ;
+                    dtPos.x  = 400 + i*90;  // chiều ngang bộ bài
+                    dtPos.y = 140;           //chiều dọc bộ bài
+                    scale = 1;
                 }
                  else if( j == 5 || j ==6){ // bộ bài dịch sang phải theo index
                     dtPos.x += i * 10;
+                    scale = 0.5;
                 }
                 else{ //bộ bài dịch xuống theo index
                     dtPos.y += i * 10;
+                    scale = 0.5;
                 }
 
-                card.runAction(cc.sequence(cc.delayTime(time),cc.moveTo(0.5,dtPos),cc.delayTime(time)));
+
+
+                var acSpawn =  cc.spawn(cc.moveTo(timeDealOne,dtPos), cc.scaleTo(timeDealOne, scale), cc.rotateTo(timeDealOne,0));
+                var sequence =  cc.sequence(cc.delayTime(time), cc.delayTime(time), cc.show(),
+                    acSpawn);
+                card.runAction(sequence);
+
+                //card.runAction(cc.sequence(cc.delayTime(time),cc.moveTo(0.5,dtPos),cc.delayTime(time)));
+
             }
 
         }
