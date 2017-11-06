@@ -1,5 +1,16 @@
 <UserData Version="3.10.0.0">
   <Properties>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="ui/scene_bacay.csd" />
+          <FilePathData Path="ui/node_betting_bacay.csd" />
+          <FilePathData Path="ui/node_slot_table.csd" />
+          <FilePathData Path="newcardschips/new_cards_chips.csi" />
+        </OpenedDocuments>
+        <ActiveDocument Path="ui/scene_bacay.csd" />
+      </Value>
+    </Item>
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />

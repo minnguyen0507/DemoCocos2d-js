@@ -5,20 +5,21 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         this._super();
         this.loadingBar = null;
         this.count = 100;
-        this.serverList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35];
-        this._lbTest = null;
         this.cards = null;
-        this.slotPos = [{x: 410, y: 150},
-            {x: 68, y: 380},  {x: 300, y: 580},
-            {x: 700, y: 580}, {x: 1050, y: 500}, {x: 1050, y: 250}];
-        this.slots = [];
         this.init();
     },
     init: function() {
         this._super();
 
         //this._createUILabel();
-        this._createUILayout();
+        //this._createUISkeleton();
+
+        for (i=0; i<64; i++){
+            var tile = cc.Sprite.create(res.btn_next);
+            this.addChild(tile,0);
+            tile.setPosition(cc.winSize.width / 2 +i%8*50/-10, cc.winSize.height / 2-Math.floor(i/8)*50);
+
+        }
 
 
         ZLog.error("Finish new UI");

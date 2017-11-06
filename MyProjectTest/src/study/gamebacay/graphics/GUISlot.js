@@ -125,7 +125,7 @@ var GUISlot = AdminBaseGUI.extend({
                 break;
             case POS.PLAYER4:
             case POS.PLAYER5:
-                this.nodeKeCuaDanhBien.setPosition(-100,30);
+                this.nodeKeCuaDanhBien.setPosition(100,30);
                 break;
             case POS.PLAYER6:
             case POS.PLAYER7:
