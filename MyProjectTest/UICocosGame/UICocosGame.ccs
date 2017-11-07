@@ -229,6 +229,7 @@
           <Folder Name="bacay">
             <Image Name="avatar_player.png" />
             <Image Name="bg_bacay.png" />
+            <Image Name="box_avatar2.png" />
             <Image Name="btn_back.png" />
             <Image Name="btn_back_press.png" />
             <Image Name="btn_chatbox.png" />

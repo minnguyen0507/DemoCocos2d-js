@@ -91,13 +91,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnDatCuoc" ActionTag="214809119" Tag="184" IconVisible="False" LeftMargin="14.0000" RightMargin="1050.0000" TopMargin="524.0000" BottomMargin="44.0000" TouchEnable="True" FontSize="14" ButtonText="BET" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnDatCuoc" ActionTag="214809119" Tag="184" IconVisible="False" LeftMargin="14.0000" RightMargin="1050.0000" TopMargin="542.9999" BottomMargin="25.0001" TouchEnable="True" FontSize="14" ButtonText="BET" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="72.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="50.0000" Y="80.0000" />
+            <Position X="50.0000" Y="61.0001" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0440" Y="0.1250" />
+            <PrePosition X="0.0440" Y="0.0953" />
             <PreSize X="0.0634" Y="0.1125" />
             <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
@@ -107,13 +107,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnHuyBo" ActionTag="666428053" Tag="338" IconVisible="False" LeftMargin="94.0000" RightMargin="970.0000" TopMargin="524.0000" BottomMargin="44.0000" TouchEnable="True" FontSize="14" ButtonText="CANCLE" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnHuyBo" ActionTag="666428053" Tag="338" IconVisible="False" LeftMargin="94.0000" RightMargin="970.0000" TopMargin="542.9999" BottomMargin="25.0001" TouchEnable="True" FontSize="14" ButtonText="CANCLE" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="72.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="130.0000" Y="80.0000" />
+            <Position X="130.0000" Y="61.0001" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1144" Y="0.1250" />
+            <PrePosition X="0.1144" Y="0.0953" />
             <PreSize X="0.0634" Y="0.1125" />
             <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
@@ -141,13 +141,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="lbGoldGa" ActionTag="987325629" Tag="522" IconVisible="False" LeftMargin="2.1668" RightMargin="-34.1668" TopMargin="21.9053" BottomMargin="4.0947" IsCustomSize="True" FontSize="20" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="lbGoldGa" ActionTag="987325629" Tag="522" IconVisible="False" LeftMargin="2.1669" RightMargin="-34.1669" TopMargin="21.9053" BottomMargin="4.0947" IsCustomSize="True" FontSize="20" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="200.0000" Y="30.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="102.1668" Y="19.0947" />
+                    <AnchorPoint ScaleX="0.4965" ScaleY="0.8165" />
+                    <Position X="101.4693" Y="28.5909" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6081" Y="0.3410" />
+                    <PrePosition X="0.6040" Y="0.5106" />
                     <PreSize X="1.1905" Y="0.5357" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -197,6 +197,87 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player0" ActionTag="931310533" Tag="35" IconVisible="True" LeftMargin="400.0000" RightMargin="736.0000" TopMargin="530.0000" BottomMargin="110.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="400.0000" Y="110.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.3521" Y="0.1719" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player1" ActionTag="1045047322" Tag="26" IconVisible="True" LeftMargin="215.0000" RightMargin="921.0000" TopMargin="478.0000" BottomMargin="162.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="215.0000" Y="162.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1893" Y="0.2531" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player2" ActionTag="-665066034" Tag="28" IconVisible="True" LeftMargin="215.0000" RightMargin="921.0000" TopMargin="320.0000" BottomMargin="320.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="215.0000" Y="320.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1893" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player3" ActionTag="-1397905318" Tag="29" IconVisible="True" LeftMargin="215.0000" RightMargin="921.0000" TopMargin="162.0000" BottomMargin="478.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="215.0000" Y="478.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1893" Y="0.7469" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player4" ActionTag="1159264045" Tag="30" IconVisible="True" LeftMargin="400.0000" RightMargin="736.0000" TopMargin="100.0000" BottomMargin="540.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="400.0000" Y="540.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.3521" Y="0.8438" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player5" ActionTag="3812248" Tag="31" IconVisible="True" LeftMargin="715.0000" RightMargin="421.0000" TopMargin="100.0000" BottomMargin="540.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="715.0000" Y="540.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.6294" Y="0.8438" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player6" ActionTag="-738988297" Tag="32" IconVisible="True" LeftMargin="925.0000" RightMargin="211.0000" TopMargin="162.0000" BottomMargin="478.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="925.0000" Y="478.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8143" Y="0.7469" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player7" ActionTag="-1046595090" Tag="33" IconVisible="True" LeftMargin="925.0000" RightMargin="211.0000" TopMargin="320.0000" BottomMargin="320.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="925.0000" Y="320.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8143" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="player8" ActionTag="869158717" Tag="34" IconVisible="True" LeftMargin="925.0000" RightMargin="211.0000" TopMargin="478.0000" BottomMargin="162.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="925.0000" Y="162.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8143" Y="0.2531" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
         </Children>

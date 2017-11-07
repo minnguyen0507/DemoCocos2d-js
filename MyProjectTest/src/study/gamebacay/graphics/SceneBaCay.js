@@ -7,10 +7,10 @@ var BaCayLayer = AdminBaseGUI.extend({
 		this.listCards = [];
         this.serverCardTest =[6,26,13];
         this.serverList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35];
-        this.slotPos = [{x: 450, y: 96},
-            {x: 190, y: 180},  {x: 190, y: 330},
-            {x: 190, y: 480}, {x: 450, y: 550}, {x: 700, y: 550},
-            {x: 920, y: 480}, {x: 920, y: 330}, {x: 920, y: 180}];
+        this.slotPos = [{x: 400, y: 110},
+            {x: 215, y: 162},  {x: 215, y: 320}, {x: 215, y: 478},
+            {x: 400, y: 540}, {x: 714, y: 540},
+            {x: 925, y: 162}, {x: 925, y: 320}, {x: 925, y: 478}];
         this.slots = [];
         this.cards = null;
         this.cardIndex = null;
@@ -38,8 +38,6 @@ var BaCayLayer = AdminBaseGUI.extend({
         this._super();
         this.setDeepSyncChildren();
         this.syncAllChildren(res.scene_bacay, this);
-
-
         cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
 
 
@@ -102,7 +100,6 @@ var BaCayLayer = AdminBaseGUI.extend({
     },
 
     _actionChiaBai : function () {
-
         var time = 0;
         var scale = 0.5;
         var dtPos = cc.p (0,0);
@@ -112,6 +109,7 @@ var BaCayLayer = AdminBaseGUI.extend({
         for (var i = 1; i <= 3; i++)  //Tổng số quân bài muốn chia
         {
             for (var j = 1; j <= this.slotPos.length; j++) {
+
                 count++;
                 dtPos = this.slotPos[j-1];
                 time  = time + 0.05; // Tốc độ chia bài
@@ -121,16 +119,16 @@ var BaCayLayer = AdminBaseGUI.extend({
                 this.addChild(card,1);
                 card.setScale(0.5);
                 card.setLocalZOrder(-count);
-                ZLog.error("aaaa", count);
 
                 if(j == 1 ){        // Bộ bài của minh
                     //dtPos.x  += (i * 10) ;
-                    dtPos.x  = 470 + i*90;  // chiều ngang bộ bài
-                    dtPos.y = 140;           //chiều dọc bộ bài
+                    dtPos.x  = 440 + i*90;  // chiều ngang bộ bài
+                    dtPos.y = 120;           //chiều dọc bộ bài
                     scale = 1;
                 }
                 else if( j == 2 || j == 3 || j == 4){
-                    dtPos.y += i * 10;
+                    ZLog.error("sssss",i);
+                    dtPos.y += i ;
                     dtPos.x = 270;
                     scale = 0.5;
                 }
@@ -182,8 +180,8 @@ var BaCayLayer = AdminBaseGUI.extend({
                 clearInterval(self._timerVaoGa);
                 self.nodeChicken.setVisible(false);
                 ZLog.error("CHIA BAI");
-                this._actionChiaBai();
-                self._showNanBai();
+//                this._actionChiaBai();
+             //   self._showNanBai();
                 //moduleMgr.getBaCayModule().showGUIBaCay();
             }
         }, 1000);
@@ -200,10 +198,10 @@ var BaCayLayer = AdminBaseGUI.extend({
 
             newSlot.setPlayerInfo(BACAY_SERVER_INFO[i]);
 
-            newSlot.testLabelWinLose(i,1);
-            newSlot.testIconAndLabel(i);
-            newSlot.testKeCuaDanhBien(i);
-            newSlot.testLabelDiemAndGold(i);
+           // newSlot.testLabelWinLose(i,1);
+          //  newSlot.testIconAndLabel(i);
+          //  newSlot.testKeCuaDanhBien(i);
+           // newSlot.testLabelDiemAndGold(i);
             //
             // for (var j = 0; j < 3; ++j) {
             //     var addCards = new cc.Sprite("#newcardschips/card_" + AdminRandom.randomBetweenNumber(1,36) + ".png");
@@ -294,12 +292,8 @@ var BaCayLayer = AdminBaseGUI.extend({
     onTouchUIEndEvent: function(sender){
         switch (sender) {
             case this.btnDatCuoc:
-               this._showDatCuoc(CHECKBETGOLD);
-               // this.setOpacity(100);
-               //  this.setCascadeOpacityEnabled(true);
                break;
             case this.btnHuyBo:
-                this._guiBetting.hideGui();
                 break;
             case this.btnVaoGa:
                 this.runEffectAddGold(450, 96, 568,320);

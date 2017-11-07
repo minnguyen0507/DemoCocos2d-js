@@ -26,17 +26,19 @@ BACAY_SERVER_TEST = {
     CHECKBETGOLD : 1,
 };
 
-BACAY_SERVER_INFO = [   {slotIdx:0,uName:"IsMe",gold:"99999",chicken:0},
-                        {slotIdx:1,uName:"Player1",gold:"9999",chicken:0},
-                        {slotIdx:2,uName:"Player2",gold:"4333",chicken:0},
-                        {slotIdx:3,uName:"Player3",gold:"433234",chicken:0},
-                        {slotIdx:4,uName:"Player4",gold:"324323",chicken:0},
-                        {slotIdx:5,uName:"Player5",gold:"434234",chicken:0},
-                        {slotIdx:6,uName:"Player6",gold:"8888",chicken:0},
-                        {slotIdx:7,uName:"Player7",gold:"54888",chicken:0},
-                        {slotIdx:8,uName:"Player8",gold:"343432",chicken:0}
+BACAY_SERVER_INFO = [   {slotIdx:0,uName:"IsMe",gold:"99999",chicken:0,avatar:"",vip:1},
+                        {slotIdx:1,uName:"Player1",gold:"9999",chicken:0,avatar:"",vip:1},
+                        {slotIdx:2,uName:"Player2",gold:"4333",chicken:0,avatar:"",vip:1},
+                        {slotIdx:3,uName:"Player3",gold:"433234",chicken:0,avatar:"",vip:1},
+                        {slotIdx:4,uName:"Player4",gold:"324323",chicken:0,avatar:"",vip:1},
+                        {slotIdx:5,uName:"Player5",gold:"434234",chicken:0,avatar:"",vip:1},
+                        {slotIdx:6,uName:"Player6",gold:"8888",chicken:0,avatar:"",vip:1},
+                        {slotIdx:7,uName:"Player7",gold:"54888",chicken:0,avatar:"",vip:1},
+                        {slotIdx:8,uName:"Player8",gold:"343432",chicken:0,avatar:"",vip:1}
                     ];
-
+BACAY_SERVER_BOBAI = [
+                        {}
+                    ];
 
 
 
