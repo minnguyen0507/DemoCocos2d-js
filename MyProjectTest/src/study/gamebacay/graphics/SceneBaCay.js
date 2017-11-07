@@ -31,6 +31,8 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.btnStore = null;
         this.btnChatBox = null;
 
+        this.cardsChiaBai = [];
+
 		this.init();
 
 	},
@@ -47,7 +49,6 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.addChild( buttonTest, 3);
         cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
 
-        this._actionChiaBai();
 
         return true;
         this.setDeepSyncChildren();
@@ -141,6 +142,7 @@ var BaCayLayer = AdminBaseGUI.extend({
                 card.setScale(0.5);
                 card.setLocalZOrder(-count);
                 ZLog.error("aaaa", count);
+                this.cardsChiaBai.push(card);
 
                 if(j == 1 ){        // Bộ bài của minh
                     //dtPos.x  += (i * 10) ;
@@ -157,13 +159,15 @@ var BaCayLayer = AdminBaseGUI.extend({
                     scale = 0.5;
                 }
 
-
-
                 var acSpawn =  cc.spawn(cc.moveTo(timeDealOne,dtPos), cc.scaleTo(timeDealOne, scale), cc.rotateTo(timeDealOne,0));
                 var sequence =  cc.sequence(cc.delayTime(time), cc.delayTime(time), cc.show(),
                     acSpawn);
                 card.runAction(sequence);
 
+
+              while (count == 27){
+                  ZLog.error("Xoas Sprite");
+              }
                 //card.runAction(cc.sequence(cc.delayTime(time),cc.moveTo(0.5,dtPos),cc.delayTime(time)));
 
             }
@@ -372,6 +376,18 @@ var BaCayLayer = AdminBaseGUI.extend({
 		case ccui.Widget.TOUCH_MOVED:
 			break;
 		case ccui.Widget.TOUCH_ENDED:
+		    this._actionChiaBai();
+
+
+            // setTimeout(function(){
+            //     for(var card in this.cardsChiaBai){
+            //         if(card){
+            //             card.removeFromParentAndCleanup(true);
+            //         }
+            //     }
+            // }.bind(this), 7000); // after 3 seconds
+		    //end game thi xoa bo bai
+
             // var getIndexCard = AdminRandom.randomBetweenNumber(0,35);
             // ZLog.error("test",getIndexCard);
             // this.cardIndex.setSpriteFrame("card_" + getIndexCard + ".png");
