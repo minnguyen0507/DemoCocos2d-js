@@ -17,6 +17,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0843" Y="1.8409" />
                 <PreSize X="0.2212" Y="0.8333" />
+                <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

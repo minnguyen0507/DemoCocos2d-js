@@ -1,7 +1,4 @@
 
-TIMERSTART = 2;
-TIMERCHICKEN = 2;
-CHECKBETGOLD = 1;
 var BaCayLayer = AdminBaseGUI.extend({
 	ctor:function () {
 		this._super();
@@ -39,20 +36,12 @@ var BaCayLayer = AdminBaseGUI.extend({
 	init: function () {
         var size = cc.winSize;
         this._super();
-
-        var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
-        buttonTest.setAnchorPoint(0.5 , 0.5);
-        buttonTest.setPosition( 1050, 50);
-
-        buttonTest.addTouchEventListener(this.touchEvent,this);
-        buttonTest.setPressedActionEnabled(true);
-        this.addChild( buttonTest, 3);
-        cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
-
-
-        return true;
         this.setDeepSyncChildren();
         this.syncAllChildren(res.scene_bacay, this);
+
+
+        cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
+
 
        // cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
 
@@ -79,7 +68,7 @@ var BaCayLayer = AdminBaseGUI.extend({
         // test.getDiem();
 
         var bgBaCay = new cc.Sprite(res.bg_bacay);
-        this.addChild(bgBaCay, -1);
+        this.addChild(bgBaCay, -30);
         bgBaCay.setPosition(size.width/2, size.height/2);
 
         var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
@@ -90,7 +79,6 @@ var BaCayLayer = AdminBaseGUI.extend({
         buttonTest.setPressedActionEnabled(true);
         this.addChild( buttonTest, 3);
 
-        cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
 
         var arrayTest = [11,12,13,14,15,16,17,18,19,10];
 
@@ -115,14 +103,6 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     _actionChiaBai : function () {
 
-            // for (var j = 0; j < 3; j++)
-            // {
-            //     var card = new BaseCards();
-            //     this.addChild(card,1);
-            //     card.setIdx(j);
-            //     card.setPosition(cc.winSize.width/2, cc.winSize.height/2);
-            //     card.runAction(cc.sequence(cc.delayTime(j*0.1),cc.moveTo(0.5,cc.p(this.slotPos[0].x + j*30,this.slotPos[0].y)),cc.delayTime(j*0.1)));
-            // }
         var time = 0;
         var scale = 0.5;
         var dtPos = cc.p (0,0);
@@ -134,7 +114,7 @@ var BaCayLayer = AdminBaseGUI.extend({
             for (var j = 1; j <= this.slotPos.length; j++) {
                 count++;
                 dtPos = this.slotPos[j-1];
-                time  = time + 0.1; // Tốc độ chia bài
+                time  = time + 0.05; // Tốc độ chia bài
 
                 var card = new BaseCards();
                 card.setPosition(cc.winSize.width/2, cc.winSize.height/2);
@@ -142,20 +122,26 @@ var BaCayLayer = AdminBaseGUI.extend({
                 card.setScale(0.5);
                 card.setLocalZOrder(-count);
                 ZLog.error("aaaa", count);
-                this.cardsChiaBai.push(card);
 
                 if(j == 1 ){        // Bộ bài của minh
                     //dtPos.x  += (i * 10) ;
-                    dtPos.x  = 400 + i*90;  // chiều ngang bộ bài
+                    dtPos.x  = 470 + i*90;  // chiều ngang bộ bài
                     dtPos.y = 140;           //chiều dọc bộ bài
                     scale = 1;
                 }
-                 else if( j == 5 || j ==6){ // bộ bài dịch sang phải theo index
-                    dtPos.x += i * 10;
+                else if( j == 2 || j == 3 || j == 4){
+                    dtPos.y += i * 10;
+                    dtPos.x = 270;
                     scale = 0.5;
                 }
-                else{ //bộ bài dịch xuống theo index
+                else if( j == 5 || j ==6){
+                    dtPos.x += i * 5;
+                    dtPos.y = 430;
+                    scale = 0.5;
+                }
+                else if( j == 7 || j == 8 || j == 9){
                     dtPos.y += i * 10;
+                    dtPos.x = 820;
                     scale = 0.5;
                 }
 
@@ -164,12 +150,6 @@ var BaCayLayer = AdminBaseGUI.extend({
                     acSpawn);
                 card.runAction(sequence);
 
-
-              while (count == 27){
-                  ZLog.error("Xoas Sprite");
-              }
-                //card.runAction(cc.sequence(cc.delayTime(time),cc.moveTo(0.5,dtPos),cc.delayTime(time)));
-
             }
 
         }
@@ -177,12 +157,12 @@ var BaCayLayer = AdminBaseGUI.extend({
     showStartGame:function () {
         var self = this;
         this._timerStart = setInterval(function () {
-            self.lbTimer.setString(TIMERSTART);
-            TIMERSTART--;
-            ZLog.error("CountDown", TIMERSTART);
-            if (TIMERSTART === 1) {
+            self.lbTimer.setString(BACAY_SERVER_TEST.TIMERSTART);
+            BACAY_SERVER_TEST.TIMERSTART--;
+            ZLog.error("CountDown", BACAY_SERVER_TEST.TIMERSTART);
+            if (BACAY_SERVER_TEST.TIMERSTART === 0) {
                 clearInterval(self._timerStart);
-                ZLog.error("Chia bai - Hien dat cuoc");
+                ZLog.error("VAO GA");
                 self.imgClockStart.setVisible(false);
                 self.nodeChicken.setVisible(true);
                 self.showStartVaoGa();
@@ -195,13 +175,14 @@ var BaCayLayer = AdminBaseGUI.extend({
     showStartVaoGa:function () {
         var self = this;
         this._timerVaoGa = setInterval(function () {
-            self.lbTimerGa.setString(TIMERCHICKEN);
-            TIMERCHICKEN--;
-            ZLog.error("CountDown", TIMERCHICKEN);
-            if (TIMERCHICKEN === 0) {
+            self.lbTimerGa.setString(BACAY_SERVER_TEST.TIMERCHICKEN);
+            BACAY_SERVER_TEST.TIMERCHICKEN--;
+            ZLog.error("CountDown", BACAY_SERVER_TEST.TIMERCHICKEN);
+            if (BACAY_SERVER_TEST.TIMERCHICKEN === 0) {
                 clearInterval(self._timerVaoGa);
                 self.nodeChicken.setVisible(false);
-                ZLog.error("Show Bai - Tinh Diem");
+                ZLog.error("CHIA BAI");
+                this._actionChiaBai();
                 self._showNanBai();
                 //moduleMgr.getBaCayModule().showGUIBaCay();
             }
@@ -211,51 +192,51 @@ var BaCayLayer = AdminBaseGUI.extend({
 
 
 	_testGameUI : function(){
-        var _tableMaxPlayer = 9;
-
-        for (var i = 0; i < _tableMaxPlayer; ++i) {
+        for (var i = 0; i < BACAY_SERVER_INFO.length; ++i) {
             var newSlot = new GUISlot();
             newSlot.setPosition(this.slotPos[i]);
             this.addChild(newSlot, 1);
             this.slots.push(newSlot);
 
-             newSlot.testLabelWinLose(i,1);
-            // newSlot.testIconAndLabel(i);
-             newSlot.testKeCuaDanhBien(i);
-            // newSlot.testLabelDiemAndGold(i);i
+            newSlot.setPlayerInfo(BACAY_SERVER_INFO[i]);
 
-            for (var j = 0; j < 3; ++j) {
-                var addCards = new cc.Sprite("#newcardschips/card_" + AdminRandom.randomBetweenNumber(1,36) + ".png");
-                this.addChild(addCards, 2);
-                addCards.setScale(0.3);
-                switch (i){
-                    case POS.ISME:
-                        addCards.setSpriteFrame("newcardschips/card_black.png");
-                       // newSlot.imgAvatar.setTexture("res/box_myAvatar.png");
-                        newSlot.lbGold.setString("1$");
-                        newSlot.lbName.setString("Min");
-                        newSlot.nodeKeCuaDanhBien.setVisible(false);
-                        this.listCardsPlayer.push(addCards);
-                        addCards.setScale(1);
-                        addCards.setPosition(newSlot.getPosition().x + j* 40 + 150,newSlot.getPosition().y + 40);
-                        break;
-                    case POS.PLAYER1:
-                    case POS.PLAYER2:
-                    case POS.PLAYER3:
-                        addCards.setPosition(newSlot.getPosition().x + 80,newSlot.getPosition().y - (j * 25) + 12);
-                        break;
-                    case POS.PLAYER4:
-                    case POS.PLAYER5:
-                        addCards.setPosition(newSlot.getPosition().x + ( j* 15) - 15,newSlot.getPosition().y - 125 );
-                        break;
-                    case POS.PLAYER6:
-                    case POS.PLAYER7:
-                    case POS.PLAYER8:
-                        addCards.setPosition(newSlot.getPosition().x - 80,newSlot.getPosition().y - (j * 25) + 12);
-                    break;
-
-                }
-            }
+            newSlot.testLabelWinLose(i,1);
+            newSlot.testIconAndLabel(i);
+            newSlot.testKeCuaDanhBien(i);
+            newSlot.testLabelDiemAndGold(i);
+            //
+            // for (var j = 0; j < 3; ++j) {
+            //     var addCards = new cc.Sprite("#newcardschips/card_" + AdminRandom.randomBetweenNumber(1,36) + ".png");
+            //     this.addChild(addCards, 2);
+            //     addCards.setScale(0.3);
+            //     switch (i){
+            //         case POS.ISME:
+            //             addCards.setSpriteFrame("newcardschips/card_black.png");
+            //            // newSlot.imgAvatar.setTexture("res/box_myAvatar.png");
+            //             newSlot.lbGold.setString("1$");
+            //             newSlot.lbName.setString("Min");
+            //             newSlot.nodeKeCuaDanhBien.setVisible(false);
+            //             this.listCardsPlayer.push(addCards);
+            //             addCards.setScale(1);
+            //             addCards.setPosition(newSlot.getPosition().x + j* 40 + 150,newSlot.getPosition().y + 40);
+            //             break;
+            //         case POS.PLAYER1:
+            //         case POS.PLAYER2:
+            //         case POS.PLAYER3:
+            //             addCards.setPosition(newSlot.getPosition().x + 80,newSlot.getPosition().y - (j * 25) + 12);
+            //             break;
+            //         case POS.PLAYER4:
+            //         case POS.PLAYER5:
+            //             addCards.setPosition(newSlot.getPosition().x + ( j* 15) - 15,newSlot.getPosition().y - 125 );
+            //             break;
+            //         case POS.PLAYER6:
+            //         case POS.PLAYER7:
+            //         case POS.PLAYER8:
+            //             addCards.setPosition(newSlot.getPosition().x - 80,newSlot.getPosition().y - (j * 25) + 12);
+            //         break;
+            //
+            //     }
+            // }
         }
         // var listCards1 = [];
         // for (var i = 0; i < 3; i++) {
@@ -416,18 +397,3 @@ var SceneBaCay = cc.Scene.extend({
 		this.addChild(layer);
 	}
 });
-
-
-POS ={
-    ISME: 0,
-    PLAYER1: 1,
-    PLAYER2: 2,
-    PLAYER3: 3,
-    PLAYER4: 4,
-    PLAYER5: 5,
-    PLAYER6: 6,
-    PLAYER7: 7,
-    PLAYER8: 8,
-}
-
-

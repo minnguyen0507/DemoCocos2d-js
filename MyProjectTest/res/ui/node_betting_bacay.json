@@ -74,6 +74,11 @@
                 "IsCustomSize": true,
                 "FontSize": 20,
                 "LabelText": "1000",
+                "FontResource": {
+                  "Type": "Normal",
+                  "Path": "texture/font/UTM-PenumbraBold.ttf",
+                  "Plist": ""
+                },
                 "HorizontalAlignmentType": "HT_Center",
                 "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
@@ -142,7 +147,8 @@
       "UsedResources": [
         "../texture/bacay/btn_progessbar1.png",
         "../texture/bacay/btn_progessbar2.png",
-        "../texture/bacay/btn_progessbar3.png"
+        "../texture/bacay/btn_progessbar3.png",
+        "../texture/font/UTM-PenumbraBold.ttf"
       ],
       "ctype": "GameFileData"
     }

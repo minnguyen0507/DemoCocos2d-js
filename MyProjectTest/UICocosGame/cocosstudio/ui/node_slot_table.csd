@@ -28,27 +28,27 @@
             <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lbName" ActionTag="158550890" Tag="189" IconVisible="False" LeftMargin="-33.2042" RightMargin="-33.7958" TopMargin="-60.5759" BottomMargin="42.5759" FontSize="14" LabelText="Text Label" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="67.0000" Y="18.0000" />
+          <AbstractNodeData Name="lbName" ActionTag="158550890" Tag="189" IconVisible="False" LeftMargin="-41.7042" RightMargin="-42.2958" TopMargin="-62.0759" BottomMargin="41.0759" FontSize="14" LabelText="Text Label" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="84.0000" Y="21.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="0.2958" Y="51.5759" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
+            <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lbGold" ActionTag="397925254" Tag="190" IconVisible="False" LeftMargin="-33.5226" RightMargin="-33.4774" TopMargin="37.8672" BottomMargin="-55.8672" FontSize="14" LabelText="Text Label" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="67.0000" Y="18.0000" />
+          <AbstractNodeData Name="lbGold" ActionTag="397925254" Tag="190" IconVisible="False" LeftMargin="-42.0226" RightMargin="-41.9774" TopMargin="36.3672" BottomMargin="-57.3672" FontSize="14" LabelText="Text Label" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="84.0000" Y="21.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-0.0226" Y="-46.8672" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="0" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
+            <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -66,17 +66,6 @@
             <NormalFileData Type="Normal" Path="texture/bacay/btn_invite.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="icon_chicken" ActionTag="-484703585" Tag="192" IconVisible="False" LeftMargin="28.8738" RightMargin="-56.8738" TopMargin="-35.0108" BottomMargin="7.0108" ctype="SpriteObjectData">
-            <Size X="28.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="42.8738" Y="21.0108" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="texture/bacay/icon_chicken.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="iconVip" ActionTag="1198486006" Tag="196" IconVisible="False" LeftMargin="-58.2393" RightMargin="27.2393" TopMargin="18.0984" BottomMargin="-49.0984" ctype="SpriteObjectData">
             <Size X="31.0000" Y="31.0000" />

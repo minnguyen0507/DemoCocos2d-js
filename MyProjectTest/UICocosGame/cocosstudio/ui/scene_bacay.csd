@@ -54,15 +54,15 @@
           <AbstractNodeData Name="imgClockStart" ActionTag="887157858" Tag="182" IconVisible="False" LeftMargin="526.5000" RightMargin="526.5000" TopMargin="272.0000" BottomMargin="272.0000" ctype="SpriteObjectData">
             <Size X="83.0000" Y="96.0000" />
             <Children>
-              <AbstractNodeData Name="lbTimer" ActionTag="707523841" Tag="185" IconVisible="False" LeftMargin="24.0401" RightMargin="22.9599" TopMargin="28.0398" BottomMargin="27.9602" FontSize="30" LabelText="03" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="36.0000" Y="40.0000" />
+              <AbstractNodeData Name="lbTimer" ActionTag="707523841" Tag="185" IconVisible="False" LeftMargin="22.0401" RightMargin="20.9599" TopMargin="26.0398" BottomMargin="25.9602" FontSize="30" LabelText="03" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="42.0401" Y="47.9602" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="139" G="105" B="20" />
                 <PrePosition X="0.5065" Y="0.4996" />
-                <PreSize X="0.4337" Y="0.4167" />
-                <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
+                <PreSize X="0.4819" Y="0.4583" />
+                <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -99,7 +99,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0440" Y="0.1250" />
             <PreSize X="0.0634" Y="0.1125" />
-            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
+            <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="Normal" Path="texture/bacay/btn_cuoc.png.png" Plist="" />
             <PressedFileData Type="Normal" Path="texture/bacay/btn_cuoc.png.png" Plist="" />
@@ -115,7 +115,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1144" Y="0.1250" />
             <PreSize X="0.0634" Y="0.1125" />
-            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
+            <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="Normal" Path="texture/bacay/btn_cuoc_press.png" Plist="" />
             <PressedFileData Type="Normal" Path="texture/bacay/btn_cuoc_press.png" Plist="" />
@@ -137,7 +137,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6046" Y="0.6874" />
                     <PreSize X="0.7143" Y="0.5000" />
-                    <FontResource Type="Normal" Path="texture/font/SFUAngieBold.TTF" Plist="" />
+                    <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -177,7 +177,7 @@
                     <CColor A="255" R="139" G="105" B="20" />
                     <PrePosition X="0.5013" Y="0.5416" />
                     <PreSize X="0.9804" Y="0.5172" />
-                    <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
+                    <FontResource Type="Normal" Path="texture/font/UTM-PenumbraBold.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

@@ -282,7 +282,7 @@
                 "LabelText": "03",
                 "FontResource": {
                   "Type": "Normal",
-                  "Path": "texture/font/Roboto-Bold.ttf",
+                  "Path": "texture/font/UTM-PenumbraBold.ttf",
                   "Plist": ""
                 },
                 "HorizontalAlignmentType": "HT_Center",
@@ -321,18 +321,18 @@
                   "Y": 0.4996
                 },
                 "PreSize": {
-                  "X": 0.4337,
-                  "Y": 0.4167
+                  "X": 0.4819,
+                  "Y": 0.4583
                 },
-                "LeftMargin": 24.0401,
-                "RightMargin": 22.9599,
-                "TopMargin": 28.0398,
-                "BottomMargin": 27.9602,
+                "LeftMargin": 22.0401,
+                "RightMargin": 20.9599,
+                "TopMargin": 26.0398,
+                "BottomMargin": 25.9602,
                 "Tag": 185,
                 "ActionTag": 707523841,
                 "Size": {
-                  "X": 36.0,
-                  "Y": 40.0
+                  "X": 40.0,
+                  "Y": 44.0
                 },
                 "Name": "lbTimer",
                 "ctype": "TextObjectData"
@@ -426,7 +426,7 @@
             "ButtonText": "BET",
             "FontResource": {
               "Type": "Normal",
-              "Path": "texture/font/Roboto-Bold.ttf",
+              "Path": "texture/font/UTM-PenumbraBold.ttf",
               "Plist": ""
             },
             "TextColor": {},
@@ -502,7 +502,7 @@
             "ButtonText": "CANCLE",
             "FontResource": {
               "Type": "Normal",
-              "Path": "texture/font/Roboto-Bold.ttf",
+              "Path": "texture/font/UTM-PenumbraBold.ttf",
               "Plist": ""
             },
             "TextColor": {},
@@ -671,7 +671,7 @@
                     "LabelText": "VAO GA",
                     "FontResource": {
                       "Type": "Normal",
-                      "Path": "texture/font/SFUAngieBold.TTF",
+                      "Path": "texture/font/UTM-PenumbraBold.ttf",
                       "Plist": ""
                     },
                     "HorizontalAlignmentType": "HT_Center",
@@ -827,7 +827,7 @@
                     "LabelText": "0",
                     "FontResource": {
                       "Type": "Normal",
-                      "Path": "texture/font/Roboto-Bold.ttf",
+                      "Path": "texture/font/UTM-PenumbraBold.ttf",
                       "Plist": ""
                     },
                     "HorizontalAlignmentType": "HT_Center",
@@ -920,8 +920,7 @@
         "../texture/bacay/btn_store.png",
         "../texture/bacay/o_clock1.png",
         "../texture/bacay/o_clock2.png",
-        "../texture/font/Roboto-Bold.ttf",
-        "../texture/font/SFUAngieBold.TTF"
+        "../texture/font/UTM-PenumbraBold.ttf"
       ],
       "ctype": "GameFileData"
     }

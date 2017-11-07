@@ -110,7 +110,7 @@
             "LabelText": "Text Label",
             "FontResource": {
               "Type": "Normal",
-              "Path": "texture/font/Roboto-Bold.ttf",
+              "Path": "texture/font/UTM-PenumbraBold.ttf",
               "Plist": ""
             },
             "HorizontalAlignmentType": "HT_Center",
@@ -148,15 +148,15 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -33.2042,
-            "RightMargin": -33.7958,
-            "TopMargin": -60.5759,
-            "BottomMargin": 42.5759,
+            "LeftMargin": -41.7042,
+            "RightMargin": -42.2958,
+            "TopMargin": -62.0759,
+            "BottomMargin": 41.0759,
             "Tag": 189,
             "ActionTag": 158550890,
             "Size": {
-              "X": 67.0,
-              "Y": 18.0
+              "X": 84.0,
+              "Y": 21.0
             },
             "Name": "lbName",
             "ctype": "TextObjectData"
@@ -166,7 +166,7 @@
             "LabelText": "Text Label",
             "FontResource": {
               "Type": "Normal",
-              "Path": "texture/font/Roboto-Bold.ttf",
+              "Path": "texture/font/UTM-PenumbraBold.ttf",
               "Plist": ""
             },
             "HorizontalAlignmentType": "HT_Center",
@@ -206,15 +206,15 @@
               "X": 0.0,
               "Y": 0.0
             },
-            "LeftMargin": -33.5226,
-            "RightMargin": -33.4774,
-            "TopMargin": 37.8672,
-            "BottomMargin": -55.8672,
+            "LeftMargin": -42.0226,
+            "RightMargin": -41.9774,
+            "TopMargin": 36.3672,
+            "BottomMargin": -57.3672,
             "Tag": 190,
             "ActionTag": 397925254,
             "Size": {
-              "X": 67.0,
-              "Y": 18.0
+              "X": 84.0,
+              "Y": 21.0
             },
             "Name": "lbGold",
             "ctype": "TextObjectData"
@@ -297,51 +297,6 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "texture/bacay/icon_chicken.png",
-              "Plist": ""
-            },
-            "BlendFunc": {
-              "Src": 1,
-              "Dst": 771
-            },
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 42.8738,
-              "Y": 21.0108
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": 28.8738,
-            "RightMargin": -56.8738,
-            "TopMargin": -35.0108,
-            "BottomMargin": 7.0108,
-            "Tag": 192,
-            "ActionTag": -484703585,
-            "Size": {
-              "X": 28.0,
-              "Y": 28.0
-            },
-            "Name": "icon_chicken",
-            "ctype": "SpriteObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
               "Path": "texture/bacay/icon_vip.png",
               "Plist": ""
             },
@@ -396,9 +351,8 @@
         "../Default/Sprite.png",
         "../texture/bacay/avatar_player.png",
         "../texture/bacay/btn_invite.png",
-        "../texture/bacay/icon_chicken.png",
         "../texture/bacay/icon_vip.png",
-        "../texture/font/Roboto-Bold.ttf"
+        "../texture/font/UTM-PenumbraBold.ttf"
       ],
       "ctype": "GameFileData"
     }

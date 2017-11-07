@@ -149,6 +149,240 @@ var GUISlot = AdminBaseGUI.extend({
             this.nodeKeCuaDanhBien.addChild(this.btnDanhBien,1);
 
     },
+    setMaxMin: function (max, min, tableId) {
+        this.maxGold = max;
+        this.minGold = min;
+        this.tableId = tableId;
+    },
+
+    setStructureId: function (structureId) {
+        this.structureId = structureId;
+    },
+
+    setIsMe: function (b) {
+        this._isMe = b;
+        if(b){
+            this.img_bg.setSpriteFrame(res.box_avatar2);
+            this.lbMoney.setColor(cc.color(136,62,23));
+            this.lbPlayerName.setColor(cc.color(136,62,23));
+        }
+        else{
+            this.img_bg.setSpriteFrame(res.box_avatar1);
+            this.lbMoney.setColor(cc.color(255,165,0));
+            this.lbPlayerName.setColor(cc.color(255,165,0));
+        }
+    },
+
+    setIsBoss: function (b) {
+        this._isBoss = b;
+        this.img_chuong.setVisible(b);
+    },
+
+    setVip: function (b) {
+        this._vip = b;
+        if(b < 1)
+            this.imgVIP.setVisible(false);
+        else
+            this.imgVIP.setSpriteFrame(res["vip_ingame_" + b]);
+    },
+
+    setGold :function (b) {
+        this._money = b;
+        this.lbGold.setString(Utility.formatMoney(this._money,""));
+    },
+    getMoney :function () {
+
+    },
+    getVip: function () {
+        return this._vip;
+    },
+
+    isBoss: function () {
+        return this._isBoss;
+    },
+
+    canCheck: function () {
+        return this._canCheck;
+    },
+
+    setCanCheck: function (b) {
+        this._canCheck = b;
+    },
+    setAlive: function (b) {
+        this._isAlive = b;
+        this._nodeUI.setVisible(b);
+        this.btnInvite.setVisible(!b);
+
+    },
+    setSlotIndex: function (idx){
+        this.index = idx;
+    },
+
+    getSlotIndex: function () {
+        return this.index;
+    },
+
+    isMe: function () {
+        return this._isMe;
+    },
+
+    isAlive: function () {
+        return this._isAlive;
+    },
+
+    isSitting: function () {
+        return this._isSitting;
+    },
+
+    isEmpty: function () {
+        return this.status === SlotStatus.NONE;
+    },
+
+    isSpectator: function () {
+        return this.status === SlotStatus.SPECTATOR;
+    },
+
+
+
+    /**
+     *
+     * @param dataPlayer
+     */
+    setPlayerInfo: function (dataPlayer) {
+        ZLog.error("dataaaaaa" + JSON.stringify(dataPlayer));
+        // this.playerInfo = dataPlayer;
+        // this.lbName.setString(Utility.displayName(dataPlayer.uName, 7));
+        // this.index = dataPlayer.slotIdx;
+        // this.setStatus(dataPlayer.status);
+        // this.setVip(dataPlayer.vipLevel);
+        // this.setGold(dataPlayer.gold);
+        // this.avatar.setSprite(dataPlayer.defaultAvatar);
+
+        this.lbName.setString(dataPlayer.uName);
+        this.setGold(dataPlayer.gold);
+        this.index = dataPlayer.slotIdx;
+
+    },
+
+    getPlayerInfo: function () {
+        return this.playerInfo;
+    },
+
+    getStatus: function () {
+        return this.status;
+    },
+
+    setStatus: function (s) {
+        this.status = s;
+        this._isAlive = true;
+
+        switch (this.status) {
+            case SlotStatus.NONE:
+            case SlotStatus.SPECTATOR:
+                this._isAlive = false;
+                this.setVisibleInviting(false);
+                break;
+            case SlotStatus.SITTING:
+                this._isSitting = true;
+                this.setVisibleInviting(true);
+                break;
+            default:
+                break;
+        }
+
+    },
+
+    cleanUpStatus: function () {
+        this.index = -1;
+        this.setStatus(SlotStatus.NONE);
+        this.playerInfo = null;
+        this._isMe = false;
+        if (this._imgEmo) {
+            this._imgEmo.setVisible(false);
+        }
+        this._nodeUI.setVisible(false);
+        this.btnInvite.setVisible(true);
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+
+    switchToPlayer: function () {
+        this.setStatus(SlotStatus.SITTING);
+        this._nodeUI.runAction(cc.fadeTo(0.3, FoldOpacity));
+    },
+
+    switchToSpectator: function () {
+        this.setStatus(SlotStatus.SPECTATOR);
+        this.fade();
+    },
+
+    fade: function(){
+        this._nodeUI.setVisible(true);
+        this._nodeUI.setOpacity(FoldOpacity);
+        if(this.avatar){
+            this.avatar.getListener().setEnabled(true);
+        }
+    },
+
+    leaveTable: function () {
+        this.setStatus(SlotStatus.NONE);
+        this.hide();
+        // TODO send leave table
+    },
+
+    isVisibleInviting: function () {
+        return this.btnInvite.isVisible();
+    },
+
+    setVisibleInviting: function (b) {
+        this.btnInvite.setVisible(b);
+        if (!b) {
+            Tooltip.hide();
+        }
+
+        if (this.isMe()) {
+            this.btnInvite.setVisible(false);
+        }
+        if (this._nodeUI.isVisible()) {
+            this.btnInvite.setVisible(false);
+        }
+    },
+
+    sitDown: function () {
+        this.setStatus(SlotStatus.SITTING);
+        this.btnInvite.setVisible(false);
+        this._nodeUI.setOpacity(255);
+    },
+
+    addEmoticon: function (emoName) {
+        if (emoName && emoName.length > 0 && isEmoticon(emoName)) {
+            if (this._imgEmo === null) {
+                this._imgEmo = new Emoticon(emoName);
+                this._imgEmo.setPosition(0, 0);
+                this.addChild(this._imgEmo, 1);
+
+                if (!this.isMe()) {
+                    this._imgEmo.setScale(0.78);
+                }
+            }
+            else {
+                this._imgEmo.stop();
+                this._imgEmo.changeEmo(emoName);
+                this._imgEmo.setPosition(0, 0);
+                this._imgEmo.setVisible(true);
+                this._imgEmo.setOpacity(255);
+            }
+
+            this._imgEmo.start();
+        }
+        else {
+            ZLog.error("emoticon not found - %s", emoName);
+        }
+    },
+
 
 
 
