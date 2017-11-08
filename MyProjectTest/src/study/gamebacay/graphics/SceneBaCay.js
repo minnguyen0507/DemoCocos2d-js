@@ -30,6 +30,7 @@ var BaCayLayer = AdminBaseGUI.extend({
 
         this.cardsChiaBai = [];
 
+        this.contenSizeAVT = null;
 		this.init();
 
 	},
@@ -102,16 +103,18 @@ var BaCayLayer = AdminBaseGUI.extend({
     _actionChiaBai : function () {
         var time = 0;
         var scale = 0.5;
-        var dtPos = cc.p (0,0);
+        //var dtPos = cc.p (0,0);
         var timeSlow = 3*8/3;
         var timeDealOne = 0.05*timeSlow;
         var count = 0;
         for (var i = 1; i <= 3; i++)  //Tổng số quân bài muốn chia
         {
-            for (var j = 1; j <= this.slotPos.length; j++) {
 
+            for (var j = 1; j <= this.slotPos.length; j++) {
+                var dtPos = this.slotPos[j-1];
                 count++;
-                dtPos = this.slotPos[j-1];
+                // ZLog.error("pos", dtPos.y);
+
                 time  = time + 0.05; // Tốc độ chia bài
 
                 var card = new BaseCards();
@@ -119,31 +122,45 @@ var BaCayLayer = AdminBaseGUI.extend({
                 this.addChild(card,1);
                 card.setScale(0.5);
                 card.setLocalZOrder(-count);
-
+                scale = 0.4;
+                // ZLog.error("contenSize",this.contenSizeAVT.height/2);
+                var x = dtPos.x; //  vị trí chiều ngang quân bài
+                var y = dtPos.y; //  vị trí chiều ngang quân bài
+                var dtx = 20; //  Khoảng cách ngang giữa 2 quân bài
+                var dty = 20; //  Khoảng cách dọc giữa 2 quân bài
+                var dtx1 = 30; //  Khoảng cách ngang theo contenSize cha
+                var dty1 = 0; //  Khoảng cách dọc theo contenSize cha
+                var anChorX =  card.getContentSize().width * 0.5 * scale;
+                var anChorY =  card.getContentSize().height * 0.5 * scale;
                 if(j == 1 ){        // Bộ bài của minh
-                    //dtPos.x  += (i * 10) ;
-                    dtPos.x  = 440 + i*90;  // chiều ngang bộ bài
-                    dtPos.y = 120;           //chiều dọc bộ bài
+                    x = dtPos.x - this.contenSizeAVT.height * 0.5 + 90 * (i - 1) + 150 + anChorX;
+                    y= dtPos.y + this.contenSizeAVT.width * 0.5 - dty + anChorY;
+
+                    // dtPos.x  = 440 + i*90;  // chiều ngang bộ bài
+                    // dtPos.y = 120;           //chiều dọc bộ bài
                     scale = 1;
                 }
                 else if( j == 2 || j == 3 || j == 4){
-                    ZLog.error("sssss",i);
-                    dtPos.y += i ;
-                    dtPos.x = 270;
-                    scale = 0.5;
+                    // dtPos.x = 280;
+                    // card.setAnchorPoint(0,0);
+                    x = dtPos.x + this.contenSizeAVT.width * 0.5 + 5 + anChorX;
+                    y = dtPos.y - this.contenSizeAVT.height * 0.5 + dty * (i - 1) + dty1 + anChorY ;
+                    ZLog.error("dtPost " + JSON.stringify(dtPos));
+                    // this.contenSizeAVT.height += i + 15;
                 }
                 else if( j == 5 || j ==6){
-                    dtPos.x += i * 5;
-                    dtPos.y = 430;
-                    scale = 0.5;
+                    // card.setAnchorPoint(0,1);
+                    x = dtPos.x - this.contenSizeAVT.height * 0.5 + dtx * (i - 1) + dtx1 + anChorX;
+                    y= dtPos.y - this.contenSizeAVT.width * 0.5 - 50 - anChorY;
+
                 }
                 else if( j == 7 || j == 8 || j == 9){
-                    dtPos.y += i * 10;
-                    dtPos.x = 820;
-                    scale = 0.5;
+                    // card.setAnchorPoint(1,0);
+                    x = dtPos.x - this.contenSizeAVT.width * 0.5 - 5 - anChorX ;
+                    y = dtPos.y - this.contenSizeAVT.height * 0.5 + dty * (i - 1) + dty1 + anChorY ;
                 }
 
-                var acSpawn =  cc.spawn(cc.moveTo(timeDealOne,dtPos), cc.scaleTo(timeDealOne, scale), cc.rotateTo(timeDealOne,0));
+                var acSpawn =  cc.spawn(cc.moveTo(timeDealOne,cc.p(x,y)), cc.scaleTo(timeDealOne, scale), cc.rotateTo(timeDealOne,0));
                 var sequence =  cc.sequence(cc.delayTime(time), cc.delayTime(time), cc.show(),
                     acSpawn);
                 card.runAction(sequence);
@@ -195,8 +212,8 @@ var BaCayLayer = AdminBaseGUI.extend({
             newSlot.setPosition(this.slotPos[i]);
             this.addChild(newSlot, 1);
             this.slots.push(newSlot);
-
-            newSlot.setPlayerInfo(BACAY_SERVER_INFO[i]);
+            this.contenSizeAVT = newSlot.imgAvatar.getContentSize();
+           // newSlot.setPlayerInfo(BACAY_SERVER_INFO[i]);
 
            // newSlot.testLabelWinLose(i,1);
           //  newSlot.testIconAndLabel(i);
