@@ -213,7 +213,7 @@ var BaCayLayer = AdminBaseGUI.extend({
             this.addChild(newSlot, 1);
             this.slots.push(newSlot);
             this.contenSizeAVT = newSlot.imgAvatar.getContentSize();
-           // newSlot.setPlayerInfo(BACAY_SERVER_INFO[i]);
+            newSlot.setPlayerInfo(BACAY_SERVER_INFO[i]);
 
            // newSlot.testLabelWinLose(i,1);
           //  newSlot.testIconAndLabel(i);

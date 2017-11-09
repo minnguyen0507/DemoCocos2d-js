@@ -41,4 +41,7 @@ BACAY_SERVER_BOBAI = [
                     ];
 
 
-
+BC_GET_GAME_INFO = {"id":7,"structureId":"BC_2","blindLevel":1000,"timer":44,"gameStatus":0,"listPlayerSize":1,
+                    "playerList":[{"id":1025,"gamePosition":0,"name":"D_BNNNN","status":11,"chips":200000,"defaultAvatar":"avatar_4","level":1,"vip":0}],
+                    "listKeCuaSize":0,"listKeCua":[],"listDanhBienSize":0,"listDanhBien":[]
+                    };
