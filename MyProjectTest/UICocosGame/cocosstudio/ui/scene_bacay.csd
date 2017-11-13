@@ -141,7 +141,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="lbGoldGa" ActionTag="987325629" Tag="522" IconVisible="False" LeftMargin="2.1669" RightMargin="-34.1669" TopMargin="21.9053" BottomMargin="4.0947" IsCustomSize="True" FontSize="20" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="lbGoldGa" ActionTag="987325629" Tag="522" IconVisible="False" LeftMargin="2.1693" RightMargin="-34.1693" TopMargin="21.9041" BottomMargin="4.0959" IsCustomSize="True" FontSize="20" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="200.0000" Y="30.0000" />
                     <AnchorPoint ScaleX="0.4965" ScaleY="0.8165" />
                     <Position X="101.4693" Y="28.5909" />
@@ -279,6 +279,22 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8143" Y="0.2531" />
             <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="btnLatBai" ActionTag="865680959" VisibleForFrame="False" Tag="25" IconVisible="False" LeftMargin="511.7913" RightMargin="460.2087" TopMargin="538.3690" BottomMargin="42.6310" TouchEnable="True" FontSize="28" ButtonText="LAT BAI" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="134" Scale9Height="37" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="164.0000" Y="59.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="593.7913" Y="72.1310" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5227" Y="0.1127" />
+            <PreSize X="0.1444" Y="0.0922" />
+            <FontResource Type="Normal" Path="texture/font/Roboto-Bold.ttf" Plist="" />
+            <TextColor A="255" R="255" G="255" B="255" />
+            <DisabledFileData Type="Normal" Path="texture/button/btn_bg_164x59.png" Plist="" />
+            <PressedFileData Type="Normal" Path="texture/button/btn_bg_164x59.png" Plist="" />
+            <NormalFileData Type="Normal" Path="texture/button/btn_bg_164x59.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

@@ -27,6 +27,7 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.btnHuyBo = null;
         this.btnStore = null;
         this.btnChatBox = null;
+        this.btnLatBai = null;
 
         this.cardsChiaBai = [];
 
@@ -162,7 +163,9 @@ var BaCayLayer = AdminBaseGUI.extend({
 
                 var acSpawn =  cc.spawn(cc.moveTo(timeDealOne,cc.p(x,y)), cc.scaleTo(timeDealOne, scale), cc.rotateTo(timeDealOne,0));
                 var sequence =  cc.sequence(cc.delayTime(time), cc.delayTime(time), cc.show(),
-                    acSpawn);
+                    acSpawn,cc.delayTime(1),cc.callFunc(function () {
+                     this.btnLatBai.setVisible(true);
+                    }.bind(this)));
                 card.runAction(sequence);
 
             }
@@ -388,6 +391,9 @@ var BaCayLayer = AdminBaseGUI.extend({
             case this.btnStore:
                 break;
             case this.btnChatBox:
+                break;
+            case this.btnLatBai:
+                this.callBackNanBai();
                 break;
 
         }

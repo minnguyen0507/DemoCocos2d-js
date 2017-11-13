@@ -761,10 +761,10 @@
                       "X": 1.1905,
                       "Y": 0.5357
                     },
-                    "LeftMargin": 2.1669,
-                    "RightMargin": -34.1669,
-                    "TopMargin": 21.9053,
-                    "BottomMargin": 4.0947,
+                    "LeftMargin": 2.1693,
+                    "RightMargin": -34.1693,
+                    "TopMargin": 21.9041,
+                    "BottomMargin": 4.0959,
                     "Tag": 522,
                     "ActionTag": 987325629,
                     "Size": {
@@ -1196,6 +1196,83 @@
             },
             "Name": "player8",
             "ctype": "SingleNodeObjectData"
+          },
+          {
+            "FontSize": 28,
+            "ButtonText": "LAT BAI",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "texture/font/Roboto-Bold.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "texture/button/btn_bg_164x59.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "texture/button/btn_bg_164x59.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "texture/button/btn_bg_164x59.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 134,
+            "Scale9Height": 37,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 593.7913,
+              "Y": 72.131
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5227,
+              "Y": 0.1127
+            },
+            "PreSize": {
+              "X": 0.1444,
+              "Y": 0.0922
+            },
+            "LeftMargin": 511.7913,
+            "RightMargin": 460.2087,
+            "TopMargin": 538.369,
+            "BottomMargin": 42.631,
+            "Tag": 25,
+            "ActionTag": 865680959,
+            "Size": {
+              "X": 164.0,
+              "Y": 59.0
+            },
+            "VisibleForFrame": false,
+            "Name": "btnLatBai",
+            "ctype": "ButtonObjectData"
           }
         ],
         "Size": {
@@ -1217,6 +1294,8 @@
         "../texture/bacay/btn_store.png",
         "../texture/bacay/o_clock1.png",
         "../texture/bacay/o_clock2.png",
+        "../texture/button/btn_bg_164x59.png",
+        "../texture/font/Roboto-Bold.ttf",
         "../texture/font/UTM-PenumbraBold.ttf"
       ],
       "ctype": "GameFileData"
