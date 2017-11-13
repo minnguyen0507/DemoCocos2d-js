@@ -40,8 +40,33 @@ BACAY_SERVER_BOBAI = [
                         {}
                     ];
 
+BACAY_GET_GAME_INFO = {"id":7,"structureId":"BC_8","blindLevel":5000,"timer":52,"gameStatus":2,"listPlayerSize":2,
+    "playerList":[{"uId":1083,"uName":"D_MMKKLLL","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_9","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":0,"statusInGame":11},
+    {"uId":1081,"uName":"D_sdsdsd","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_7","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":1,"statusInGame":11}],"listKeCuaSize":0,"listKeCua":[],"listDanhBienSize":0,"listDanhBien":[]}
 
-BC_GET_GAME_INFO = {"id":7,"structureId":"BC_2","blindLevel":1000,"timer":44,"gameStatus":0,"listPlayerSize":1,
-                    "playerList":[{"id":1025,"gamePosition":0,"name":"D_BNNNN","status":11,"chips":200000,"defaultAvatar":"avatar_4","level":1,"vip":0}],
-                    "listKeCuaSize":0,"listKeCua":[],"listDanhBienSize":0,"listDanhBien":[]
-                    };
+// JS: ERROR :  receive--------------------END GAME{"time":6}
+// JS: <=============== receive a cmd = 10003
+// JS: BC_PRE_START | {"time":6}
+// JS: ERROR :  receive--------------------PRESTART{"time":6}
+// JS: ERROR :  do some thing...PreStart6
+// JS: <=============== receive a cmd = 10004
+// JS: BC_BETTING | {"time":6}
+// JS: ERROR :  receive--------------------DAT CUOC{"time":6}
+// JS: ERROR :  do some thing...betting
+// JS: ERROR :  an node start - hien node vao ga
+// JS: <=============== receive a cmd = 10005
+// JS: BC_BET_CHICKEN | {"time":11}
+// JS: ERROR :  receive--------------------DAT GA{"time":11}
+// JS: ERROR :  do some thing...betting
+// JS: <=============== receive a cmd = 10006
+// JS: BC_DEAL_GAME | {"time":16,"card1":1,"card2":2,"card3":15}
+// JS: ERROR :  receive--------------------DEAL GAME{"time":16,"card1":1,"card2":2,"card3":15}
+// JS: <=============== receive a cmd = 10006
+// JS: BC_DEAL_GAME | {"time":16,"card1":5,"card2":18,"card3":25}
+// JS: ERROR :  receive--------------------DEAL GAME{"time":16,"card1":5,"card2":18,"card3":25}
+// JS: <=============== receive a cmd = 10007
+// JS: BC_END_GAME | {"time":6}
+// JS: ERROR :  receive--------------------END GAME{"time":6}
+// JS: <=============== receive a cmd = 10003
+// JS: BC_PRE_START | {"time":6}
+
