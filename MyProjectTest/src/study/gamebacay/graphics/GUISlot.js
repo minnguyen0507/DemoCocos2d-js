@@ -9,6 +9,7 @@ var GUISlot = AdminBaseGUI.extend({
         this.btnKeCua = null;
         this.btnDanhBien = null;
         this.nodeKeCuaDanhBien = null;
+        this._spChicken = null;
         this.init();
 
     },
@@ -58,6 +59,107 @@ var GUISlot = AdminBaseGUI.extend({
 
     },
 
+    showSpriteChicken : function (slotUIIdx) {
+        this._spChicken = new cc.Sprite("res/texture/bacay/icon_chicken.png");
+        switch (slotUIIdx){
+            case POS.ISME:
+            case POS.PLAYER1:
+            case POS.PLAYER2:
+            case POS.PLAYER3:
+            case POS.PLAYER4:
+                this._spChicken.setPosition(-42,20);
+                break;
+            case POS.PLAYER5:
+            case POS.PLAYER6:
+            case POS.PLAYER7:
+            case POS.PLAYER8:
+                this._spChicken.setPosition(42,20);
+                break;
+        }
+        this._spChicken.setLocalZOrder(3);
+        this._spChicken.setVisible(true);
+        this.addChild(this._spChicken, 3);
+    },
+
+    showGoldKeCua: function (slotUIIdx) {
+        var layout = new ccui.Layout();
+        layout.setLayoutType(ccui.Layout.DIR_VERTICAL);
+        layout.setContentSize(100,30);
+        layout.setAnchorPoint(0.5,0.5);
+        this.addChild(layout, 1);
+
+        switch(slotUIIdx) {
+            case POS.ISME:
+                layout.setPosition(0,100);
+                break;
+            case POS.PLAYER1:
+            case POS.PLAYER2:
+            case POS.PLAYER3:
+                layout.setPosition(85,70);
+                break;
+            case POS.PLAYER4:
+            case POS.PLAYER5:
+                layout.setPosition(40,-80);
+                break;
+            case POS.PLAYER6:
+            case POS.PLAYER7:
+            case POS.PLAYER8:
+                layout.setPosition(-90,70);
+                break;
+        }
+        var iconCoin = new cc.Sprite(res.icon_coin);
+        iconCoin.setScale(0.8);
+        iconCoin.setPosition(layout.getContentSize().width/2 - 30, layout.getContentSize().height/2);
+        layout.addChild(iconCoin,1);
+
+        var labelGold = new cc.LabelTTF("$200K", "Arial", 20,cc.size(84,21),cc.TEXT_ALIGNMENT_CENTER);
+        labelGold.setPosition(iconCoin.getPositionX()+ 40, iconCoin.getPositionY());
+        labelGold.setColor(cc.color(0,128,0));
+        layout.addChild(labelGold, 2);
+
+    },
+
+    showGoldBien: function (slotUIIdx) {
+        var layout = new ccui.Layout();
+        layout.setLayoutType(ccui.Layout.DIR_VERTICAL);
+        layout.setContentSize(100,30);
+        layout.setAnchorPoint(0.5,0.5);
+        this.addChild(layout, 1);
+
+        switch(slotUIIdx) {
+            case POS.ISME:
+                layout.setPosition(100,-20);
+                break;
+            case POS.PLAYER1:
+            case POS.PLAYER2:
+            case POS.PLAYER3:
+                layout.setPosition(-100,-20);
+                break;
+            case POS.PLAYER4:
+                layout.setPosition(100,-20);
+                break;
+            case POS.PLAYER5:
+                layout.setPosition(-100,-20);
+                break;
+            case POS.PLAYER6:
+            case POS.PLAYER7:
+            case POS.PLAYER8:
+                layout.setPosition(100,-20);
+                break;
+        }
+        var iconCoin = new cc.Sprite(res.icon_coin);
+        iconCoin.setPosition(layout.getContentSize().width/2 - 30, layout.getContentSize().height/2);
+        iconCoin.setColor(cc.color(0,128,0));
+        layout.addChild(iconCoin,1);
+
+        var labelGold = new cc.LabelBMFont("", res.FONT_BITMAP);
+        labelGold.setString(Utility.formatMoney("200000",""));
+        labelGold.setPosition(iconCoin.getPositionX()+ 40, iconCoin.getPositionY());
+        labelGold.setColor(cc.color(255,255,0));
+        layout.addChild(labelGold, 2);
+
+    },
+
     testLabelWinLose : function (slotUIIdx, result) {
         var spWinLose = new cc.Sprite();
         spWinLose.setPosition(0, -68);
@@ -85,26 +187,25 @@ var GUISlot = AdminBaseGUI.extend({
             case POS.PLAYER1:
             case POS.PLAYER2:
             case POS.PLAYER3:
-                layout.setPosition(70,50);
+                layout.setPosition(85,50);
                 break;
             case POS.PLAYER4:
             case POS.PLAYER5:
-                layout.setPosition(0,-80);
+                layout.setPosition(-40,-80);
                 break;
             case POS.PLAYER6:
             case POS.PLAYER7:
             case POS.PLAYER8:
-                layout.setPosition(-70,50);
+                layout.setPosition(-90,50);
                 break;
         }
             var iconCoin = new cc.Sprite(res.icon_coin);
             iconCoin.setPosition(layout.getContentSize().width/2 - 30, layout.getContentSize().height/2);
             layout.addChild(iconCoin,1);
 
-            var labelGold = new cc.LabelTTF("$2", "Arial", 20);
-            labelGold.setPosition(iconCoin.getPositionX()+ 30, iconCoin.getPositionY());
+            var labelGold = new cc.LabelTTF("$200K", "Arial", 20,cc.size(84,21),cc.TEXT_ALIGNMENT_CENTER);
+            labelGold.setPosition(iconCoin.getPositionX()+ 40, iconCoin.getPositionY());
             layout.addChild(labelGold, 2);
-
     },
 
     testKeCuaDanhBien: function (slotUIIdx) {
@@ -116,7 +217,9 @@ var GUISlot = AdminBaseGUI.extend({
 
         switch(slotUIIdx) {
             case POS.ISME:
-                this.nodeKeCuaDanhBien.setPosition(-100,30);
+                this.nodeKeCuaDanhBien.setVisible(false);
+               // this.nodeKeCuaDanhBien.setPosition(-100,30);
+
                 break;
             case POS.PLAYER1:
             case POS.PLAYER2:
@@ -124,8 +227,10 @@ var GUISlot = AdminBaseGUI.extend({
                 this.nodeKeCuaDanhBien.setPosition(-100,30);
                 break;
             case POS.PLAYER4:
-            case POS.PLAYER5:
                 this.nodeKeCuaDanhBien.setPosition(100,30);
+                break;
+            case POS.PLAYER5:
+                this.nodeKeCuaDanhBien.setPosition(-100,30);
                 break;
             case POS.PLAYER6:
             case POS.PLAYER7:

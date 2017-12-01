@@ -14,14 +14,19 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         //this._createUILabel();
         //this._createUISkeleton();
 
-        for (i=0; i<64; i++){
-            var tile = cc.Sprite.create(res.btn_next);
-            this.addChild(tile,0);
-            tile.setPosition(cc.winSize.width / 2 +i%8*50/-10, cc.winSize.height / 2-Math.floor(i/8)*50);
+        // for (i=0; i<64; i++){
+        //     var tile = cc.Sprite.create(res.btn_next);
+        //     this.addChild(tile,0);
+        //     tile.setPosition(cc.winSize.width / 2 +i%8*50/-10, cc.winSize.height / 2-Math.floor(i/8)*50);
+        //
+        // }
 
-        }
+       // cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
 
 
+        this._createTestVoice();
+        //this._createUIAnimation();
+        //this._createUILabelBMT();
         ZLog.error("Finish new UI");
         return true;
 
@@ -34,7 +39,9 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         lbTest.setPosition(cc.winSize.width/2, cc.winSize.height/2);
     },
     _createUILabelBMT: function () {
-
+        var lbTest = new cc.LabelBMFont("2222", res.FONT_BITMAP);
+        this.addChild(lbTest,1);
+        lbTest.setPosition(cc.winSize.width/2, cc.winSize.height/2);
     },
 
     _createUIMenu: function(){
@@ -220,6 +227,31 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         var runningAction = new cc.RepeatForever(new cc.Animate(animation));
 
         var sprite = new cc.Sprite("#anim0.png");
+        sprite.setPosition(cc.winSize.width/2, cc.winSize.height/2);
+        //sprite.setRotation(-180);
+        sprite.runAction(runningAction);
+        this.addChild(sprite, 2);
+    },
+
+
+    _createTestVoice: function () {
+        //cc.spriteFrameCache.addSpriteFrames("res/animation/tx_mobat/actionmobat.plist");
+        cc.spriteFrameCache.addSpriteFrames("res/animation/animation_voice.plist");
+
+        //init runningAction
+        var animFrames = [];
+        for (var i = 0; i < 5; i++) {
+            var str = "texture/chat/icon_mic_"+ i + ".png";
+            var frame = cc.spriteFrameCache.getSpriteFrame(str);
+            animFrames.push(frame);
+        }
+
+        var animation = new cc.Animation(animFrames, 0.1);
+        animation.setDelayPerUnit(0.1);
+        animation.setRestoreOriginalFrame(true);
+        var runningAction = new cc.RepeatForever(new cc.Animate(animation));
+
+        var sprite = new cc.Sprite("#texture/chat/icon_mic_0.png");
         sprite.setPosition(cc.winSize.width/2, cc.winSize.height/2);
         //sprite.setRotation(-180);
         sprite.runAction(runningAction);

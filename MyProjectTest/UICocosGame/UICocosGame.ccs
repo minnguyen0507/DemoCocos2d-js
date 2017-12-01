@@ -258,6 +258,7 @@
             <Image Name="btn_close.png" />
           </Folder>
           <Folder Name="font">
+            <Fnt Name="font_tienvang_to.fnt" />
             <TTF Name="Roboto-Black.ttf" />
             <TTF Name="Roboto-Bold.ttf" />
             <TTF Name="RobotoCondensed-Bold.ttf" />
@@ -268,6 +269,16 @@
           </Folder>
           <Folder Name="login">
             <Image Name="bg_login.png" />
+          </Folder>
+          <Folder Name="mic animation">
+            <Image Name="bgr.png" />
+            <Image Name="icon mic off.png" />
+            <Image Name="icon mic on.png" />
+            <Image Name="icon_mic_0.png" />
+            <Image Name="icon_mic_1.png" />
+            <Image Name="icon_mic_2.png" />
+            <Image Name="icon_mic_3.png" />
+            <Image Name="icon_mic_4.png" />
           </Folder>
           <Folder Name="minigames">
             <Folder Name="taixiu">

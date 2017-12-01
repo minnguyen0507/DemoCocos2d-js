@@ -21,6 +21,8 @@ var res = {
     cocoban_png : "res/animation/spritesheet.png",
     tx_animations_plist : "res/animation/tx_animations.plist",
     tx_animations_png : "res/animation/tx_animations.png",
+    animation_chatvoice_plist : "res/animation/animation_voice.plist",
+    animation_chatvoice_png : "res/animation/animation_voice.png",
     actionmobat_plist : "res/animation/tx_mobat/actionmobat.plist",
     actionmobat_png : "res/animation/tx_mobat/actionmobat.png",
     actionsocdia_plist : "res/animation/tx_socdia/actionsocdia.plist",
@@ -53,6 +55,12 @@ var res = {
     icon_thang: "res/texture/bacay/icon_thang.png",
     icon_thua: "res/texture/bacay/icon_thua.png",
 
+    //----------CHAT--------------
+    icon_mic_1: "res/texture/chat/icon_mic_1.png",
+    icon_mic_2: "res/texture/chat/icon_mic_2.png",
+    icon_mic_3: "res/texture/chat/icon_mic_3.png",
+    icon_mic_4: "res/texture/chat/icon_mic_4.png",
+
     //-----------cards-----------------
     card_0: "res/cards/at_0.png",
     card_1: "res/cards/at_1.png",
@@ -75,6 +83,7 @@ var res = {
 
         //--------Font Name--------------
     //FONT_ROBOTO_BOLD : "res/ui/texture/font/Roboto-Bold.ttf",
+    FONT_BITMAP: "res/texture/font/font_tienvang_to.fnt",
 
     HelloWorld_png : "res/HelloWorld.png",
     btn_next : "res/button/btn_next.png",

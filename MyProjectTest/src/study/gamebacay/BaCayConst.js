@@ -40,9 +40,15 @@ BACAY_SERVER_BOBAI = [
                         {}
                     ];
 
-BACAY_GET_GAME_INFO = {"id":7,"structureId":"BC_8","blindLevel":5000,"timer":52,"gameStatus":2,"listPlayerSize":2,
+BACAY_GET_GAME_INFO = {"id":7,"structureId":"BC_8","blindLevel":5000,"timer":52,"gameStatus":2,"listPlayerSize":8,
     "playerList":[{"uId":1083,"uName":"D_MMKKLLL","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_9","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":0,"statusInGame":11},
-    {"uId":1081,"uName":"D_sdsdsd","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_7","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":1,"statusInGame":11}],"listKeCuaSize":0,"listKeCua":[],"listDanhBienSize":0,"listDanhBien":[]}
+        {"uId":1083,"uName":"D_MMKKLLL","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_9","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":1,"statusInGame":11},
+        {"uId":1083,"uName":"D_MMKKLLL","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_9","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":2,"statusInGame":11},
+        {"uId":1083,"uName":"D_MMKKLLL","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_9","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":3,"statusInGame":11},
+        {"uId":1083,"uName":"D_MMKKLLL","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_9","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":4,"statusInGame":11},
+        {"uId":1083,"uName":"D_MMKKLLL","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_9","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":5,"statusInGame":11},
+        {"uId":1083,"uName":"D_MMKKLLL","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_9","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":6,"statusInGame":11},
+    {"uId":1081,"uName":"D_sdsdsd","displayName":null,"avatarURL":null,"defaultAvatar":"avatar_7","gold":1000000,"level":1,"exp":null,"vipLevel":0,"vipPoint":null,"vipExpireTime":null,"gamePosition":7,"statusInGame":11}],"listKeCuaSize":0,"listKeCua":[],"listDanhBienSize":0,"listDanhBien":[]}
 
 // JS: ERROR :  receive--------------------END GAME{"time":6}
 // JS: <=============== receive a cmd = 10003

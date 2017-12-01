@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>texture/chat/icon_mic_0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1},{70,99}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{70,99}</string>
+			</dict>
+			<key>texture/chat/icon_mic_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,102},{70,99}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{70,99}</string>
+			</dict>
+			<key>texture/chat/icon_mic_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,203},{70,99}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{70,99}</string>
+			</dict>
+			<key>texture/chat/icon_mic_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,304},{70,99}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{70,99}</string>
+			</dict>
+			<key>texture/chat/icon_mic_4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,405},{70,99}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{70,99}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>animation_voice.png</string>
+			<key>realTextureFileName</key>
+			<string>animation_voice.png</string>
+			<key>size</key>
+			<string>{128,512}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>128</integer>
+			<key>height</key>
+			<integer>512</integer>
+		</dict>
+	</dict>
+</plist>
