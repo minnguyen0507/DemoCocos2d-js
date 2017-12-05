@@ -1,4 +1,4 @@
-var BaCayNanBai = BaseGUI.extend({
+var BaCayNanBai = AdminBaseGUI.extend({
     arrCardTypes: [],
     CardOnHand: [],
     sizeScreen: cc.size(0, 0),
