@@ -236,12 +236,12 @@ var GUIUICocos2d = AdminBaseGUI.extend({
 
     _createTestVoice: function () {
         //cc.spriteFrameCache.addSpriteFrames("res/animation/tx_mobat/actionmobat.plist");
-        cc.spriteFrameCache.addSpriteFrames("res/animation/animation_voice.plist");
+        cc.spriteFrameCache.addSpriteFrames("res/animation/animation_play_voice.plist");
 
         //init runningAction
         var animFrames = [];
-        for (var i = 0; i < 5; i++) {
-            var str = "texture/chat/icon_mic_"+ i + ".png";
+        for (var i = 0; i < 4 ; i++) {
+            var str = "texture/chat/icon_play_mic_"+ i + ".png";
             var frame = cc.spriteFrameCache.getSpriteFrame(str);
             animFrames.push(frame);
         }
@@ -251,7 +251,7 @@ var GUIUICocos2d = AdminBaseGUI.extend({
         animation.setRestoreOriginalFrame(true);
         var runningAction = new cc.RepeatForever(new cc.Animate(animation));
 
-        var sprite = new cc.Sprite("#texture/chat/icon_mic_0.png");
+        var sprite = new cc.Sprite("#texture/chat/icon_play_mic_0.png");
         sprite.setPosition(cc.winSize.width/2, cc.winSize.height/2);
         //sprite.setRotation(-180);
         sprite.runAction(runningAction);

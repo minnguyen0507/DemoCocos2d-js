@@ -23,6 +23,8 @@ var res = {
     tx_animations_png : "res/animation/tx_animations.png",
     animation_chatvoice_plist : "res/animation/animation_voice.plist",
     animation_chatvoice_png : "res/animation/animation_voice.png",
+    animation_play_chatvoice_plist : "res/animation/animation_play_voice.plist",
+    animation_play_chatvoice_png : "res/animation/animation_play_voice.png",
     actionmobat_plist : "res/animation/tx_mobat/actionmobat.plist",
     actionmobat_png : "res/animation/tx_mobat/actionmobat.png",
     actionsocdia_plist : "res/animation/tx_socdia/actionsocdia.plist",
