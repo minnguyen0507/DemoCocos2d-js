@@ -1,8 +1,7 @@
-var GUINanBai = AdminBaseGUI.extend({
+var BaCayNanBai = BaseGUI.extend({
     arrCardTypes: [],
     CardOnHand: [],
     sizeScreen: cc.size(0, 0),
-    scaleApp: 1,
     disTouchBegan: cc.size(0, 0),
     pointTouchBegan: cc.size(0, 0),
     bottomCard: 0,
@@ -12,7 +11,6 @@ var GUINanBai = AdminBaseGUI.extend({
     widthCard: 0,
     heightCard: 0,
 
-    scaleApp: 0,
     startLeft: 0,
     startTop: 0,
 
@@ -43,7 +41,10 @@ var GUINanBai = AdminBaseGUI.extend({
     vt: 0,
     m_callback: null,
     m_callbackListener: null,
-    tag: null,
+    xMin: 0,
+    xMax: 0,
+    yMin: 0,
+    yMax: 0,
 
     ctor: function () {
         this._super();
@@ -56,10 +57,6 @@ var GUINanBai = AdminBaseGUI.extend({
         // this.setPosition(0, 0);
 
         this.sizeScreen = cc.director.getVisibleSize();
-        var scaleX = 1;
-        var scaleY = 1;
-        var scaleMin = (scaleX < scaleY) ? scaleX : scaleY;
-        this.scaleApp = scaleMin;
 
         this.startLeft = 0;
         this.startTop = 0;
@@ -88,12 +85,13 @@ var GUINanBai = AdminBaseGUI.extend({
         //touch end
         this.vt = -1;
 
-        this.bottomCard = 60;
-        this.leftCard = 129 + (129 / 2);
+        this.bottomCard = this.sizeScreen.height >> 1;
+        this.leftCard = this.sizeScreen.width >> 1;
         this.rightCard = this.leftCard;
 
-        this.widthCard = 129;
-        this.heightCard = 178;
+
+        this.widthCard = 94 * 1.2;
+        this.heightCard = 130 * 1.2;
 
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
@@ -106,7 +104,7 @@ var GUINanBai = AdminBaseGUI.extend({
     },
 
     onExit: function () {
-
+        this._super();
     },
 
     ConvertPoint: function (point) {
@@ -119,7 +117,7 @@ var GUINanBai = AdminBaseGUI.extend({
         var x1, x2;
         var y1, y2;
 
-        var A = ((Math.pow(xCenter - xTap, 2) + Math.pow(yCenter - yTap, 2))) / Math.pow(this.scaleApp, 2);
+        var A = ((Math.pow(xCenter - xTap, 2) + Math.pow(yCenter - yTap, 2)));
         var B = Math.pow((yCenter - yTap) / (xCenter - xTap), 2) + 1;
 
         x1 = xCenter + Math.sqrt(A / B);
@@ -127,8 +125,7 @@ var GUINanBai = AdminBaseGUI.extend({
 
         y1 = yCenter + (yCenter - yTap) * (x1 - xCenter) / (xCenter - xTap);
         y2 = yCenter + (yCenter - yTap) * (x2 - xCenter) / (xCenter - xTap);
-        // "Ä‘iá»ƒm cáº§n convert" = A
-        // Bá»Ÿi vĂ¬ A vĂ  Tap náº±m á»Ÿ cĂ¹ng 1 phĂ­a so vá»›i Center nĂªn náº¿u xTap < xCenter thĂ¬ xA < xCenter vĂ  ngÆ°á»£c láº¡i
+
         if ((xTap < xCenter && x1 < xCenter) || (xTap > xCenter && x1 > xCenter)) {
             x1 -= this.startLeft;
             y1 -= this.startTop;
@@ -144,28 +141,48 @@ var GUINanBai = AdminBaseGUI.extend({
         } else {
             cc.log("no define point convert");
         }
-        cc.log("x= " + point.x + ": y = " + point.y);
         return point;
     },
 
     initListCardHand: function (listCardsSever) {
-        ZLog.error("Serverrrrr", listCardsSever);
+
         for (var i = 0; i < listCardsSever.length; ++i) {
-            ZLog.error("Serverrrrr", listCardsSever[i]);
-            var pCard = new cc.Sprite("#newcardschips/card_" + listCardsSever[i] + ".png");
+
+            var pCard = new cc.Sprite("#textures/newcardschips/card_black.png");
+            var spriteFrame = cc.spriteFrameCache.getSpriteFrame("textures/newcardschips/card_" + listCardsSever[i] + ".png");
+            if(spriteFrame || spriteFrame !== undefined)
+                pCard.setSpriteFrame(spriteFrame);
+
+            pCard.setScale(1.2);
             pCard.setPosition(this.leftCard, this.bottomCard);
             pCard.setLocalZOrder(i + 1);
 
             this.addChild(pCard);
             this.CardOnHand.push(pCard);
         }
+        this.xMin = this.leftCard - (this.widthCard >> 1);
+        this.xMax = this.leftCard + (this.widthCard >> 1);
+        this.yMin = this.bottomCard - (this.heightCard >> 1);
+        this.yMax = this.bottomCard + (this.heightCard >> 1);
 
-        if (this.CardOnHand.length == 0)
+
+        if (this.CardOnHand.length === 0)
             return;
 
+
         this.cardIndex = parseInt(this.CardOnHand.length - 1);
+        var btnLatBai = new ccui.Button("textures/bacay/btn_lat_bai.png", "", "", ccui.Widget.PLIST_TEXTURE);
+        this.addChild(btnLatBai, 1);
+        btnLatBai.setTitleText("Lật bài");
+        btnLatBai.setTitleFontSize("28");
+        btnLatBai.setTitleFontName(res.UTM_PenumbraBold);
+        btnLatBai.setPosition(cc.winSize.width / 2, cc.winSize.height / 2 - 200);
+        btnLatBai.addTouchEventListener(this._onTouchUIEvent, this);
     },
 
+    _onTouchUIEvent: function (sender) {
+        this.CloseLayerNanBai();
+    },
     setCallbackFunc: function (target, callfun) {
         this.m_callback = target;
         this.m_callbackListener = callfun;
@@ -177,9 +194,8 @@ var GUINanBai = AdminBaseGUI.extend({
         var tap = target.convertToNodeSpace(touch.getLocation());
         target.pointTouchBegan = tap;
         target.disTouchBegan = cc.size(0, 0);
-
-        if (tap.x > target.leftCard && tap.x < target.leftCard + target.widthCard &&
-            tap.y > target.bottomCard && tap.y < target.bottomCard + target.heightCard) {
+        if (tap.x > target.xMin && tap.x < target.xMax &&
+            tap.y > target.yMin && tap.y < target.yMax) {
             target.isTouched = true;
             target.dx = tap.x - target.leftCard;
             target.dy = tap.y - target.bottomCard;
@@ -197,13 +213,11 @@ var GUINanBai = AdminBaseGUI.extend({
     },
 
     onTouchMoved: function (pTouch, pEvent) {
-        cc.log("onTouchMoved");
         var target = pEvent.getCurrentTarget();
         var touch = pTouch;
 
         var tap = target.convertToNodeSpace(touch.getLocation());
         tap = target.ConvertPoint(tap);
-
         if (target.isTouched) {
             target.deltaX = target.sX - tap.x;
             target.deltaY = target.sY - tap.y;
@@ -212,7 +226,7 @@ var GUINanBai = AdminBaseGUI.extend({
 
             if (target.deltaX > 0 && tap.x < target.xcu) {
                 target.count_move++;
-                if (target.count_move == 1)
+                if (target.count_move === 1)
                     target.flag_left = 0;
                 else
                     target.count_move++;
@@ -220,7 +234,7 @@ var GUINanBai = AdminBaseGUI.extend({
 
             if (target.deltaX < 0 && tap.x > target.xcu) {
                 target.count_move--;
-                if (target.count_move == -1)
+                if (target.count_move === -1)
                     target.flag_right = 0;
                 else
                     target.count_move++;
@@ -229,12 +243,12 @@ var GUINanBai = AdminBaseGUI.extend({
             tap.x -= target.disTouchBegan.width;
             tap.y -= target.disTouchBegan.height;
 
-            if (target.flag_left == 0) {
+            if (target.flag_left === 0) {
                 var pCard = target.CardOnHand[target.cardIndex];
                 pCard.setPosition(tap);
             }
 
-            if (target.flag_right == 0) {
+            if (target.flag_right === 0) {
                 var pCard = target.CardOnHand[target.cardIndex_under];
                 pCard.setPosition(tap);
             }
@@ -243,24 +257,24 @@ var GUINanBai = AdminBaseGUI.extend({
 
     onTouchEnded: function (pTouch, pEvent) {
         var target = pEvent.getCurrentTarget();
-        if (target.flag_left == 0)
+        if (target.flag_left === 0)
             target.vt = target.cardIndex;
-        else if (target.flag_right == 0)
+        else if (target.flag_right === 0)
             target.vt = target.cardIndex_under;
 
         if (target.isTouched) {
-            if (target.vt == -1)
+            if (target.vt === -1)
                 return;
 
             var pCard = target.CardOnHand[target.vt];
             if (pCard.getPositionX() <= (target.leftCard - target.widthCard) ||
                 pCard.getPositionX() >= (target.leftCard + target.widthCard) ||
                 pCard.getPositionY() >= (target.bottomCard + target.heightCard)) {
-                if (target.flag_left == 0) {
+                if (target.flag_left === 0) {
                     target.MovePockerFinish(pCard, target.vt);
                     target.cardIndex--;
                 }
-                if (target.flag_right == 0) {
+                if (target.flag_right === 0) {
                     target.MovePockerFinish(pCard, target.vt);
                     target.cardIndex_under++;
                 }
@@ -275,7 +289,7 @@ var GUINanBai = AdminBaseGUI.extend({
         target.flag_left = target.flag_right = -1;
         target.count_move = 0;
 
-        if (target.cardIndex == target.cardIndex_under) {
+        if (target.cardIndex === target.cardIndex_under) {
             var pCard = target.CardOnHand[target.cardIndex];
             target.MovePockerFinish(pCard, target.cardIndex);
             target.runAction(cc.sequence(
@@ -313,7 +327,48 @@ var GUINanBai = AdminBaseGUI.extend({
         ZLog.error("Function callback");
         if (this.m_callback && this.m_callbackListener)
             this.m_callback.call(this.m_callbackListener);
-        this.removeFromParent(true);
+        this.cleanUp();
+    },
+    cleanUp: function () {
+        this.startLeft = 0;
+        this.startTop = 0;
 
+        this.dx = 0;
+        this.dy = 0;
+        this._index = -1;
+        this._where = -1;
+        this.isTouched = false;
+
+        this.deltaX = 0;
+        this.deltaY = 0;
+        this.sX = 0;
+        this.sY = 0;
+        this.xcu = 0;
+        this.ycu = 0;
+
+        this.cardIndex = 2;
+
+        //Touch move
+        this.cardIndex_under = 0;
+        this.flag_move = false;
+        this.flag_left = this.flag_right = -1;
+        this.count_move = 0;
+
+        //touch end
+        this.vt = -1;
+
+        this.bottomCard = this.sizeScreen.height >> 1;
+        this.leftCard = this.sizeScreen.width >> 1;
+        this.rightCard = this.leftCard;
+
+
+        this.widthCard = 96 * 1.2;
+        this.heightCard = 130 * 1.2;
+
+        for (var i = 0; i < this.CardOnHand.length; i++) {
+            this.CardOnHand[i].removeFromParent(true);
+        }
+        this.CardOnHand = [];
+        this.hide();
     }
 });
