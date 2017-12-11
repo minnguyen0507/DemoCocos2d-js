@@ -55,6 +55,11 @@
         "src/study/BaseSpriteTest.js",
         "src/study/CocosActions.js",
         "src/study/test/TestBaseGUI.js",
+        "src/study/MyNameMin/commom/Card.js",
+        "src/study/MyNameMin/commom/Slot.js",
+        "src/study/MyNameMin/commom/DataPlayer.js",
+        "src/study/MyNameMin/game/bacay/graphics/BaCayScene.js",
+        "src/study/MyNameMin/game/bacay/graphics/BaCaySlot.js",
         "src/rapidgame/SingleTouch.js"
     ]
 }

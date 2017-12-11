@@ -1,0 +1,61 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="card" Type="Plist" ID="f59a46ad-933b-40af-8110-9c9a9a7b55c7" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="True" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="textures/cards/10b.png" />
+      <FilePathData Path="textures/cards/10c.png" />
+      <FilePathData Path="textures/cards/10r.png" />
+      <FilePathData Path="textures/cards/10t.png" />
+      <FilePathData Path="textures/cards/11b.png" />
+      <FilePathData Path="textures/cards/11c.png" />
+      <FilePathData Path="textures/cards/11r.png" />
+      <FilePathData Path="textures/cards/11t.png" />
+      <FilePathData Path="textures/cards/12b.png" />
+      <FilePathData Path="textures/cards/12c.png" />
+      <FilePathData Path="textures/cards/12r.png" />
+      <FilePathData Path="textures/cards/12t.png" />
+      <FilePathData Path="textures/cards/13b.png" />
+      <FilePathData Path="textures/cards/13c.png" />
+      <FilePathData Path="textures/cards/13r.png" />
+      <FilePathData Path="textures/cards/13t.png" />
+      <FilePathData Path="textures/cards/1b.png" />
+      <FilePathData Path="textures/cards/1c.png" />
+      <FilePathData Path="textures/cards/1r.png" />
+      <FilePathData Path="textures/cards/1t.png" />
+      <FilePathData Path="textures/cards/2b.png" />
+      <FilePathData Path="textures/cards/2c.png" />
+      <FilePathData Path="textures/cards/2r.png" />
+      <FilePathData Path="textures/cards/2t.png" />
+      <FilePathData Path="textures/cards/3b.png" />
+      <FilePathData Path="textures/cards/3c.png" />
+      <FilePathData Path="textures/cards/3r.png" />
+      <FilePathData Path="textures/cards/3t.png" />
+      <FilePathData Path="textures/cards/4b.png" />
+      <FilePathData Path="textures/cards/4c.png" />
+      <FilePathData Path="textures/cards/4r.png" />
+      <FilePathData Path="textures/cards/4t.png" />
+      <FilePathData Path="textures/cards/5b.png" />
+      <FilePathData Path="textures/cards/5c.png" />
+      <FilePathData Path="textures/cards/5r.png" />
+      <FilePathData Path="textures/cards/5t.png" />
+      <FilePathData Path="textures/cards/6b.png" />
+      <FilePathData Path="textures/cards/6c.png" />
+      <FilePathData Path="textures/cards/6r.png" />
+      <FilePathData Path="textures/cards/6t.png" />
+      <FilePathData Path="textures/cards/7b.png" />
+      <FilePathData Path="textures/cards/7c.png" />
+      <FilePathData Path="textures/cards/7r.png" />
+      <FilePathData Path="textures/cards/7t.png" />
+      <FilePathData Path="textures/cards/8b.png" />
+      <FilePathData Path="textures/cards/8c.png" />
+      <FilePathData Path="textures/cards/8r.png" />
+      <FilePathData Path="textures/cards/8t.png" />
+      <FilePathData Path="textures/cards/9b.png" />
+      <FilePathData Path="textures/cards/9c.png" />
+      <FilePathData Path="textures/cards/9r.png" />
+      <FilePathData Path="textures/cards/9t.png" />
+      <FilePathData Path="textures/cards/back.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

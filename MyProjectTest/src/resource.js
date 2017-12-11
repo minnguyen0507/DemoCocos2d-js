@@ -1,5 +1,6 @@
 
 var new_card_dir = "newcardschips/";
+var cards = "textures/cards/";
 var res = {
 	//----game lat bai----
 	cover : "res/gamelatbai/cover.png",
@@ -73,6 +74,8 @@ var res = {
     cards_chips_png : "res/cards/cards_chips.png",
     new_cards_chips_plist : "res/" + new_card_dir + "new_cards_chips.plist",
     new_cards_chips_png : "res/" + new_card_dir + "new_cards_chips.png",
+    cards_plist : "res/" + cards + "card.plist",
+    cards_png : "res/" + cards + "card.png",
 
     //---------Cocostudio ----------------
         //-------- File JSOn-------------
@@ -81,6 +84,7 @@ var res = {
     node_slot_table : "res/ui/node_slot_table.json",
     scene_bacay : "res/ui/scene_bacay.json",
     node_betting_bacay : "res/ui/node_betting_bacay.json",
+    node_table_slot : "res/ui/node_table_slot.json",
         //--------File PNG---------------
 
         //--------Font Name--------------

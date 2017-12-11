@@ -247,6 +247,7 @@
             <Image Name="btn_store.png" />
             <Image Name="icon_chicken.png" />
             <Image Name="icon_vip.png" />
+            <Image Name="icon-star.png" />
             <Image Name="o_clock1.png" />
             <Image Name="o_clock2.png" />
           </Folder>
@@ -300,6 +301,7 @@
         <Folder Name="ui">
           <Project Name="node_betting_bacay.csd" Type="Node" />
           <Project Name="node_slot_table.csd" Type="Node" />
+          <Project Name="node_table_slot.csd" Type="Node" />
           <Project Name="scene_bacay.csd" Type="Scene" />
         </Folder>
         <Image Name="checkbox_bg.png" />
@@ -311,6 +313,64 @@
         <Image Name="txtTai.png" />
         <Image Name="txtXiu.png" />
         <Image Name="xiu1.png" />
+        <Folder Name="textures">
+          <Folder Name="cards">
+            <Image Name="10b.png" />
+            <Image Name="10c.png" />
+            <Image Name="10r.png" />
+            <Image Name="10t.png" />
+            <Image Name="11b.png" />
+            <Image Name="11c.png" />
+            <Image Name="11r.png" />
+            <Image Name="11t.png" />
+            <Image Name="12b.png" />
+            <Image Name="12c.png" />
+            <Image Name="12r.png" />
+            <Image Name="12t.png" />
+            <Image Name="13b.png" />
+            <Image Name="13c.png" />
+            <Image Name="13r.png" />
+            <Image Name="13t.png" />
+            <Image Name="1b.png" />
+            <Image Name="1c.png" />
+            <Image Name="1r.png" />
+            <Image Name="1t.png" />
+            <Image Name="2b.png" />
+            <Image Name="2c.png" />
+            <Image Name="2r.png" />
+            <Image Name="2t.png" />
+            <Image Name="3b.png" />
+            <Image Name="3c.png" />
+            <Image Name="3r.png" />
+            <Image Name="3t.png" />
+            <Image Name="4b.png" />
+            <Image Name="4c.png" />
+            <Image Name="4r.png" />
+            <Image Name="4t.png" />
+            <Image Name="5b.png" />
+            <Image Name="5c.png" />
+            <Image Name="5r.png" />
+            <Image Name="5t.png" />
+            <Image Name="6b.png" />
+            <Image Name="6c.png" />
+            <Image Name="6r.png" />
+            <Image Name="6t.png" />
+            <Image Name="7b.png" />
+            <Image Name="7c.png" />
+            <Image Name="7r.png" />
+            <Image Name="7t.png" />
+            <Image Name="8b.png" />
+            <Image Name="8c.png" />
+            <Image Name="8r.png" />
+            <Image Name="8t.png" />
+            <Image Name="9b.png" />
+            <Image Name="9c.png" />
+            <Image Name="9r.png" />
+            <Image Name="9t.png" />
+            <Image Name="back.png" />
+            <PlistInfo Name="card.csi" Type="Plist" />
+          </Folder>
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

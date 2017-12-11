@@ -2,25 +2,7 @@
   <PropertyGroup Name="scene_bacay" Type="Scene" ID="7b746c36-2fd3-4cc0-b9fb-1c4c5e422645" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="20" Speed="1.0000">
-        <Timeline ActionTag="596698961" Property="FileData">
-          <TextureFrame FrameIndex="0" Tween="False">
-            <TextureFile Type="Normal" Path="texture/mic animation/icon_mic_0.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="5" Tween="False">
-            <TextureFile Type="Normal" Path="texture/mic animation/icon_mic_1.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="10" Tween="False">
-            <TextureFile Type="Normal" Path="texture/mic animation/icon_mic_2.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="15" Tween="False">
-            <TextureFile Type="Normal" Path="texture/mic animation/icon_mic_3.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="20" Tween="False">
-            <TextureFile Type="Normal" Path="texture/mic animation/icon_mic_4.png" Plist="" />
-          </TextureFrame>
-        </Timeline>
-      </Animation>
+      <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Scene" Tag="176" ctype="GameNodeObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
@@ -311,42 +293,6 @@
             <DisabledFileData Type="Normal" Path="texture/button/btn_bg_164x59.png" Plist="" />
             <PressedFileData Type="Normal" Path="texture/button/btn_bg_164x59.png" Plist="" />
             <NormalFileData Type="Normal" Path="texture/button/btn_bg_164x59.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="bgr_2" ActionTag="-1559676760" Tag="341" IconVisible="False" LeftMargin="484.0000" RightMargin="474.0000" TopMargin="235.0000" BottomMargin="227.0000" ctype="SpriteObjectData">
-            <Size X="178.0000" Y="178.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="573.0000" Y="316.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5044" Y="0.4938" />
-            <PreSize X="0.1567" Y="0.2781" />
-            <FileData Type="Normal" Path="texture/mic animation/bgr.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_3" ActionTag="596698961" Tag="342" IconVisible="False" LeftMargin="540.0000" RightMargin="526.0000" TopMargin="256.5000" BottomMargin="284.5000" ctype="SpriteObjectData">
-            <Size X="70.0000" Y="99.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="575.0000" Y="334.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5062" Y="0.5219" />
-            <PreSize X="0.0616" Y="0.1547" />
-            <FileData Type="Normal" Path="texture/mic animation/icon_mic_1.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Button_1" ActionTag="-702479327" Tag="343" IconVisible="False" LeftMargin="63.2613" RightMargin="1032.7388" TopMargin="338.2098" BottomMargin="248.7902" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="10" Scale9Height="31" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="40.0000" Y="53.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="83.2613" Y="275.2902" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0733" Y="0.4301" />
-            <PreSize X="0.0352" Y="0.0828" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="texture/mic animation/icon mic off.png" Plist="" />
-            <NormalFileData Type="Normal" Path="texture/mic animation/icon mic on.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

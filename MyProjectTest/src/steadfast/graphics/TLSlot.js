@@ -148,6 +148,7 @@ var TLSlot = BaseSlot.extend({
         var disCard = 60;
         var topCard = 20;
 
+        // Chia bài - nếu là mình thì hiển thị bộ bài khi chia xong
         if (this._isMe) {
             var leftTheFirst = (GV.VISIBALE_SIZE.width - ((this.listCardsSlot.length - 1)) * disCard) / 5;
             for (var i = 0; i < this.listCardsSlot.length; i++) {
