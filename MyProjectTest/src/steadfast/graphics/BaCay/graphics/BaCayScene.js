@@ -1,7 +1,7 @@
 /**
  * Created by Min on 10/17/2017.
  */
-var BaCayScene = BaseGameUI.extend({
+var BaCayScene = AdminBaseGUI.extend({
     _className: "BaCayScene",
 
     ctor: function(){

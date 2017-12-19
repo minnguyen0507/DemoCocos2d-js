@@ -298,21 +298,6 @@
             </Folder>
           </Folder>
         </Folder>
-        <Folder Name="ui">
-          <Project Name="node_betting_bacay.csd" Type="Node" />
-          <Project Name="node_slot_table.csd" Type="Node" />
-          <Project Name="node_table_slot.csd" Type="Node" />
-          <Project Name="scene_bacay.csd" Type="Scene" />
-        </Folder>
-        <Image Name="checkbox_bg.png" />
-        <Image Name="checkbox_tick.png" />
-        <File Name="favicon.ico" />
-        <Image Name="HelloWorld.png" />
-        <Image Name="img_jackpot.png" />
-        <Image Name="tai1.png" />
-        <Image Name="txtTai.png" />
-        <Image Name="txtXiu.png" />
-        <Image Name="xiu1.png" />
         <Folder Name="textures">
           <Folder Name="cards">
             <Image Name="10b.png" />
@@ -371,6 +356,21 @@
             <PlistInfo Name="card.csi" Type="Plist" />
           </Folder>
         </Folder>
+        <Folder Name="ui">
+          <Project Name="node_betting_bacay.csd" Type="Node" />
+          <Project Name="node_slot_table.csd" Type="Node" />
+          <Project Name="node_table_slot.csd" Type="Node" />
+          <Project Name="scene_bacay.csd" Type="Scene" />
+        </Folder>
+        <Image Name="checkbox_bg.png" />
+        <Image Name="checkbox_tick.png" />
+        <File Name="favicon.ico" />
+        <Image Name="HelloWorld.png" />
+        <Image Name="img_jackpot.png" />
+        <Image Name="tai1.png" />
+        <Image Name="txtTai.png" />
+        <Image Name="txtXiu.png" />
+        <Image Name="xiu1.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

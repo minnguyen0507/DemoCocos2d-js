@@ -2,7 +2,7 @@
  * Created by  on MinNguyen 12/11/2017.
  */
 
-var Slot = AdminGUI.extend({
+var Slot = AdminBaseGUI.extend({
     _className: "BaseSlot",
 
     ctor: function () {

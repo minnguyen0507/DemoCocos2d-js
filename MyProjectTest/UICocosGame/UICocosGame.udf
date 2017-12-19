@@ -16,7 +16,7 @@
         <AndroidkeyStore Value="" />
         <AndroidVersion Value="" />
         <iOS_Target Value="UICocosGame-mobile" />
-        <iOS_BundleID Value="" />
+        <iOS_BundleID Value="iPhone Developer: Phi Duc Phuong (3FZB27DCK3)" />
         <Platform Value="None" />
         <RunPlatform Value="None" />
         <FrameworkVersion Value="cocos2d-x-3.8" />
@@ -26,6 +26,17 @@
         <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="ui/scene_bacay.csd" />
+          <FilePathData Path="ui/node_table_slot.csd" />
+          <FilePathData Path="textures/cards/card.csi" />
+          <FilePathData Path="ui/node_slot_table.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="ui/node_table_slot.csd" />
       </Value>
     </Item>
   </Properties>

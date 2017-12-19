@@ -60,6 +60,9 @@
         "src/study/MyNameMin/commom/DataPlayer.js",
         "src/study/MyNameMin/game/bacay/graphics/BaCayScene.js",
         "src/study/MyNameMin/game/bacay/graphics/BaCaySlot.js",
-        "src/rapidgame/SingleTouch.js"
+        "src/rapidgame/SingleTouch.js",
+        "src/study/gamemaubinh/graphics/SceneMauBinh.js",
+        "src/study/gamemaubinh/graphics/SlotMauBinh.js"
+
     ]
 }

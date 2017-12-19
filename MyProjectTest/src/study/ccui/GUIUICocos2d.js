@@ -11,20 +11,77 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     init: function() {
         this._super();
 
-        //this._createUILabel();
+        this._createProgressTimerBar();
         //this._createUISkeleton();
 
-        // for (i=0; i<64; i++){
-        //     var tile = cc.Sprite.create(res.btn_next);
+        // for (var i = 0; i < 13; i++){
+        //     var tile = cc.Sprite.create(res.card_0);
         //     this.addChild(tile,0);
-        //     tile.setPosition(cc.winSize.width / 2 +i%8*50/-10, cc.winSize.height / 2-Math.floor(i/8)*50);
-        //
-        // }
+        //     tile.setPosition(cc.winSize.width / 2 + i % 5 *50, cc.winSize.height / 2 - Math.floor(i/5)*50);
+            //tile.setPosition(568 + (i >3 ? (i - 2) : i) * 50, i > 3 ? cc.winSize.height / 2 : (i > 8 ? (cc.winSize.height / 2 - 50) : (cc.winSize.height / 2 -100) ));
+             //tile.setPosition(568 + i > 3 ? cc.log("width---dung === " + i) : cc.log(" width ----sai=" + i) , i > 3 ? 320 + cc.log("height---dung === " + i) : 320 + cc.log("height ----sai=" + i) );
+            //tile.setPosition(568 + i > 3 ? cc.log("width---dung === " + i) : cc.log("width ----sai= -----" + i) , i > 3 ? 320 + cc.log("height---dung " + i) :(i > 8 ? 320 + cc.log("height---dung" + i) : 320 + cc.log("height ----sai" + i)) );
+            // switch (i){
+            //     case 1:
+            //         tile.x = cc.winSize.width / 2;
+            //         tile.y = cc.winSize.height / 2;
+            //         break;
+            //     case 2:
+            //         tile.x = cc.winSize.width / 2 + 50;
+            //         tile.y = cc.winSize.height / 2;
+            //         break;
+            //     case 3:
+            //         tile.x = cc.winSize.width / 2 + 100;
+            //         tile.y = cc.winSize.height / 2;
+            //         break;
+            //     case 4:
+            //         tile.x = cc.winSize.width / 2 - 50;
+            //         tile.y = cc.winSize.height / 2 - 50;
+            //         break;
+            //     case 5:
+            //         tile.x = cc.winSize.width / 2 ;
+            //         tile.y = cc.winSize.height / 2 - 50;
+            //         break;
+            //     case 6:
+            //         tile.x = cc.winSize.width / 2 + 50;
+            //         tile.y = cc.winSize.height / 2 - 50;
+            //         break;
+            //     case 7:
+            //         tile.x = cc.winSize.width / 2 + 100;
+            //         tile.y = cc.winSize.height / 2 - 50;
+            //         break;
+            //     case 8:
+            //         tile.x = cc.winSize.width / 2 + 150;
+            //         tile.y = cc.winSize.height / 2 - 50;
+            //         break;
+            //     case 9:
+            //         tile.x = cc.winSize.width / 2 -50;
+            //         tile.y = cc.winSize.height / 2 - 100;
+            //         break;
+            //     case 10:
+            //         tile.x = cc.winSize.width / 2 ;
+            //         tile.y = cc.winSize.height / 2 - 100;
+            //         break;
+            //     case 11:
+            //         tile.x = cc.winSize.width / 2 + 50;
+            //         tile.y = cc.winSize.height / 2 - 100;
+            //         break;
+            //     case 12:
+            //         tile.x = cc.winSize.width / 2  + 100;
+            //         tile.y = cc.winSize.height / 2 - 100;
+            //         break;
+            //     case 13:
+            //         tile.x = cc.winSize.width / 2 + 150;
+            //         tile.y = cc.winSize.height / 2 - 100;
+            //         break;
+            //}
+
+        //}
 
        // cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
 
 
-        this._createTestVoice();
+      //  this._createTestVoice();
         //this._createUIAnimation();
         //this._createUILabelBMT();
         ZLog.error("Finish new UI");
