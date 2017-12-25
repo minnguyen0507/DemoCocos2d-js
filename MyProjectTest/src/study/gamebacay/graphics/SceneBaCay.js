@@ -32,6 +32,7 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.cardsChiaBai = [];
 
         this.contenSizeAVT = null;
+        this.listCardsSlot =[];
 		this.init();
 
 	},
@@ -41,6 +42,7 @@ var BaCayLayer = AdminBaseGUI.extend({
         this.setDeepSyncChildren();
         this.syncAllChildren(res.scene_bacay, this);
         cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
+
 
 
        // cc.spriteFrameCache.addSpriteFrames(res.new_cards_chips_plist);
@@ -67,9 +69,9 @@ var BaCayLayer = AdminBaseGUI.extend({
         // var test = new BaCayBo(listCards);
         // test.getDiem();
 
-        var bgBaCay = new cc.Sprite(res.bg_bacay);
-        this.addChild(bgBaCay, -30);
-        bgBaCay.setPosition(size.width/2, size.height/2);
+        // var bgBaCay = new cc.Sprite(res.bg_bacay);
+        // this.addChild(bgBaCay, -30);
+        // bgBaCay.setPosition(size.width/2, size.height/2);
 
         var buttonTest = new ccui.Button(res.btn_next, res.btn_next, res.btn_next);
         buttonTest.setAnchorPoint(0.5 , 0.5);
@@ -94,11 +96,51 @@ var BaCayLayer = AdminBaseGUI.extend({
 		this._testGameUI();
         this.showStartGame();
 
+        var VuotBaiTest = new GuiVuotBai();
+        this.addChild(VuotBaiTest,10);
+        VuotBaiTest.initListCardsHand();
+
 
         ZLog.error("Finish SceneBaCay");
 
         return true;
 
+    },
+
+    randomNumberTest: function () {
+        var valueX = Math.floor((Math.random() * 100) + 1) + 400;
+        var valueY = Math.floor((Math.random() * 100) + 1) + 210;
+        ZLog.error("randomX " + valueX , "randomY" + valueY);
+
+        var data1 = [];
+        data1.push(valueX);
+        data1.push(valueY);
+
+        var valueX1 = Math.floor((Math.random() * 215) + 1) + 459;
+        var valueY2 = Math.floor((Math.random() * 50) + 1) + 210;
+        ZLog.error("randomX " + valueX1 , "randomY" + valueY2);
+
+        var data2 = [];
+        data2.push(valueX1);
+        data2.push(valueY2);
+
+        var valueX3 = Math.floor((Math.random() * 100) + 1) + 620;
+        var valueY3 = Math.floor((Math.random() * 100) + 1) + 210;
+        ZLog.error("randomX " + valueX3 , "randomY" + valueY3);
+
+        var data3 = [];
+        data3.push(valueX3);
+        data3.push(valueY3);
+
+        var listArrayRandom = [];
+        listArrayRandom.push(data1);
+        listArrayRandom.push(data2);
+        listArrayRandom.push(data3);
+
+        var rand = Math.floor(Math.random() * listArrayRandom.length);
+
+        ZLog.error("list cuoi cung" + JSON.stringify(listArrayRandom), "rand" + rand, "end" + JSON.stringify(listArrayRandom[rand]));
+        return listArrayRandom[rand];
     },
 
     _actionChiaBaiServer : function (data) {
@@ -134,6 +176,7 @@ var BaCayLayer = AdminBaseGUI.extend({
                 var anChorX =  card.getContentSize().width * 0.5 * scale;
                 var anChorY =  card.getContentSize().height * 0.5 * scale;
                 if(j == 1 ){        // Bộ bài của minh
+                    this.listCardsPlayer.push(card);
                     x = dtPos.x - this.contenSizeAVT.height * 0.5 + 90 * (i - 1) + 150 + anChorX;
                     y= dtPos.y + this.contenSizeAVT.width * 0.5 - dty + anChorY;
 
@@ -144,7 +187,7 @@ var BaCayLayer = AdminBaseGUI.extend({
                 else if( j == 2 || j == 3 || j == 4){
                     // dtPos.x = 280;
                     // card.setAnchorPoint(0,0);
-                    x = dtPos.x + this.contenSizeAVT.width * 0.5 + 5 + anChorX;
+                    x = dtPos.x + this.contenSizeAVT.width * 0.5- + 5 + anChorX;
                     y = dtPos.y - this.contenSizeAVT.height * 0.5 + dty * (i - 1) + dty1 + anChorY ;
                     ZLog.error("dtPost " + JSON.stringify(dtPos));
                     // this.contenSizeAVT.height += i + 15;
@@ -359,7 +402,7 @@ var BaCayLayer = AdminBaseGUI.extend({
 
     _showNanBai: function () {
         if(this._guiNanBai == null){
-            this._guiNanBai  = new GUINanBai();
+            this._guiNanBai  = new BaCayNanBai();
             this.addChild(this._guiNanBai,11);
             this.retain();
         }
@@ -425,14 +468,15 @@ var BaCayLayer = AdminBaseGUI.extend({
             var comeBack = cc.scaleTo(0.4, 1, 1);
             var delay = cc.delayTime(0.05);
             var sum = 0;
-            this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender,data) {
-                ZLog.error("Call back lat bai", data);
-                //sender.setTexture(res.card_0);
-                sender.setSpriteFrame("newcardschips/card_" + data + ".png");
-                sum += data;
-
-                ZLog.error("Tinh diem", sum % 10 );
-            },this.listCardsPlayer[i],this.serverCardTest[i]),comeBack)));
+            this.listCardsPlayer[i].setSpriteFrame("newcardschips/card_" + this.serverCardTest[i] + ".png");
+            // this.listCardsPlayer[i].runAction(cc.sequence(scaleTo,delay,cc.spawn(cc.callFunc(function (sender,data) {
+            //     ZLog.error("Call back lat bai", data);
+            //     //sender.setTexture(res.card_0);
+            //     sender.setSpriteFrame("newcardschips/card_" + data + ".png");
+            //     sum += data;
+            //
+            //     ZLog.error("Tinh diem", sum % 10 );
+            // },this.listCardsPlayer[i],this.serverCardTest[i]),comeBack)));
         }
     },
 	touchEvent : function (sender,  type) {
@@ -445,6 +489,7 @@ var BaCayLayer = AdminBaseGUI.extend({
 			break;
 		case ccui.Widget.TOUCH_ENDED:
 		    this._actionChiaBaiServer(BACAY_GET_GAME_INFO);
+		    //this._showNanBai();
 
 
             // setTimeout(function(){
