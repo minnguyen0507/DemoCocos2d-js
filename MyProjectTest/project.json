@@ -50,6 +50,7 @@
         "src/study/gamebacay/BaCayConst.js",
         "src/study/gametotem/GameToTem.js",
         "src/study/gametaixiu/GameTaiXiu.js",
+        "src/study/gamelieng/graphics/GameLiengScene.js",
         "src/study/ccui/GUIUICocos2d.js",
         "src/study/ARRAY/CodeArrays.js",
         "src/study/testbaseclass/TestClass.js",

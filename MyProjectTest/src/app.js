@@ -63,8 +63,8 @@ var HelloWorldLayer = cc.Layer.extend({
 
 
       //  this._initCheckBox();
-       // this._testFuncInterval();
-        setTimeout(this._testSetTimeout,3000);
+        this._testFuncInterval();
+        //setTimeout(this._testSetTimeout,3000);
         return true;
     },
 
@@ -74,10 +74,15 @@ var HelloWorldLayer = cc.Layer.extend({
     },
 
     _testFuncInterval: function () {
-      var testInterval =  setInterval(function () {
-            ZLog.error("something...");
-            clearInterval(testInterval);
-        },2000);
+        var counter  = 10;
+        var testInterval =  setInterval(function () {
+            counter --;
+          ZLog.error("count ==== ",counter);
+          if (counter == 0) { // hết thời gian làm 1 nhiệm vụ nào đó
+              ZLog.error("HAPPY NEW YEAR");
+              clearInterval(testInterval);
+          }
+        },1000);
     },
     _createMenuItem: function () {
         this.Menu = new cc.Menu();
