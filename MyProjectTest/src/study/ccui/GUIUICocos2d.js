@@ -11,7 +11,7 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     init: function() {
         this._super();
 
-        this._createProgressTimerBar();
+        this._controlSlider();
         //this._createUISkeleton();
 
         // for (var i = 0; i < 13; i++){
@@ -156,6 +156,30 @@ var GUIUICocos2d = AdminBaseGUI.extend({
     _createUICheckBox: function(){
 
     },
+
+    //TODO: tạo thanh slider nhưng touch được từng ko cần kéo
+    _controlSlider : function(){
+        ZLog.error("11111111111");
+        var slider = new cc.ControlSlider(res.cocos2d_slider_track,res.cocos2d_slider_progress,res.cocos2d_slider_thumb);
+        slider.setMinimumValue(0.0);
+        slider.setMaximumValue(5.0);
+        slider.setPosition(cc.winSize.width/2 + 16, cc.winSize.height/2);
+        slider.setTag(1);
+        slider.addTargetWithActionForControlEvents(this, this.valueChanged, cc.CONTROL_EVENT_VALUECHANGED);
+
+        this.addChild(slider);
+
+
+    },
+
+    valueChanged:function (sender, controlEvent) {
+        // Change value of label.
+        if (sender.tag == 1)
+            ZLog.error("getPercent" +  sender.getValue().toFixed(2));
+        // if (sender.tag == 2)
+        //     this._displayValueLabel.setString("Lower slider value = " + sender.getValue().toFixed(2));
+    },
+
 
     _createUILoadingBar: function(){
         this.loadingBar = new ccui.LoadingBar();

@@ -31,6 +31,13 @@ var res = {
     actionsocdia_plist : "res/animation/tx_socdia/actionsocdia.plist",
     actionsocdia_png : "res/animation/tx_socdia/actionsocdia.png",
 
+    //----------GUI UI COCOS2D-------
+        //----------SLIDER-------
+        cocos2d_slider_track : "res/textures/guicocos2d/slider/sliderTrack.png", // image
+        cocos2d_slider_progress : "res/textures/guicocos2d/slider/sliderProgress.png", //loading
+        cocos2d_slider_thumb : "res/textures/guicocos2d/slider/sliderThumb.png", //btn
+
+
 	//----------Sound -------------
 	sound_bang : "res/sound/bang.mp3",
 	sound_loop : "res/sound/loop.mp3",
